@@ -26,15 +26,51 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        MainWindow.cpp
+        MainWindow.cpp \
+    MapForm.cpp \
+    TaskForm.cpp \
+    TitleBarEx.cpp \
+    DeviceStateForm.cpp \
+    UserForm.cpp \
+    HistoryForm.cpp \
+    AbnormalForm.cpp \
+    ConfigForm.cpp \
+    PushButtonEx.cpp \
+    LineEditEx.cpp \
+    ComboBoxEx.cpp \
+    TableViewEx.cpp \
+    CustomTableModel.cpp
 
 HEADERS += \
-        MainWindow.h
+        MainWindow.h \
+    MapForm.h \
+    TaskForm.h \
+    TitleBarEx.h \
+    CustomTabStyle.h \
+    DeviceStateForm.h \
+    UserForm.h \
+    HistoryForm.h \
+    AbnormalForm.h \
+    ConfigForm.h \
+    PushButtonEx.h \
+    LineEditEx.h \
+    ComboBoxEx.h \
+    TableViewEx.h \
+    CustomTableModel.h
 
 FORMS += \
-        MainWindow.ui
+        MainWindow.ui \
+    MapForm.ui \
+    TaskForm.ui \
+    DeviceStateForm.ui \
+    UserForm.ui \
+    HistoryForm.ui \
+    AbnormalForm.ui \
+    ConfigForm.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
