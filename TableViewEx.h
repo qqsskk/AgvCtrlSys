@@ -2,15 +2,16 @@
 #define TABLEVIEWEX_H
 
 #include <QTableView>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
-#include "CustomTableModel.h"
 
 class TableViewEx : public QTableView
 {
     Q_OBJECT
 public:
       TableViewEx(QWidget *parent = 0);
+private:
+      void init();
+public:
+      void setTableModel(QAbstractTableModel *model);
 
 };
 

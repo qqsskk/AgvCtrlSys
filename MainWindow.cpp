@@ -61,20 +61,6 @@ void MainWindow::initWindow()
     ui->tabWidget->addTab(pSetForm, QString::fromLocal8Bit("系统配置"));
     ui->tabWidget->setIconSize(QSize(32,32));
     ui->tabWidget->setCurrentIndex(2);
-
-//    // 定义调色板
-//    QPalette palette0;
-//    QPalette palette1;
-//    // 设定画刷
-//    palette0.setColor(QPalette::Background, QColor::fromRgb(0,200,0));
-//    palette1.setColor(QPalette::Background, QColor("#484C55"));
-//    // 设定调色板
-//    ui->tabWidget->setAutoFillBackground(true);
-//    ui->tabWidget->setPalette(palette0);
-//    ui->tabWidget->widget(0)->setAutoFillBackground(true);
-//    ui->tabWidget->widget(0)->setPalette(palette1);
-
-
 }
 
 

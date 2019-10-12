@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -39,7 +39,8 @@ SOURCES += \
     LineEditEx.cpp \
     ComboBoxEx.cpp \
     TableViewEx.cpp \
-    CustomTableModel.cpp
+    CustomTableModel.cpp \
+    CustomJsonModel.cpp
 
 HEADERS += \
         MainWindow.h \
@@ -56,7 +57,8 @@ HEADERS += \
     LineEditEx.h \
     ComboBoxEx.h \
     TableViewEx.h \
-    CustomTableModel.h
+    CustomTableModel.h \
+    CustomJsonModel.h
 
 FORMS += \
         MainWindow.ui \
