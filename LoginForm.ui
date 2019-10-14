@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginForm</class>
+ <widget class="QWidget" name="LoginForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_username">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>140</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>用户名：</string>
+   </property>
+  </widget>
+  <widget class="LineEditEx" name="lineEdit_userName">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>130</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="LineEditEx" name="lineEdit_passwd">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>180</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_passwd">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>190</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>密  码：</string>
+   </property>
+  </widget>
+  <widget class="PushButtonEx" name="pushButton_exit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>240</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </widget>
+  <widget class="PushButtonEx" name="pushButton_login">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>240</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonTitle">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>451</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LineEditEx</class>
+   <extends>QLineEdit</extends>
+   <header>LineEditEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PushButtonEx</class>
+   <extends>QPushButton</extends>
+   <header>PushButtonEx.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

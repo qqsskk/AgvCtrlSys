@@ -27,6 +27,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::initWindow()
 {
+    // 窗口背景
+    QPalette pal(this->palette());
+    pal.setColor(QPalette::Background, QColor("#484C55"));
+    this->setAutoFillBackground(true);
+    this->setPalette(pal);
+
     // 窗口初始尺寸
     this->resize(QSize(1280, 800));
     this->setFixedSize(this->width(),this->height());

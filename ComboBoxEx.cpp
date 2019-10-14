@@ -1,6 +1,11 @@
 ﻿#include "ComboBoxEx.h"
-#include <QListView>
+
 ComboBoxEx::ComboBoxEx(QWidget *parent) : QComboBox(parent)
+{
+    init();
+}
+
+void ComboBoxEx::init()
 {
     setView(new QListView());
     setStyleSheet("QComboBox {border-radius: 5px; border:1px solid #CCCCCC; background:#FFFFFF;\

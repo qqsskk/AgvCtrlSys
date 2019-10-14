@@ -13,17 +13,17 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QRadioButton" name="radioButton">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>150</y>
-     <width>91</width>
-     <height>18</height>
+     <x>50</x>
+     <y>50</y>
+     <width>120</width>
+     <height>80</height>
     </rect>
    </property>
-   <property name="text">
-    <string>RadioButton</string>
+   <property name="title">
+    <string>GroupBox</string>
    </property>
   </widget>
  </widget>

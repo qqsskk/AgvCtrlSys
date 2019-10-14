@@ -32,7 +32,7 @@ public:
                     painter->save();
                     painter->setPen(QColor("#34373E"));
                     painter->setBrush(QColor("#34373E"));
-                    painter->drawRect(allRect.adjusted(6, 6, -6, -6));
+                    painter->drawRect(allRect.adjusted(/*6, 6, -6, -6*/0,0,0,0));
                     painter->restore();
                 }
                 QTextOption option;

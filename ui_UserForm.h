@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -19,16 +19,16 @@ QT_BEGIN_NAMESPACE
 class Ui_UserForm
 {
 public:
-    QRadioButton *radioButton;
+    QGroupBox *groupBox;
 
     void setupUi(QWidget *UserForm)
     {
         if (UserForm->objectName().isEmpty())
             UserForm->setObjectName(QString::fromUtf8("UserForm"));
         UserForm->resize(400, 300);
-        radioButton = new QRadioButton(UserForm);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
-        radioButton->setGeometry(QRect(140, 150, 91, 18));
+        groupBox = new QGroupBox(UserForm);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setGeometry(QRect(50, 50, 120, 80));
 
         retranslateUi(UserForm);
 
@@ -38,7 +38,7 @@ public:
     void retranslateUi(QWidget *UserForm)
     {
         UserForm->setWindowTitle(QApplication::translate("UserForm", "Form", nullptr));
-        radioButton->setText(QApplication::translate("UserForm", "RadioButton", nullptr));
+        groupBox->setTitle(QApplication::translate("UserForm", "GroupBox", nullptr));
     } // retranslateUi
 
 };
