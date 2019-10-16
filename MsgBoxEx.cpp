@@ -1,6 +1,6 @@
-﻿#include "MessageBoxEx.h"
+﻿#include "MsgBoxEx.h"
 
-MessageBoxEx::MessageBoxEx(QWidget *parent) : QMessageBox(parent)
+MsgBoxEx::MsgBoxEx(QWidget *parent) : QMessageBox(parent)
 {
     m_pBtnOk = addButton(QString::fromLocal8Bit("确定"), QMessageBox::AcceptRole);
     m_pBtnCancel = addButton(QString::fromLocal8Bit("取消"), QMessageBox::AcceptRole);
@@ -11,44 +11,45 @@ MessageBoxEx::MessageBoxEx(QWidget *parent) : QMessageBox(parent)
 }
 
 
-void MessageBoxEx::setMessageBoxMode(QString content)
+void MsgBoxEx::setMsgBoxMode(QString content, int delayTime)
 {
     m_strContent = content;
-    m_msgBoxMode = MessageBoxMode::MessageBoxMode_OnlyHint;
+    m_nDelayTime = delayTime;
+    m_msgBoxMode = MsgBoxMode::MsgBoxMode_OnlyHint;
 
-    updateMessageBoxMode();
+    updateMsgBoxMode();
 }
-void MessageBoxEx::setMessageBoxMode(QString content, QString title, MessageBoxBtnType btnType)
+void MsgBoxEx::setMsgBoxMode(QString content, QString title, MsgBoxBtnType btnType)
 {
     m_strContent = content;
     m_strTitle = title;
     m_msgBoxBtnType = btnType;
-    m_msgBoxMode = MessageBoxMode::MessageBoxMode_Normal;
+    m_msgBoxMode = MsgBoxMode::MsgBoxMode_Normal;
 
-    updateMessageBoxMode();
+    updateMsgBoxMode();
 }
-void MessageBoxEx::updateMessageBoxMode()
+void MsgBoxEx::updateMsgBoxMode()
 {
     setWindowFlags(Qt::FramelessWindowHint);
     setText("\n"+m_strContent);
     //setIconPixmap(QPixmap("./res/icon/waring.png"));
     switch (m_msgBoxMode)
     {
-        case MessageBoxMode::MessageBoxMode_OnlyHint:
+        case MsgBoxMode::MsgBoxMode_OnlyHint:
         {
             removeButton(m_pBtnOk);
             removeButton(m_pBtnCancel);
-            setStyleSheet("QMessageBox{background-color:#484C55}\
+            setStyleSheet("QMessageBox{background-color:#000000}\
                            QLabel{font: 12pt Microsoft YaHei; font-weight: bold; color:#FFFFFF}");
             addButton(QMessageBox::Ok);
             button(QMessageBox::Ok)->hide();
             show();
-            QTimer::singleShot(1500, this, SLOT(close()));
+            QTimer::singleShot(m_nDelayTime, this, SLOT(close()));
         }
             break;
-        case MessageBoxMode::MessageBoxMode_Normal:
+        case MsgBoxMode::MsgBoxMode_Normal:
         {
-            setStyleSheet("QMessageBox{background-color:#484C55}\
+            setStyleSheet("QMessageBox{background-color:#000000}\
                            QLabel{font: 12pt Microsoft YaHei; font-weight: bold; color:#FFFFFF}\
                            QPushButton{background:#FFFFFF; border-radius:5px; font-size:10pt; \
                             font-family:Microsoft YaHei; color:#000000; width:65; height:25} \
@@ -57,10 +58,10 @@ void MessageBoxEx::updateMessageBoxMode()
 
             switch(m_msgBoxBtnType)
             {
-                case MessageBoxBtnType_Ok:
+                case MsgBoxBtnType_Ok:
                      removeButton(m_pBtnCancel);
                 break;
-                case MessageBoxBtnType_OkCancle:
+                case MsgBoxBtnType_OkCancle:
                 break;
             }
               exec();
@@ -69,11 +70,11 @@ void MessageBoxEx::updateMessageBoxMode()
     }
 }
 
-void MessageBoxEx::onOkClicked()
+void MsgBoxEx::onOkClicked()
 {
     emit btnOkClicked();
 }
-void MessageBoxEx::onCancelClicked()
+void MsgBoxEx::onCancelClicked()
 {
     emit btnCancelClicked();
 }

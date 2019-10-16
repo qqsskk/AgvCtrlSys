@@ -2,6 +2,7 @@
 #define TABLEVIEWEX_H
 
 #include <QTableView>
+#include <QHeaderView>
 
 class TableViewEx : public QTableView
 {

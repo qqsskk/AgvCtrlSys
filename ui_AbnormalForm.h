@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -19,16 +19,15 @@ QT_BEGIN_NAMESPACE
 class Ui_AbnormalForm
 {
 public:
-    QGroupBox *groupBox;
+    QGridLayout *gridLayout;
 
     void setupUi(QWidget *AbnormalForm)
     {
         if (AbnormalForm->objectName().isEmpty())
             AbnormalForm->setObjectName(QString::fromUtf8("AbnormalForm"));
-        AbnormalForm->resize(400, 300);
-        groupBox = new QGroupBox(AbnormalForm);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(100, 170, 120, 80));
+        AbnormalForm->resize(751, 433);
+        gridLayout = new QGridLayout(AbnormalForm);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
 
         retranslateUi(AbnormalForm);
 
@@ -38,7 +37,6 @@ public:
     void retranslateUi(QWidget *AbnormalForm)
     {
         AbnormalForm->setWindowTitle(QApplication::translate("AbnormalForm", "Form", nullptr));
-        groupBox->setTitle(QApplication::translate("AbnormalForm", "GroupBox", nullptr));
     } // retranslateUi
 
 };

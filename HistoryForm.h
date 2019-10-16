@@ -1,7 +1,11 @@
-#ifndef HISTORYFORM_H
+﻿#ifndef HISTORYFORM_H
 #define HISTORYFORM_H
 
 #include <QWidget>
+#include <QTimer>
+#include <QSqlQueryModel>
+#include <QSqlTableModel>
+#include "CustomTableModel.h"
 
 namespace Ui {
 class HistoryForm;
@@ -17,6 +21,10 @@ public:
 
 private:
     Ui::HistoryForm *ui;
+    QSqlQueryModel *m_model;
+
+private slots:
+    void onUpdateModel();
 };
 
 #endif // HISTORYFORM_H

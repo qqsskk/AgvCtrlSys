@@ -1,24 +1,19 @@
 ﻿#include "MainWindow.h"
 #include "ui_MainWindow.h"
 
-#include "TitleBarEx.h"
-#include "CustomTabStyle.h"
-#include "MapForm.h"
-#include "TaskForm.h"
-#include "DeviceStateForm.h"
-#include "UserForm.h"
-#include "HistoryForm.h"
-#include "AbnormalForm.h"
-#include "ConfigForm.h"
-
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QString user, QString passwd, int level, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
+    m_userName = user;
+    m_userPasswd = passwd;
+    m_userLevel = level;
+
     initWindow();
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -40,15 +35,16 @@ void MainWindow::initWindow()
     // 窗口标题栏
     setWindowIcon(QIcon("./res/icon/devstate.png"));
     setWindowFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint);
-    TitleBarEx *pTitle = new TitleBarEx(this);
-    pTitle->setIcon("./res/icon/devstate.png");
-    pTitle->setButtonType(MINI_MAX_BUTTON);
-    pTitle->setTitle(QString::fromLocal8Bit("  AGV 调度系统"));
+    TitleBarEx *pTitleBar = new TitleBarEx(this);
+    pTitleBar->setIcon("./res/icon/devstate.png");
+    pTitleBar->setButtonType(MINI_MAX_BUTTON);
+    pTitleBar->setTitle(QString::fromLocal8Bit("  AGV 调度系统"));
+    connect(pTitleBar, SIGNAL(windowClose()), this, SLOT(onWindowClose())); // 绑定信号槽
 
 
     // 主页
     // QTabBar::tab:!selected {border-image: url(./res/icon/devstate.png);}
-    ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #CCCCCC;}");
+    ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #31343B;}");
     ui->tabWidget->setTabPosition(QTabWidget::West);
     ui->tabWidget->tabBar()->setStyle(new CustomTabStyle);
     MapForm *pMapForm = new MapForm();
@@ -63,10 +59,35 @@ void MainWindow::initWindow()
     ui->tabWidget->addTab(pUserForm, QString::fromLocal8Bit("用户信息"));
     AbnormalForm *pAbnormalForm = new AbnormalForm();
     ui->tabWidget->addTab(pAbnormalForm, QString::fromLocal8Bit("异常信息"));
-    ConfigForm *pSetForm = new ConfigForm();
-    ui->tabWidget->addTab(pSetForm, QString::fromLocal8Bit("系统配置"));
+
+    // 根据用户权限添加功能
+    switch(m_userLevel)
+    {
+        case UserLevel::UserLevel_High:
+        {
+            ConfigForm *pSetForm = new ConfigForm();
+            ui->tabWidget->addTab(pSetForm, QString::fromLocal8Bit("系统配置"));
+        }
+        break;
+    }
+
     ui->tabWidget->setIconSize(QSize(32,32));
-    ui->tabWidget->setCurrentIndex(2);
+    ui->tabWidget->setCurrentIndex(6);
+
 }
 
+void MainWindow::onWindowClose()
+{
+    MsgBoxEx *msgBox = new MsgBoxEx();
+    connect(msgBox, SIGNAL(btnOkClicked()), this, SLOT(onBtnOkClicked()));
+    connect(msgBox, SIGNAL(btnCancelClicked()), this, SLOT(onBtnCancelClicked()));
+    msgBox->setMsgBoxMode(QString::fromLocal8Bit("确定要退出系统吗？"),"hello", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
+}
+void MainWindow::onBtnOkClicked()
+{
+    qApp->quit();
+}
 
+void MainWindow::onBtnCancelClicked()
+{
+}

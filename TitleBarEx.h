@@ -37,6 +37,8 @@ private slots:
 	void restoreButtonClicked();
 	void maxButtonClicked();
 	void closeButtonClicked();
+signals:
+    void windowClose();
 
 private:
 	QLabel *m_pIconLabel; //表示标题栏Icon

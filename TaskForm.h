@@ -1,7 +1,11 @@
-#ifndef TASKFORM_H
+﻿#ifndef TASKFORM_H
 #define TASKFORM_H
 
 #include <QWidget>
+#include <QTimer>
+#include <QSqlQueryModel>
+#include <QSqlTableModel>
+#include "CustomTableModel.h"
 
 namespace Ui {
 class TaskForm;
@@ -17,6 +21,10 @@ public:
 
 private:
     Ui::TaskForm *ui;
+    QSqlQueryModel *m_model;
+
+private slots:
+    void onUpdateModel();
 };
 
 #endif // TASKFORM_H

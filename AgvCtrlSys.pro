@@ -42,7 +42,11 @@ SOURCES += \
     CustomTableModel.cpp \
     CustomJsonModel.cpp \
     LoginForm.cpp \
-    MessageBoxEx.cpp
+    MsgBoxEx.cpp \
+    LoginSetForm.cpp \
+    Config.cpp \
+    LabelEx.cpp \
+    GroupBoxEx.cpp
 
 HEADERS += \
         MainWindow.h \
@@ -62,7 +66,11 @@ HEADERS += \
     CustomTableModel.h \
     CustomJsonModel.h \
     LoginForm.h \
-    MessageBoxEx.h
+    MsgBoxEx.h \
+    LoginSetForm.h \
+    Config.h \
+    LabelEx.h \
+    GroupBoxEx.h
 
 FORMS += \
         MainWindow.ui \
@@ -73,7 +81,8 @@ FORMS += \
     HistoryForm.ui \
     AbnormalForm.ui \
     ConfigForm.ui \
-    LoginForm.ui
+    LoginForm.ui \
+    LoginSetForm.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

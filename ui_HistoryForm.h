@@ -9,36 +9,33 @@
 #ifndef UI_HISTORYFORM_H
 #define UI_HISTORYFORM_H
 
-#include <ComboBoxEx.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
+#include "TableViewEx.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_HistoryForm
 {
 public:
-    ComboBoxEx *comboBox;
-    ComboBoxEx *comboBox_2;
-    ComboBoxEx *comboBox_3;
+    QGridLayout *gridLayout;
+    TableViewEx *tableView;
 
     void setupUi(QWidget *HistoryForm)
     {
         if (HistoryForm->objectName().isEmpty())
             HistoryForm->setObjectName(QString::fromUtf8("HistoryForm"));
-        HistoryForm->resize(400, 300);
-        comboBox = new ComboBoxEx(HistoryForm);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(90, 70, 241, 31));
-        comboBox_2 = new ComboBoxEx(HistoryForm);
-        comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
-        comboBox_2->setEnabled(false);
-        comboBox_2->setGeometry(QRect(90, 180, 161, 22));
-        comboBox_3 = new ComboBoxEx(HistoryForm);
-        comboBox_3->setObjectName(QString::fromUtf8("comboBox_3"));
-        comboBox_3->setEnabled(true);
-        comboBox_3->setGeometry(QRect(90, 150, 161, 22));
+        HistoryForm->resize(355, 295);
+        gridLayout = new QGridLayout(HistoryForm);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        tableView = new TableViewEx(HistoryForm);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+
+        gridLayout->addWidget(tableView, 0, 0, 1, 1);
+
 
         retranslateUi(HistoryForm);
 

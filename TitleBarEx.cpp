@@ -203,5 +203,6 @@ void TitleBarEx::maxButtonClicked()
 
 void TitleBarEx::closeButtonClicked()
 {
-	window()->close();
+    emit windowClose();
+    //window()->close();
 }

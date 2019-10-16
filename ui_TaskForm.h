@@ -11,33 +11,31 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
-#include "LineEditEx.h"
+#include "TableViewEx.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_TaskForm
 {
 public:
-    LineEditEx *lineEdit;
-    LineEditEx *lineEdit_2;
-    LineEditEx *lineEdit_3;
+    QGridLayout *gridLayout;
+    TableViewEx *tableView;
 
     void setupUi(QWidget *TaskForm)
     {
         if (TaskForm->objectName().isEmpty())
             TaskForm->setObjectName(QString::fromUtf8("TaskForm"));
         TaskForm->resize(400, 300);
-        lineEdit = new LineEditEx(TaskForm);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(130, 80, 151, 41));
-        lineEdit_2 = new LineEditEx(TaskForm);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(60, 150, 151, 41));
-        lineEdit_3 = new LineEditEx(TaskForm);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setEnabled(false);
-        lineEdit_3->setGeometry(QRect(100, 200, 151, 41));
+        gridLayout = new QGridLayout(TaskForm);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        tableView = new TableViewEx(TaskForm);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+
+        gridLayout->addWidget(tableView, 0, 0, 1, 1);
+
 
         retranslateUi(TaskForm);
 

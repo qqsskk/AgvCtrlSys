@@ -20,31 +20,32 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_MessageBoxEx_t {
+struct qt_meta_stringdata_MsgBoxEx__MessageBoxEx_t {
     QByteArrayData data[6];
-    char stringdata0[72];
+    char stringdata0[82];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MessageBoxEx_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_MsgBoxEx__MessageBoxEx_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_MessageBoxEx_t qt_meta_stringdata_MessageBoxEx = {
+static const qt_meta_stringdata_MsgBoxEx__MessageBoxEx_t qt_meta_stringdata_MsgBoxEx__MessageBoxEx = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "MessageBoxEx"
-QT_MOC_LITERAL(1, 13, 12), // "btnOkClicked"
-QT_MOC_LITERAL(2, 26, 0), // ""
-QT_MOC_LITERAL(3, 27, 16), // "btnCancelClicked"
-QT_MOC_LITERAL(4, 44, 11), // "onOkClicked"
-QT_MOC_LITERAL(5, 56, 15) // "onCancelClicked"
+QT_MOC_LITERAL(0, 0, 22), // "MsgBoxEx::MessageBoxEx"
+QT_MOC_LITERAL(1, 23, 12), // "btnOkClicked"
+QT_MOC_LITERAL(2, 36, 0), // ""
+QT_MOC_LITERAL(3, 37, 16), // "btnCancelClicked"
+QT_MOC_LITERAL(4, 54, 11), // "onOkClicked"
+QT_MOC_LITERAL(5, 66, 15) // "onCancelClicked"
 
     },
-    "MessageBoxEx\0btnOkClicked\0\0btnCancelClicked\0"
-    "onOkClicked\0onCancelClicked"
+    "MsgBoxEx::MessageBoxEx\0btnOkClicked\0"
+    "\0btnCancelClicked\0onOkClicked\0"
+    "onCancelClicked"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_MessageBoxEx[] = {
+static const uint qt_meta_data_MsgBoxEx__MessageBoxEx[] = {
 
  // content:
        8,       // revision
@@ -76,7 +77,7 @@ static const uint qt_meta_data_MessageBoxEx[] = {
        0        // eod
 };
 
-void MessageBoxEx::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void MsgBoxEx::MessageBoxEx::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<MessageBoxEx *>(_o);
@@ -108,30 +109,30 @@ void MessageBoxEx::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject MessageBoxEx::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject MsgBoxEx::MessageBoxEx::staticMetaObject = { {
     &QMessageBox::staticMetaObject,
-    qt_meta_stringdata_MessageBoxEx.data,
-    qt_meta_data_MessageBoxEx,
+    qt_meta_stringdata_MsgBoxEx__MessageBoxEx.data,
+    qt_meta_data_MsgBoxEx__MessageBoxEx,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *MessageBoxEx::metaObject() const
+const QMetaObject *MsgBoxEx::MessageBoxEx::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *MessageBoxEx::qt_metacast(const char *_clname)
+void *MsgBoxEx::MessageBoxEx::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_MessageBoxEx.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_MsgBoxEx__MessageBoxEx.stringdata0))
         return static_cast<void*>(this);
     return QMessageBox::qt_metacast(_clname);
 }
 
-int MessageBoxEx::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int MsgBoxEx::MessageBoxEx::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMessageBox::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -149,13 +150,13 @@ int MessageBoxEx::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void MessageBoxEx::btnOkClicked()
+void MsgBoxEx::MessageBoxEx::btnOkClicked()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 
 // SIGNAL 1
-void MessageBoxEx::btnCancelClicked()
+void MsgBoxEx::MessageBoxEx::btnCancelClicked()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }

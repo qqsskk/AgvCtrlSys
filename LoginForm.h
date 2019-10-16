@@ -4,11 +4,14 @@
 #include <QWidget>
 #include <QSqlDatabase>
 #include <QSqlTableModel>
+#include <QSqlRecord>
+#include <QSqlQuery>
 #include <QDebug>
 #include <QTimer>
-#include "MessageBoxEx.h"
+#include "MsgBoxEx.h"
 #include "MainWindow.h"
-
+#include "LoginSetForm.h"
+#include "Config.h"
 
 namespace Ui {
 class LoginForm;
@@ -32,10 +35,18 @@ private slots:
 
     void onLoginMainWindow();
 
+    void onSetClicked();
 private:
     Ui::LoginForm *ui;
 
     MainWindow *mainWindow;
+
+    QString m_userName;
+    QString m_userPasswd;
+    int m_userLevel;
+
+private:
+    bool linkdb();
 };
 
 #endif // LOGINFORM_H
