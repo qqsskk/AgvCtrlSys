@@ -3,7 +3,10 @@
 
 #include <QWidget>
 #include <QHBoxLayout>
-#include "TableViewEx.h"
+#include <QTimer>
+#include <QSqlQueryModel>
+#include <QSqlTableModel>
+#include "CustomTableModel.h"
 
 namespace Ui {
 class DeviceStateForm;
@@ -19,6 +22,10 @@ public:
 
 private:
     Ui::DeviceStateForm *ui;
+    QSqlQueryModel *m_model;
+
+private slots:
+    void onUpdateModel();
 };
 
 #endif // DEVICESTATEFORM_H

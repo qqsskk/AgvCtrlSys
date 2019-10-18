@@ -143,7 +143,7 @@ public:
         pushButtonSetDb->setObjectName(QString::fromUtf8("pushButtonSetDb"));
         sizePolicy1.setHeightForWidth(pushButtonSetDb->sizePolicy().hasHeightForWidth());
         pushButtonSetDb->setSizePolicy(sizePolicy1);
-        pushButtonSetDb->setMinimumSize(QSize(0, 30));
+        pushButtonSetDb->setMinimumSize(QSize(80, 30));
 
         gridLayout_2->addWidget(pushButtonSetDb, 0, 12, 1, 1);
 
@@ -238,7 +238,7 @@ public:
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         sizePolicy1.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
         pushButton_6->setSizePolicy(sizePolicy1);
-        pushButton_6->setMinimumSize(QSize(0, 30));
+        pushButton_6->setMinimumSize(QSize(80, 30));
 
         gridLayout_3->addWidget(pushButton_6, 0, 12, 1, 1);
 
@@ -352,7 +352,7 @@ public:
         pushButtonSetNet->setObjectName(QString::fromUtf8("pushButtonSetNet"));
         sizePolicy1.setHeightForWidth(pushButtonSetNet->sizePolicy().hasHeightForWidth());
         pushButtonSetNet->setSizePolicy(sizePolicy1);
-        pushButtonSetNet->setMinimumSize(QSize(0, 30));
+        pushButtonSetNet->setMinimumSize(QSize(80, 30));
 
         gridLayout_4->addWidget(pushButtonSetNet, 0, 12, 1, 1);
 
@@ -438,7 +438,7 @@ public:
         pushButtonAddDev->setObjectName(QString::fromUtf8("pushButtonAddDev"));
         sizePolicy1.setHeightForWidth(pushButtonAddDev->sizePolicy().hasHeightForWidth());
         pushButtonAddDev->setSizePolicy(sizePolicy1);
-        pushButtonAddDev->setMinimumSize(QSize(0, 30));
+        pushButtonAddDev->setMinimumSize(QSize(80, 30));
 
         gridLayout_5->addWidget(pushButtonAddDev, 0, 15, 1, 1);
 
@@ -490,19 +490,19 @@ public:
     {
         ConfigForm->setWindowTitle(QApplication::translate("ConfigForm", "Form", nullptr));
         groupBox->setTitle(QString());
-        label_21->setText(QApplication::translate("ConfigForm", "\345\257\206\347\240\201\357\274\232", nullptr));
+        label_21->setText(QApplication::translate("ConfigForm", "\345\257\206   \347\240\201\357\274\232", nullptr));
         label_13->setText(QApplication::translate("ConfigForm", "\346\225\260\346\215\256\345\272\223\345\220\215\357\274\232", nullptr));
         pushButtonSetDb->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
         label_8->setText(QApplication::translate("ConfigForm", "\346\234\215\345\212\241\345\231\250\345\220\215\357\274\232", nullptr));
         label_20->setText(QApplication::translate("ConfigForm", "\347\231\273\345\275\225\345\220\215\357\274\232", nullptr));
         groupBox_4->setTitle(QString());
-        label_22->setText(QApplication::translate("ConfigForm", "\345\257\206\347\240\201\357\274\232", nullptr));
+        label_22->setText(QApplication::translate("ConfigForm", "\345\257\206   \347\240\201\357\274\232", nullptr));
         label_14->setText(QApplication::translate("ConfigForm", "\346\225\260\346\215\256\345\272\223\345\220\215\357\274\232", nullptr));
         pushButton_6->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
         label_15->setText(QApplication::translate("ConfigForm", "\346\234\215\345\212\241\345\231\250\345\220\215\357\274\232", nullptr));
         label_23->setText(QApplication::translate("ConfigForm", "\347\231\273\345\275\225\345\220\215\357\274\232", nullptr));
         groupBox_2->setTitle(QString());
-        label_7->setText(QApplication::translate("ConfigForm", "\347\253\257\345\217\243\357\274\232", nullptr));
+        label_7->setText(QApplication::translate("ConfigForm", "\347\253\257   \345\217\243\357\274\232", nullptr));
         pushButtonSetNet->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
         groupBox_3->setTitle(QString());
         label_10->setText(QApplication::translate("ConfigForm", "\350\256\276\345\244\207\347\261\273\345\236\213\357\274\232", nullptr));
@@ -510,7 +510,7 @@ public:
         label_11->setText(QApplication::translate("ConfigForm", "IP\357\274\232", nullptr));
         label_9->setText(QApplication::translate("ConfigForm", "\350\277\220\345\212\250\346\226\271\345\220\221\357\274\232", nullptr));
         pushButtonAddDev->setText(QApplication::translate("ConfigForm", "\346\267\273\345\212\240", nullptr));
-        label_12->setText(QApplication::translate("ConfigForm", "\347\253\257\345\217\243\357\274\232", nullptr));
+        label_12->setText(QApplication::translate("ConfigForm", "\347\253\257   \345\217\243\357\274\232", nullptr));
     } // retranslateUi
 
 };

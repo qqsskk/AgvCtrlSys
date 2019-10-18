@@ -70,7 +70,8 @@ HEADERS += \
     LoginSetForm.h \
     Config.h \
     LabelEx.h \
-    GroupBoxEx.h
+    GroupBoxEx.h \
+    CustomData.h
 
 FORMS += \
         MainWindow.ui \

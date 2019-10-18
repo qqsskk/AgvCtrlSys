@@ -12,16 +12,12 @@
 #include "AbnormalForm.h"
 #include "ConfigForm.h"
 #include "MsgBoxEx.h"
+#include "CustomData.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-enum UserLevel{
-    UserLevel_High = 1,
-    UserLevel_Center,
-    UserLevel_Low
-};
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

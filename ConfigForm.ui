@@ -41,7 +41,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>密码：</string>
+         <string>密   码：</string>
         </property>
        </widget>
       </item>
@@ -97,7 +97,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>80</width>
           <height>30</height>
          </size>
         </property>
@@ -249,7 +249,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>密码：</string>
+         <string>密   码：</string>
         </property>
        </widget>
       </item>
@@ -305,7 +305,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>80</width>
           <height>30</height>
          </size>
         </property>
@@ -490,7 +490,7 @@
       <item row="0" column="0">
        <widget class="LabelEx" name="label_7">
         <property name="text">
-         <string>端口：</string>
+         <string>端   口：</string>
         </property>
        </widget>
       </item>
@@ -585,7 +585,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>80</width>
           <height>30</height>
          </size>
         </property>
@@ -764,7 +764,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>80</width>
           <height>30</height>
          </size>
         </property>
@@ -808,7 +808,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>端口：</string>
+         <string>端   口：</string>
         </property>
        </widget>
       </item>
@@ -864,6 +864,12 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>GroupBoxEx</class>
+   <extends>QGroupBox</extends>
+   <header>GroupBoxEx.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>LineEditEx</class>
    <extends>QLineEdit</extends>
    <header>LineEditEx.h</header>
@@ -877,12 +883,6 @@
    <class>LabelEx</class>
    <extends>QLabel</extends>
    <header>LabelEx.h</header>
-  </customwidget>
-  <customwidget>
-   <class>GroupBoxEx</class>
-   <extends>QGroupBox</extends>
-   <header>GroupBoxEx.h</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>ComboBoxEx</class>

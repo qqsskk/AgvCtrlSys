@@ -55,7 +55,7 @@ void MainWindow::initWindow()
     ui->tabWidget->addTab(pHistoryForm, QString::fromLocal8Bit("历史信息"));
     DeviceStateForm *pDeviceStateForm = new DeviceStateForm();
     ui->tabWidget->addTab(pDeviceStateForm, QString::fromLocal8Bit("设备状态"));
-    UserForm *pUserForm = new UserForm();
+    UserForm *pUserForm = new UserForm(m_userName, m_userPasswd, m_userLevel);
     ui->tabWidget->addTab(pUserForm, QString::fromLocal8Bit("用户信息"));
     AbnormalForm *pAbnormalForm = new AbnormalForm();
     ui->tabWidget->addTab(pAbnormalForm, QString::fromLocal8Bit("异常信息"));
@@ -67,12 +67,23 @@ void MainWindow::initWindow()
         {
             ConfigForm *pSetForm = new ConfigForm();
             ui->tabWidget->addTab(pSetForm, QString::fromLocal8Bit("系统配置"));
+
+            // 显示用户信息页的用户设置组
+            pUserForm->visibleUsersetGroup();
+        }
+        break;
+        case UserLevel::UserLevel_Center:
+        {
+            ConfigForm *pSetForm = new ConfigForm();
+            ui->tabWidget->addTab(pSetForm, QString::fromLocal8Bit("系统配置"));
         }
         break;
     }
 
+
+    ui->tabWidget->setTabIcon(2, QIcon("./res/icon/devstate.png"));
     ui->tabWidget->setIconSize(QSize(32,32));
-    ui->tabWidget->setCurrentIndex(6);
+    ui->tabWidget->setCurrentIndex(4);
 
 }
 
@@ -81,7 +92,7 @@ void MainWindow::onWindowClose()
     MsgBoxEx *msgBox = new MsgBoxEx();
     connect(msgBox, SIGNAL(btnOkClicked()), this, SLOT(onBtnOkClicked()));
     connect(msgBox, SIGNAL(btnCancelClicked()), this, SLOT(onBtnCancelClicked()));
-    msgBox->setMsgBoxMode(QString::fromLocal8Bit("确定要退出系统吗？"),"hello", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
+    msgBox->setMsgBoxMode(QString::fromLocal8Bit("确定要退出系统吗？"), "", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
 }
 void MainWindow::onBtnOkClicked()
 {
@@ -90,4 +101,5 @@ void MainWindow::onBtnOkClicked()
 
 void MainWindow::onBtnCancelClicked()
 {
+    // 无需实现
 }

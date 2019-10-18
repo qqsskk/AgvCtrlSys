@@ -55,7 +55,7 @@ void LoginForm::on_pushButton_login_clicked()
     //    model.select();
     bool bOk = false;
     QSqlQuery query;
-    query.exec(tr("select * from AGVDB_INFO_USER where user_name = '%1' and user_passwd = '%2'").arg(strName).arg(strPasswd));
+    query.exec(tr("SELECT * FROM AGVDB_INFO_USER WHERE user_name = '%1' AND user_passwd = '%2'").arg(strName).arg(strPasswd));
     while (query.next())
     {
         m_userName = query.value(0).toString();
@@ -99,6 +99,7 @@ void LoginForm::onBtnOkClicked()
 
 void LoginForm::onBtnCancelClicked()
 {
+    // 无需实现
 }
 
 void LoginForm::onLoginMainWindow()

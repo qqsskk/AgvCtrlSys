@@ -18,46 +18,47 @@ DeviceStateForm::DeviceStateForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    // 测试连接数据库
-//    QSqlDatabase db=QSqlDatabase::addDatabase("QODBC3");
-//    db.setDatabaseName(QString("DRIVER={SQL SERVER};"
-//                                   "SERVER=%1;"  //服务器名称
-//                                   "DATABASE=%2;"//数据库名
-//                                   "UID=%3;"     //登录名
-//                                   "PWD=%4;"     //密码
-//                                   )
-//                           .arg("zoufawei")
-//                           .arg("LYDB")
-//                           .arg("sa")
-//                           .arg("456852")
-//                           );
-//    if (!db.open())
-//    {
-//        qDebug()<<"connect sql server failed!";
-//        return;
 
-//    }
-//    else
-//    {
-//        qDebug()<<"connect sql server successfully!";
-//    }
-//    QSqlQueryModel *model = new QSqlQueryModel;
-//    model->setQuery(QObject::tr("select * from AGV"));
+    m_model= new QSqlQueryModel(this);
 
-    // 使用JSON
-    QString str("[	{\"a\":1,\"b\":0.1,\"c\":\"xx\"},\
-    {\"a\":2,\"b\":0.2,\"c\":\"yy\"},\
-      {\"a\":2,\"b\":0.2,\"c\":\"zz\"}]");
-    QJsonParseError err;
-    QJsonDocument jd = QJsonDocument::fromJson(str.toUtf8(), &err);
-    QJsonArray ja = jd.array();
-    CustomJsonModel *model = new CustomJsonModel(ja, this);
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(onUpdateModel()));
+    timer->start(1000);
 
-    // CustomTableModel *model = new CustomTableModel;
-    ui->tableView->setTableModel(model);
+//    // 使用JSON
+//    QString str("[	{\"a\":1,\"b\":0.1,\"c\":\"xx\"},\
+//    {\"a\":2,\"b\":0.2,\"c\":\"yy\"},\
+//      {\"a\":2,\"b\":0.2,\"c\":\"zz\"}]");
+//    QJsonParseError err;
+//    QJsonDocument jd = QJsonDocument::fromJson(str.toUtf8(), &err);
+//    QJsonArray ja = jd.array();
+//    CustomJsonModel *model = new CustomJsonModel(ja, this);
+
+//    // CustomTableModel *model = new CustomTableModel;
+//    ui->tableView->setTableModel(model);
 }
 
 DeviceStateForm::~DeviceStateForm()
 {
     delete ui;
+}
+
+void DeviceStateForm::onUpdateModel()
+{
+    m_model->setQuery(QString("SELECT * FROM AGVDB_INFO_AGV"));
+    m_model->setHeaderData(0, Qt::Horizontal,QString::fromLocal8Bit("编号"));
+    m_model->setHeaderData(1, Qt::Horizontal,QString::fromLocal8Bit("类型"));
+    m_model->setHeaderData(2, Qt::Horizontal,QString::fromLocal8Bit("运行方向"));
+    m_model->setHeaderData(3, Qt::Horizontal,QString::fromLocal8Bit("IP"));
+    m_model->setHeaderData(4, Qt::Horizontal,QString::fromLocal8Bit("端口"));
+    m_model->setHeaderData(5, Qt::Horizontal,QString::fromLocal8Bit("当前地标卡"));
+    m_model->setHeaderData(6, Qt::Horizontal,QString::fromLocal8Bit("目标地标卡"));
+    m_model->setHeaderData(7, Qt::Horizontal,QString::fromLocal8Bit("状态"));
+    m_model->setHeaderData(8, Qt::Horizontal,QString::fromLocal8Bit("电量"));
+    m_model->setHeaderData(9, Qt::Horizontal,QString::fromLocal8Bit("速度"));
+    m_model->setHeaderData(10, Qt::Horizontal,QString::fromLocal8Bit("载货"));
+    m_model->setHeaderData(11, Qt::Horizontal,QString::fromLocal8Bit("动作"));
+    m_model->setHeaderData(12, Qt::Horizontal,QString::fromLocal8Bit("动作状态"));
+    m_model->setHeaderData(13, Qt::Horizontal,QString::fromLocal8Bit("异常"));
+    ui->tableView->setTableModel(m_model);
 }

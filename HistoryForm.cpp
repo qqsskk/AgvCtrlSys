@@ -21,8 +21,7 @@ HistoryForm::~HistoryForm()
 
 void HistoryForm::onUpdateModel()
 {
-    m_model->setQuery(QString("select * from AGVDB_TASK_HISTORY"));
-    m_model->removeColumn(0);
+    m_model->setQuery(QString("SELECT * FROM AGVDB_TASK_HISTORY"));
     m_model->setHeaderData(0, Qt::Horizontal,QString::fromLocal8Bit("取货点"));
     m_model->setHeaderData(1, Qt::Horizontal,QString::fromLocal8Bit("卸货点"));
     m_model->setHeaderData(2, Qt::Horizontal,QString::fromLocal8Bit("执行AGV"));

@@ -2,8 +2,8 @@
 
 MsgBoxEx::MsgBoxEx(QWidget *parent) : QMessageBox(parent)
 {
-    m_pBtnOk = addButton(QString::fromLocal8Bit("确定"), QMessageBox::AcceptRole);
     m_pBtnCancel = addButton(QString::fromLocal8Bit("取消"), QMessageBox::AcceptRole);
+    m_pBtnOk = addButton(QString::fromLocal8Bit("确定"), QMessageBox::AcceptRole);
 
     // 按钮建立信号槽
     connect(m_pBtnOk, SIGNAL(clicked()), this, SLOT(onOkClicked()));
