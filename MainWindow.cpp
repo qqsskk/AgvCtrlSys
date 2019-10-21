@@ -33,18 +33,20 @@ void MainWindow::initWindow()
     this->setFixedSize(this->width(),this->height());
 
     // 窗口标题栏
-    setWindowIcon(QIcon("./res/icon/devstate.png"));
+    setWindowIcon(QIcon("./res/icon/sys.png"));
+    setWindowTitle(QString::fromLocal8Bit("AGV调度系统"));
     setWindowFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint);
     TitleBarEx *pTitleBar = new TitleBarEx(this);
-    pTitleBar->setIcon("./res/icon/devstate.png");
+    pTitleBar->setIcon("./res/icon/main.png");
     pTitleBar->setButtonType(MINI_MAX_BUTTON);
     pTitleBar->setTitle(QString::fromLocal8Bit("  AGV 调度系统"));
     connect(pTitleBar, SIGNAL(windowClose()), this, SLOT(onWindowClose())); // 绑定信号槽
 
 
     // 主页
-    // QTabBar::tab:!selected {border-image: url(./res/icon/devstate.png);}
-    ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #31343B;}");
+    ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #31343B;}\
+            QTabBar::tab:last:!selected {border-image: url(./res/icon/error_normal.png);}\
+            QTabBar::tab:last:selected {border-image: url(./res/icon/error_pressed.png);}");
     ui->tabWidget->setTabPosition(QTabWidget::West);
     ui->tabWidget->tabBar()->setStyle(new CustomTabStyle);
     MapForm *pMapForm = new MapForm();
@@ -57,9 +59,6 @@ void MainWindow::initWindow()
     ui->tabWidget->addTab(pDeviceStateForm, QString::fromLocal8Bit("设备状态"));
     UserForm *pUserForm = new UserForm(m_userName, m_userPasswd, m_userLevel);
     ui->tabWidget->addTab(pUserForm, QString::fromLocal8Bit("用户信息"));
-    AbnormalForm *pAbnormalForm = new AbnormalForm();
-    ui->tabWidget->addTab(pAbnormalForm, QString::fromLocal8Bit("异常信息"));
-
     // 根据用户权限添加功能
     switch(m_userLevel)
     {
@@ -79,12 +78,11 @@ void MainWindow::initWindow()
         }
         break;
     }
+    AbnormalForm *pAbnormalForm = new AbnormalForm();
+    connect(pAbnormalForm, SIGNAL(updateAbnormalExist(bool)), this, SLOT(onUpdateAbnormalExist(bool)));
+    ui->tabWidget->addTab(pAbnormalForm, QString::fromLocal8Bit("                 "));
 
-
-    ui->tabWidget->setTabIcon(2, QIcon("./res/icon/devstate.png"));
-    ui->tabWidget->setIconSize(QSize(32,32));
-    ui->tabWidget->setCurrentIndex(4);
-
+    ui->tabWidget->setCurrentIndex(0);
 }
 
 void MainWindow::onWindowClose()
@@ -102,4 +100,21 @@ void MainWindow::onBtnOkClicked()
 void MainWindow::onBtnCancelClicked()
 {
     // 无需实现
+}
+
+void MainWindow::onUpdateAbnormalExist(bool exist)
+{
+    if(exist)
+    {
+        ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #31343B;}\
+                                      QTabBar::tab:last:!selected {border-image: url(./res/icon/error_normal_corner.png);}\
+                                      QTabBar::tab:last:selected {border-image: url(./res/icon/error_pressed_corner.png);}");
+
+    }
+    else
+    {
+         ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #31343B;}\
+                                       QTabBar::tab:last:!selected {border-image: url(./res/icon/error_normal.png);}\
+                                       QTabBar::tab:last:selected {border-image: url(./res/icon/error_pressed.png);}");
+    }
 }

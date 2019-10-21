@@ -46,6 +46,7 @@ void TitleBarEx::init()
 
     pHLayout->setContentsMargins(0, 0, 0, 0);
     pHLayout->setSpacing(0);
+
 	this->setLayout(pHLayout);
 	this->setFixedHeight(TITLE_HEIGHT); //标题栏高度固定
 	
@@ -99,7 +100,7 @@ void TitleBarEx::setButtonStyle()
 void TitleBarEx::setIcon(const QString& fileName)
 {
 	QPixmap pixmap(fileName);
-    m_pIconLabel->setPixmap(pixmap.scaled(32, 32));
+    m_pIconLabel->setPixmap(pixmap.scaled(55, 35));
     m_pIconLabel->setStyleSheet("QLabel{background-color: #31343B;}");
 }
 
@@ -204,5 +205,4 @@ void TitleBarEx::maxButtonClicked()
 void TitleBarEx::closeButtonClicked()
 {
     emit windowClose();
-    //window()->close();
 }

@@ -12,7 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
+#include "TableViewEx.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -20,6 +22,7 @@ class Ui_AbnormalForm
 {
 public:
     QGridLayout *gridLayout;
+    TableViewEx *tableView;
 
     void setupUi(QWidget *AbnormalForm)
     {
@@ -28,6 +31,11 @@ public:
         AbnormalForm->resize(751, 433);
         gridLayout = new QGridLayout(AbnormalForm);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        tableView = new TableViewEx(AbnormalForm);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+
+        gridLayout->addWidget(tableView, 0, 0, 1, 1);
+
 
         retranslateUi(AbnormalForm);
 

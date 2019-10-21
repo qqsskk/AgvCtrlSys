@@ -7,7 +7,7 @@ TableViewEx::TableViewEx(QWidget *parent) : QTableView(parent)
 
 void TableViewEx::init()
 {
-    setStyleSheet("QTableView {border: 1px solid #CCCCCC; background: #484C55;}\
+    setStyleSheet("QTableView {border: 1px solid #31343B; background: #484C55;}\
     QTableView::item {font: 15pt Microsoft YaHei; color: #CCCCCC;\
                     padding-left: 5px; padding-right: 5px; border: none; background: #484C55;\
                     border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC;}\

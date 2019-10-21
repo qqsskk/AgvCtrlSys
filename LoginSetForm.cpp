@@ -8,6 +8,8 @@ LoginSetForm::LoginSetForm(QWidget *parent) :
     ui->setupUi(this);
 
     // 初始界面
+    setWindowIcon(QIcon("./res/icon/sys.png"));
+    setWindowTitle(QString::fromLocal8Bit("系统配置"));
     setWindowFlags(Qt::FramelessWindowHint);
     ui->pushButtonTitle->setStyleSheet("QPushButton:!enabled{background:#31343B; font-size:15pt; font-family:Microsoft YaHei; color:#FFFFFF}");
     ui->pushButtonTitle->setEnabled(false);

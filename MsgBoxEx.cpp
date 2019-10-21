@@ -2,6 +2,8 @@
 
 MsgBoxEx::MsgBoxEx(QWidget *parent) : QMessageBox(parent)
 {
+    setWindowIcon(QIcon("./res/icon/sys.png"));
+    setWindowTitle(QString::fromLocal8Bit("系统提示"));
     m_pBtnCancel = addButton(QString::fromLocal8Bit("取消"), QMessageBox::AcceptRole);
     m_pBtnOk = addButton(QString::fromLocal8Bit("确定"), QMessageBox::AcceptRole);
 

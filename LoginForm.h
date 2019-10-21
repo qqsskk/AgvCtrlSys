@@ -44,6 +44,7 @@ private:
     QString m_userName;
     QString m_userPasswd;
     int m_userLevel;
+    LoginSetForm *m_loginSetForm;
 
 private:
     bool linkdb();

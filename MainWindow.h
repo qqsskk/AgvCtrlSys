@@ -36,10 +36,14 @@ private:
 
 private:
     void initWindow();
+
 private slots:
     void onWindowClose();
     void onBtnOkClicked();
     void onBtnCancelClicked();
+
+public slots:
+    void onUpdateAbnormalExist(bool exist);
 };
 
 #endif // MAINWINDOW_H

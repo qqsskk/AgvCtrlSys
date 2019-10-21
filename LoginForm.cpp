@@ -6,6 +6,9 @@ LoginForm::LoginForm(QWidget *parent) :
     ui(new Ui::LoginForm)
 {
     ui->setupUi(this);
+
+    setWindowIcon(QIcon("./res/icon/sys.png"));
+    setWindowTitle(QString::fromLocal8Bit("系统登录"));
     setWindowFlags(Qt::FramelessWindowHint);
 
     ui->pushButtonTitle->setStyleSheet("QPushButton:!enabled{background:#31343B; font-size:18pt; font-family:Microsoft YaHei; color:#FFFFFF}");
@@ -110,8 +113,12 @@ void LoginForm::onLoginMainWindow()
 
 void LoginForm::onSetClicked()
 {
-    LoginSetForm *loginSetForm = new LoginSetForm();
-    loginSetForm->show();
+    if(m_loginSetForm)
+    {
+        m_loginSetForm->close();
+    }
+    m_loginSetForm = new LoginSetForm();
+    m_loginSetForm->show();
 }
 
 bool LoginForm::linkdb()
