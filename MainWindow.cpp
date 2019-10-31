@@ -94,6 +94,7 @@ void MainWindow::onWindowClose()
 }
 void MainWindow::onBtnOkClicked()
 {
+    delete this;
     qApp->quit();
 }
 

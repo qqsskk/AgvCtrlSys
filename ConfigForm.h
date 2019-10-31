@@ -2,6 +2,10 @@
 #define CONFIGFORM_H
 
 #include <QWidget>
+#include <QRegExpValidator>
+#include <QSqlQuery>
+#include "Config.h"
+#include "MsgBoxEx.h"
 
 namespace Ui {
 class ConfigForm;
@@ -24,6 +28,9 @@ private slots:
 
 private:
     Ui::ConfigForm *ui;
+
+private:
+    void init();
 };
 
 #endif // CONFIGFORM_H

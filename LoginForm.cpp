@@ -7,6 +7,16 @@ LoginForm::LoginForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    init();
+}
+
+LoginForm::~LoginForm()
+{
+    delete ui;
+}
+
+void LoginForm::init()
+{
     setWindowIcon(QIcon("./res/icon/sys.png"));
     setWindowTitle(QString::fromLocal8Bit("系统登录"));
     setWindowFlags(Qt::FramelessWindowHint);
@@ -24,11 +34,10 @@ LoginForm::LoginForm(QWidget *parent) :
                         QToolButton:hover{border-image:url(./res/icon/set_hover.png)}\
                         QToolButton:pressed{border-image:url(./res/icon/set_pressed.png);}");
     connect(ui->toolButtonSet, SIGNAL(clicked()), this, SLOT(onSetClicked()));
-}
 
-LoginForm::~LoginForm()
-{
-    delete ui;
+    m_loginSetForm = new LoginSetForm();
+    connect(m_loginSetForm, SIGNAL(setFormClosed()), this, SLOT(onSetFormClosed()));
+    connect(this, SIGNAL(closeLoginSetForm()), m_loginSetForm, SLOT(onCloseLoginSetForm()));
 }
 
 void LoginForm::on_pushButton_login_clicked()
@@ -52,10 +61,6 @@ void LoginForm::on_pushButton_login_clicked()
 
 
     // 查询用户表
-    //    QSqlTableModel model;
-    //    model.setTable("AGVDB_INFO_USER");
-    //    model.setFilter(tr("user_name = '%1' and user_passwd = '%2'").arg(strName).arg(strPasswd));
-    //    model.select();
     bool bOk = false;
     QSqlQuery query;
     query.exec(tr("SELECT * FROM AGVDB_INFO_USER WHERE user_name = '%1' AND user_passwd = '%2'").arg(strName).arg(strPasswd));
@@ -71,9 +76,9 @@ void LoginForm::on_pushButton_login_clicked()
         }
     }
 
-    MsgBoxEx *msgBox = new MsgBoxEx();
     if(!bOk)
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户名或密码错误，请重新输入!"));
         ui->lineEdit_userName->clear();
         ui->lineEdit_passwd->clear();
@@ -81,6 +86,9 @@ void LoginForm::on_pushButton_login_clicked()
     }
     else
     {
+        emit closeLoginSetForm();   // 关闭登录设置窗口
+
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("登录成功！"));
         QTimer::singleShot(500, this, SLOT(onLoginMainWindow()));
         this->close();
@@ -97,6 +105,8 @@ void LoginForm::on_pushButton_exit_clicked()
 
 void LoginForm::onBtnOkClicked()
 {
+    emit closeLoginSetForm();   // 关闭登录设置窗口
+
     close();
 }
 
@@ -113,12 +123,8 @@ void LoginForm::onLoginMainWindow()
 
 void LoginForm::onSetClicked()
 {
-    if(m_loginSetForm)
-    {
-        m_loginSetForm->close();
-    }
-    m_loginSetForm = new LoginSetForm();
     m_loginSetForm->show();
+    ui->toolButtonSet->setVisible(false);
 }
 
 bool LoginForm::linkdb()
@@ -141,4 +147,10 @@ bool LoginForm::linkdb()
         return false;
     }
     return true;
+}
+
+
+void LoginForm::onSetFormClosed()
+{
+    ui->toolButtonSet->setVisible(true);
 }

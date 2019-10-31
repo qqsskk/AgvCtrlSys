@@ -62,6 +62,11 @@ public:
         toolButtonSet = new QToolButton(LoginForm);
         toolButtonSet->setObjectName(QString::fromUtf8("toolButtonSet"));
         toolButtonSet->setGeometry(QRect(416, 92, 32, 32));
+        QWidget::setTabOrder(lineEdit_userName, lineEdit_passwd);
+        QWidget::setTabOrder(lineEdit_passwd, pushButton_exit);
+        QWidget::setTabOrder(pushButton_exit, pushButton_login);
+        QWidget::setTabOrder(pushButton_login, toolButtonSet);
+        QWidget::setTabOrder(toolButtonSet, pushButtonTitle);
 
         retranslateUi(LoginForm);
 

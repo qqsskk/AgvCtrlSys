@@ -73,6 +73,12 @@ public:
         pushButtonTitle->setObjectName(QString::fromUtf8("pushButtonTitle"));
         pushButtonTitle->setGeometry(QRect(0, 0, 451, 51));
         pushButtonTitle->setAcceptDrops(true);
+        QWidget::setTabOrder(lineEditSerName, lineEditDbName);
+        QWidget::setTabOrder(lineEditDbName, lineEditLoginName);
+        QWidget::setTabOrder(lineEditLoginName, lineEditLoginPwd);
+        QWidget::setTabOrder(lineEditLoginPwd, pushButtonCancel);
+        QWidget::setTabOrder(pushButtonCancel, pushButtonOk);
+        QWidget::setTabOrder(pushButtonOk, pushButtonTitle);
 
         retranslateUi(LoginSetForm);
 

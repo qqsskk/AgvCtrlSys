@@ -34,20 +34,24 @@ private slots:
     void onBtnCancelClicked();
 
     void onLoginMainWindow();
-
     void onSetClicked();
+    void onSetFormClosed();
+
+signals:
+    void closeLoginSetForm();
+
 private:
     Ui::LoginForm *ui;
-
-    MainWindow *mainWindow;
 
     QString m_userName;
     QString m_userPasswd;
     int m_userLevel;
+
     LoginSetForm *m_loginSetForm;
 
 private:
     bool linkdb();
+    void init();
 };
 
 #endif // LOGINFORM_H

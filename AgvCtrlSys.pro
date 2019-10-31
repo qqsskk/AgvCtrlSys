@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql quickwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -46,7 +46,22 @@ SOURCES += \
     LoginSetForm.cpp \
     Config.cpp \
     LabelEx.cpp \
-    GroupBoxEx.cpp
+    GroupBoxEx.cpp \
+    DrawingPaperEditor.cpp \
+    xml/tinystr.cpp \
+    xml/tinyxml.cpp \
+    xml/TinyxmlEngine.cpp \
+    xml/tinyxmlerror.cpp \
+    xml/tinyxmlparser.cpp \
+    graphic/Graphic.cpp \
+    graphic/GraphicBg.cpp \
+    graphic/GraphicCharger.cpp \
+    graphic/GraphicMap.cpp \
+    graphic/GraphicMark.cpp \
+    graphic/GraphicRest.cpp \
+    graphic/GraphicStation.cpp \
+    graphic/GraphicTrack.cpp \
+    graphic/GraphicAgv.cpp
 
 HEADERS += \
         MainWindow.h \
@@ -71,7 +86,21 @@ HEADERS += \
     Config.h \
     LabelEx.h \
     GroupBoxEx.h \
-    CustomData.h
+    CustomData.h \
+    DrawingPaperEditor.h \
+    xml/tinystr.h \
+    xml/tinyxml.h \
+    xml/TinyxmlEngine.h \
+    graphic/Graphic.h \
+    graphic/GraphicBg.h \
+    graphic/GraphicCharger.h \
+    graphic/GraphicMap.h \
+    graphic/GraphicMark.h \
+    graphic/GraphicRest.h \
+    graphic/GraphicsAgv.h \
+    graphic/GraphicStation.h \
+    graphic/GraphicTrack.h \
+    graphic/GraphicAgv.h
 
 FORMS += \
         MainWindow.ui \

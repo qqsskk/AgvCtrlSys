@@ -22,8 +22,14 @@ private slots:
 
     void on_pushButtonOk_clicked();
 
+    void onCloseLoginSetForm();
+signals:
+    void setFormClosed();
+
+
 private:
     Ui::LoginSetForm *ui;
+    void init();
 };
 
 #endif // LOGINSETFORM_H

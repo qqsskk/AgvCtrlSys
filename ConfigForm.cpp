@@ -1,17 +1,22 @@
 ﻿#include "ConfigForm.h"
 #include "ui_ConfigForm.h"
 
-#include <QRegExpValidator>
-#include <QSqlQuery>
-#include "Config.h"
-#include "MsgBoxEx.h"
-
 ConfigForm::ConfigForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ConfigForm)
 {
     ui->setupUi(this);
 
+    init();
+}
+
+ConfigForm::~ConfigForm()
+{
+    delete ui;
+}
+
+void ConfigForm::init()
+{
     ui->groupBox->setTitle(QString::fromLocal8Bit("数据库服务器参数配置"));
     ui->groupBox_2->setTitle(QString::fromLocal8Bit("网络服务器参数配置"));
     ui->groupBox_3->setTitle(QString::fromLocal8Bit("设备配置"));
@@ -19,8 +24,8 @@ ConfigForm::ConfigForm(QWidget *parent) :
 
     QRegExp rx("\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");
     ui->lineEditDevIP->setValidator(new QRegExpValidator(rx, this));
-
-    ui->lineEditPort->setValidator(new QRegExpValidator(QRegExp("[0-9]+$")));
+    ui->lineEditNetSerIP->setValidator(new QRegExpValidator(rx, this));
+    ui->lineEditNetSerPort->setValidator(new QRegExpValidator(QRegExp("[0-9]+$")));
 
     // 读取服务器配置参数
     Config config("./res/set/config.ini");
@@ -28,6 +33,7 @@ ConfigForm::ConfigForm(QWidget *parent) :
     QString databaseName = config.get("DataBase", "DataBaseName").toString();
     QString loginName = config.get("DataBase", "LoginName").toString();
     QString passwd = config.get("DataBase", "Passwd").toString();
+    QString netip = config.get("Net", "IP").toString();
     QString netport = config.get("Net", "Port").toString();
 
     // 填充相应文本框
@@ -35,7 +41,8 @@ ConfigForm::ConfigForm(QWidget *parent) :
     ui->lineEditDbName->setText(databaseName);
     ui->lineEditLoginName->setText(loginName);
     ui->lineEditPasswd->setText(passwd);
-    ui->lineEditPort->setText(netport);
+    ui->lineEditNetSerIP->setText(netip);
+    ui->lineEditNetSerPort->setText(netport);
 
     // 初始化组合框
     //P牵引式 S潜入式 T移载式 F叉车式 A机械手式 L激光式
@@ -49,12 +56,6 @@ ConfigForm::ConfigForm(QWidget *parent) :
     ui->comboBoxDire->addItem(QString::fromLocal8Bit("单向"));
     ui->comboBoxDire->addItem(QString::fromLocal8Bit("双向"));
     ui->comboBoxDire->addItem(QString::fromLocal8Bit("全向"));
-
-}
-
-ConfigForm::~ConfigForm()
-{
-    delete ui;
 }
 
 void ConfigForm::on_pushButtonSetDb_clicked()
@@ -64,9 +65,9 @@ void ConfigForm::on_pushButtonSetDb_clicked()
     QString loginName = ui->lineEditLoginName->text();
     QString passwd = ui->lineEditPasswd->text();
 
-    MsgBoxEx *msgBox = new MsgBoxEx();
     if(serverName.isEmpty() || databaseName.isEmpty() || loginName.isEmpty() || passwd.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("所有数据库服务器参数都不可为空！"));
         return;
     }
@@ -78,22 +79,27 @@ void ConfigForm::on_pushButtonSetDb_clicked()
     config.set("DataBase", "LoginName", QString("%1").arg(loginName));
     config.set("DataBase", "Passwd", QString("%1").arg(passwd));
 
+    MsgBoxEx *msgBox = new MsgBoxEx();
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("数据库服务器参数设置成功，若要应用此设置请重启程序！"), 3000);
 }
 
 void ConfigForm::on_pushButtonSetNet_clicked()
 {
-    QString port = ui->lineEditPort->text();
-    MsgBoxEx *msgBox = new MsgBoxEx();
-    if(port.isEmpty())
+    QString ip = ui->lineEditNetSerIP->text();
+    QString port = ui->lineEditNetSerPort->text();
+
+    if(ip.isEmpty() || port.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("网络服务器参数不可为空！"));
         return;
     }
 
     Config config("./res/set/config.ini");
-    config.set("Net", "Port", QString("%1").arg(ui->lineEditPort->text()));
+    config.set("Net", "IP", QString("%1").arg(ui->lineEditNetSerIP->text()));
+    config.set("Net", "Port", QString("%1").arg(ui->lineEditNetSerPort->text()));
 
+    MsgBoxEx *msgBox = new MsgBoxEx();
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("网络服务器参数设置成功，若要应用此设置请重启程序！"), 3000);
 }
 
@@ -105,9 +111,10 @@ void ConfigForm::on_pushButtonAddDev_clicked()
     QString devtype = ui->comboBoxDevType->currentText();
     QString devdire = ui->comboBoxDire->currentText();
 
-    MsgBoxEx *msgBox = new MsgBoxEx();
+
     if(devid.isEmpty() || devip.isEmpty() || devport.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("设备信息不可为空！"));
         return;
     }
@@ -116,19 +123,21 @@ void ConfigForm::on_pushButtonAddDev_clicked()
     query.exec(QString("SELECT * FROM AGVDB_INFO_AGV WHERE ID = %1").arg(devid));
     if(query.next())
     {
-       msgBox->setMsgBoxMode(QString::fromLocal8Bit("设备ID重复！"));
-       return;
+        MsgBoxEx *msgBox = new MsgBoxEx();
+        msgBox->setMsgBoxMode(QString::fromLocal8Bit("设备ID重复！"));
+        return;
     }
 
     query.prepare(QString("INSERT INTO AGVDB_INFO_AGV (ID, Type, Move, IP, Port) \
                           VALUES (%1, '%2', '%3', '%4', %5)").arg(devid).arg(devtype).arg(devdire).arg(devip).arg(devport));
     if(query.exec())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("添加成功！"));
     }
     else
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("添加失败！"));
     }
-
 }

@@ -15,8 +15,11 @@ Config::Config(QString fileName)
 
 Config::~Config()
 {
-    delete m_setting;
-    m_setting = 0;
+    if(m_setting)
+    {
+        delete m_setting;
+        m_setting = nullptr;
+    }
 }
 
 void Config::set(QString nodeName, QString keyName, QVariant value)

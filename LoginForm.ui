@@ -127,6 +127,14 @@
    <header>PushButtonEx.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_userName</tabstop>
+  <tabstop>lineEdit_passwd</tabstop>
+  <tabstop>pushButton_exit</tabstop>
+  <tabstop>pushButton_login</tabstop>
+  <tabstop>toolButtonSet</tabstop>
+  <tabstop>pushButtonTitle</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

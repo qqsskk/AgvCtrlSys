@@ -160,6 +160,15 @@
    <header>PushButtonEx.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lineEditSerName</tabstop>
+  <tabstop>lineEditDbName</tabstop>
+  <tabstop>lineEditLoginName</tabstop>
+  <tabstop>lineEditLoginPwd</tabstop>
+  <tabstop>pushButtonCancel</tabstop>
+  <tabstop>pushButtonOk</tabstop>
+  <tabstop>pushButtonTitle</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

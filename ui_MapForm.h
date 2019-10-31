@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +19,15 @@ QT_BEGIN_NAMESPACE
 class Ui_MapForm
 {
 public:
+    QGridLayout *gridLayout;
 
     void setupUi(QWidget *MapForm)
     {
         if (MapForm->objectName().isEmpty())
             MapForm->setObjectName(QString::fromUtf8("MapForm"));
         MapForm->resize(400, 300);
+        gridLayout = new QGridLayout(MapForm);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
 
         retranslateUi(MapForm);
 

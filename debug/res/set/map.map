@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Map>
+    <Background Scale="1.60" OffsetX="-223" OffsetY="-29" />
+    <Track StartX="-30" StartY="30" EndX="-30" EndY="30" Arc="1" />
+    <Track StartX="-40" StartY="-30" EndX="-60" EndY="-10" Arc="1" />
+    <Track StartX="30" StartY="-30" EndX="40" EndY="-40" Arc="1" />
+    <Track StartX="30" StartY="-50" EndX="40" EndY="-40" Arc="1" />
+    <Track StartX="-40" StartY="-30" EndX="30" EndY="-30" Arc="0" />
+    <Track StartX="-70" StartY="-50" EndX="-80" EndY="-40" Arc="1" />
+    <Track StartX="30" StartY="-50" EndX="-70" EndY="-50" Arc="0" />
+    <Track StartX="-80" StartY="-40" EndX="-80" EndY="20" Arc="0" />
+    <Track StartX="-50" StartY="-140" EndX="-60" EndY="-130" Arc="1" />
+    <Track StartX="-60" StartY="-160" EndX="-80" EndY="-140" Arc="1" />
+    <Track StartX="-80" StartY="-40" EndX="-80" EndY="-110" Arc="0" />
+    <Track StartX="60" StartY="-160" EndX="70" EndY="-150" Arc="1" />
+    <Track StartX="60" StartY="-140" EndX="70" EndY="-150" Arc="1" />
+    <Track StartX="60" StartY="-140" EndX="-50" EndY="-140" Arc="0" />
+    <Track StartX="60" StartY="-160" EndX="-60" EndY="-160" Arc="0" />
+    <Track StartX="210" StartY="-160" EndX="220" EndY="-150" Arc="1" />
+    <Track StartX="-60" StartY="10" EndX="-60" EndY="-10" Arc="1" />
+    <Track StartX="-60" StartY="-110" EndX="-60" EndY="-130" Arc="0" />
+    <Track StartX="-80" StartY="-110" EndX="-80" EndY="-140" Arc="0" />
+    <Track StartX="-60" StartY="-10" EndX="-60" EndY="-110" Arc="0" />
+    <Track StartX="-40" StartY="30" EndX="-60" EndY="10" Arc="1" />
+    <Track StartX="-40" StartY="30" EndX="30" EndY="30" Arc="0" />
+    <Track StartX="30" StartY="30" EndX="40" EndY="40" Arc="1" />
+    <Track StartX="30" StartY="50" EndX="40" EndY="40" Arc="1" />
+    <Track StartX="30" StartY="50" EndX="-70" EndY="50" Arc="0" />
+    <Track StartX="-70" StartY="50" EndX="-80" EndY="40" Arc="1" />
+    <Track StartX="30" StartY="90" EndX="40" EndY="80" Arc="1" />
+    <Track StartX="30" StartY="130" EndX="40" EndY="120" Arc="1" />
+    <Track StartX="40" StartY="120" EndX="40" EndY="40" Arc="0" />
+    <Track StartX="-70" StartY="90" EndX="-80" EndY="80" Arc="1" />
+    <Track StartX="-70" StartY="130" EndX="-80" EndY="120" Arc="1" />
+    <Track StartX="-70" StartY="130" EndX="30" EndY="130" Arc="0" />
+    <Track StartX="-70" StartY="90" EndX="30" EndY="90" Arc="0" />
+    <Track StartX="-80" StartY="120" EndX="-80" EndY="20" Arc="0" />
+    <Track StartX="210" StartY="-140" EndX="220" EndY="-150" Arc="1" />
+    <Track StartX="120" StartY="-160" EndX="130" EndY="-150" Arc="1" />
+    <Track StartX="120" StartY="-140" EndX="130" EndY="-150" Arc="1" />
+    <Track StartX="50" StartY="-140" EndX="210" EndY="-140" Arc="0" />
+    <Track StartX="60" StartY="-160" EndX="210" EndY="-160" Arc="0" />
+    <Mark No="1" X="10" Y="50" />
+    <Mark No="2" X="10" Y="90" />
+    <Mark No="3" X="-10" Y="50" />
+    <Mark No="4" X="-10" Y="90" />
+    <Mark No="5" X="-10" Y="30" />
+    <Mark No="7" X="-80" Y="-10" />
+    <Mark No="8" X="-80" Y="-30" />
+    <Mark No="10" X="-10" Y="-50" />
+    <Mark No="11" X="10" Y="-50" />
+    <Mark No="13" X="30" Y="-50" />
+    <Mark No="14" X="30" Y="-30" />
+    <Mark No="15" X="-10" Y="-30" />
+    <Mark No="16" X="-30" Y="-30" />
+    <Mark No="17" X="-60" Y="-10" />
+    <Mark No="18" X="-60" Y="10" />
+    <Mark No="20" X="40" Y="70" />
+    <Mark No="22" X="-80" Y="-90" />
+    <Mark No="23" X="-80" Y="-140" />
+    <Mark No="24" X="-60" Y="-160" />
+    <Mark No="25" X="-40" Y="-160" />
+    <Mark No="26" X="-20" Y="-160" />
+    <Mark No="27" X="150" Y="-160" />
+    <Mark No="28" X="170" Y="-160" />
+    <Mark No="29" X="190" Y="-160" />
+    <Mark No="31" X="190" Y="-140" />
+    <Mark No="32" X="150" Y="-140" />
+    <Mark No="33" X="90" Y="-140" />
+    <Mark No="34" X="60" Y="-140" />
+    <Mark No="35" X="-60" Y="-130" />
+    <Mark No="36" X="-60" Y="-110" />
+    <Mark No="37" X="-60" Y="-90" />
+    <Mark No="40" X="20" Y="-160" />
+    <Mark No="41" X="40" Y="-160" />
+    <Mark No="42" X="90" Y="-160" />
+    <Mark No="43" X="-50" Y="-140" />
+    <Mark No="44" X="-60" Y="-40" />
+    <Mark No="45" X="-30" Y="130" />
+    <Mark No="46" X="-30" Y="90" />
+    <Mark No="47" X="-30" Y="50" />
+    <Mark No="48" X="-80" Y="30" />
+    <Mark No="56" X="-60" Y="-70" />
+    <Mark No="58" X="-30" Y="-50" />
+    <Mark No="63" X="-10" Y="130" />
+    <Mark No="64" X="10" Y="130" />
+    <Mark No="70" X="-80" Y="70" />
+    <Mark No="71" X="110" Y="-160" />
+    <Station No="1" Mark="3" Name="卸布点1" X="-10" Y="70" />
+    <Station No="2" Mark="4" Name="卸布点2" X="-10" Y="110" />
+    <Station No="3" Mark="63" Name="卸布点3" X="-10" Y="150" />
+    <Rest No="1" Mark="11" X="170" Y="-180" />
+    <Rest No="2" Mark="28" X="90" Y="-180" />
+    <Rest No="3" Mark="26" X="-20" Y="-180" />
+    <AGV No="1" Type="T" Move="S" IP="192.168.1.11" Port="0" />
+    <AGV No="2" Type="T" Move="S" IP="192.168.1.12" Port="0" />
+    <AGV No="3" Type="T" Move="S" IP="192.168.1.13" Port="0" />
+    <AGV No="4" Type="T" Move="S" IP="192.168.1.14" Port="0" />
+    <AGV No="5" Type="T" Move="S" IP="192.168.1.15" Port="0" />
+    <AGV No="6" Type="T" Move="S" IP="192.168.1.16" Port="0" />
+    <Traffic No="1">
+        <Ctrl No="26" />
+        <Stop No="39" />
+        <Stop No="40" />
+        <Stop No="41" />
+        <Stop No="42" />
+    </Traffic>
+    <Traffic No="2">
+        <Ctrl No="41" />
+        <Ctrl No="33" />
+    </Traffic>
+    <Traffic No="3">
+        <Ctrl No="8" />
+        <Ctrl No="37" />
+        <Ctrl No="16" />
+        <Stop No="44" />
+        <Stop No="56" />
+    </Traffic>
+    <Traffic No="4">
+        <Ctrl No="45" />
+        <Ctrl No="46" />
+        <Ctrl No="47" />
+        <Stop No="70" />
+    </Traffic>
+    <Traffic No="5">
+        <Ctrl No="42" />
+        <Stop No="71" />
+        <Stop No="27" />
+        <Stop No="28" />
+    </Traffic>
+    <Traffic No="6">
+        <Ctrl No="71" />
+        <Ctrl No="32" />
+    </Traffic>
+</Map>

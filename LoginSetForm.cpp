@@ -7,10 +7,21 @@ LoginSetForm::LoginSetForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    init();
+}
+
+LoginSetForm::~LoginSetForm()
+{
+    delete ui;
+}
+
+void LoginSetForm::init()
+{
     // 初始界面
     setWindowIcon(QIcon("./res/icon/sys.png"));
     setWindowTitle(QString::fromLocal8Bit("系统配置"));
     setWindowFlags(Qt::FramelessWindowHint);
+
     ui->pushButtonTitle->setStyleSheet("QPushButton:!enabled{background:#31343B; font-size:15pt; font-family:Microsoft YaHei; color:#FFFFFF}");
     ui->pushButtonTitle->setEnabled(false);
     ui->pushButtonTitle->setText(QString::fromLocal8Bit("服务器配置"));
@@ -33,13 +44,9 @@ LoginSetForm::LoginSetForm(QWidget *parent) :
     ui->lineEditLoginPwd->setText(passwd);
 }
 
-LoginSetForm::~LoginSetForm()
-{
-    delete ui;
-}
-
 void LoginSetForm::on_pushButtonCancel_clicked()
 {
+    emit setFormClosed();
     close();
 }
 
@@ -50,9 +57,9 @@ void LoginSetForm::on_pushButtonOk_clicked()
     QString loginName = ui->lineEditLoginName->text();
     QString passwd = ui->lineEditLoginPwd->text();
 
-    MsgBoxEx *msgBox = new MsgBoxEx();
     if(serverName.isEmpty() || databaseName.isEmpty() || loginName.isEmpty() || passwd.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("所有服务器参数都不可为空！"));
         return;
     }
@@ -64,5 +71,11 @@ void LoginSetForm::on_pushButtonOk_clicked()
     config.set("DataBase", "LoginName", QString("%1").arg(loginName));
     config.set("DataBase", "Passwd", QString("%1").arg(passwd));
 
+    emit setFormClosed();
+    close();
+}
+
+void LoginSetForm::onCloseLoginSetForm()
+{
     close();
 }
