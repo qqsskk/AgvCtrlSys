@@ -13,6 +13,13 @@ LoginForm::LoginForm(QWidget *parent) :
 LoginForm::~LoginForm()
 {
     delete ui;
+
+    if(m_loginSetForm)
+    {
+        delete m_loginSetForm;
+        m_loginSetForm = nullptr;
+    }
+
 }
 
 void LoginForm::init()
@@ -110,10 +117,7 @@ void LoginForm::onBtnOkClicked()
     close();
 }
 
-void LoginForm::onBtnCancelClicked()
-{
-    // 无需实现
-}
+void LoginForm::onBtnCancelClicked(){}
 
 void LoginForm::onLoginMainWindow()
 {

@@ -16,7 +16,7 @@ protected:
 protected:
     static quint32 g_unWidth;	// 宽
     static quint32 g_unHeight;	// 高
-    static QString g_cstrPath;	// 背景图路径
+    static QString g_strPath;	// 背景图路径
 
 protected:
     QPoint m_ptCenter;		// 中心坐标

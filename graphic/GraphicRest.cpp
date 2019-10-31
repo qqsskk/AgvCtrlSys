@@ -2,7 +2,7 @@
 
 quint32 GraphicRest::g_unWidth = 20;
 quint32 GraphicRest::g_unHeight = 20;
-QString GraphicRest::g_cstrPath = "./res/image/rest.png";
+QString GraphicRest::g_strPath = "./res/image/rest.png";
 
 GraphicRest::GraphicRest(quint32 unNo, quint32 unMark)
 {
@@ -16,12 +16,17 @@ GraphicRest::GraphicRest(quint32 unNo, quint32 unMark)
     m_bMove = false;
     m_bSelect = false;
 
-    m_pImage = new QImage(g_cstrPath);
+    m_pImage = new QImage(g_strPath);
 }
 
 
 GraphicRest::~GraphicRest()
 {
+    if(m_pImage)
+    {
+        delete m_pImage;
+        m_pImage = nullptr;
+    }
 }
 
 quint32 GraphicRest::getNo()
@@ -41,16 +46,16 @@ quint32 GraphicRest::getMark()
     return m_unMark;
 }
 
-void GraphicRest::setImage(QString cstrPath)
+void GraphicRest::setImage(QString strPath)
 {
-    g_cstrPath = cstrPath;
+    g_strPath = strPath;
 
     return;
 }
 
 QString GraphicRest::getImage()
 {
-    return g_cstrPath;
+    return g_strPath;
 }
 
 bool GraphicRest::isInside(QPoint ptWinpoint)

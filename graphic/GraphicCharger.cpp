@@ -28,6 +28,16 @@ GraphicCharger::GraphicCharger(quint32 unNo, quint32 unMark, quint32 unCtrl)
 
 GraphicCharger::~GraphicCharger()
 {
+    if(m_pImageBg)
+    {
+        delete m_pImageBg;
+        m_pImageBg = nullptr;
+    }
+    if(m_pImagePower)
+    {
+        delete m_pImagePower;
+        m_pImagePower = nullptr;
+    }
 }
 
 quint32 GraphicCharger::getNo()
@@ -66,18 +76,18 @@ quint32 GraphicCharger::getMark()
     return m_unMark;
 }
 
-void GraphicCharger::setImage(QString cstrPath, QString cstrPower)
+void GraphicCharger::setImage(QString strPath, QString strPower)
 {
-    g_strPath = cstrPath;
-    g_strPower = cstrPower;
+    g_strPath = strPath;
+    g_strPower = strPower;
 
     return;
 }
 
-void GraphicCharger::getImage(QString & cstrPath, QString & cstrPower)
+void GraphicCharger::getImage(QString & strPath, QString & strPower)
 {
-    cstrPath = g_strPath;
-    cstrPower = g_strPower;
+    strPath = g_strPath;
+    strPower = g_strPower;
 
     return;
 }

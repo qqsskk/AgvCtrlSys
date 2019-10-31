@@ -8,14 +8,12 @@ MapForm::MapForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-this->grabKeyboard();
-
-   // updateMapRelateTable("");
-
     m_pMap = new GraphicMap(this);
 
-
+//    QPalette pal(this->palette());
+//    pal.setColor(QPalette::Background, Qt::black);
+//    this->setAutoFillBackground(true);
+//    this->setPalette(pal);
 }
 
 MapForm::~MapForm()
@@ -39,7 +37,6 @@ void MapForm::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     style()->drawPrimitive(QStyle::PE_FrameDefaultButton, &opt, &painter, this);
 
-
     m_pMap->drawMap(painter);
 }
 
@@ -57,12 +54,12 @@ void MapForm::wheelEvent(QWheelEvent *event)
 
 void MapForm::mousePressEvent(QMouseEvent *event)
 {
-    // 鼠标中键按下“选择”操作
-    if(event->button() == Qt::MidButton)
+    // 鼠标左键按下“选择”操作
+    if(event->button() == Qt::LeftButton)
     {
         if (m_pMap)
         {
-            m_pMap->select(BUTTONCTRL_MDOWN, event->pos());
+            m_pMap->select(BUTTONCTRL_LDOWN, event->pos());
         }
         event->accept();
         this->update();
@@ -91,12 +88,12 @@ void MapForm::mousePressEvent(QMouseEvent *event)
 
 void MapForm::mouseReleaseEvent(QMouseEvent *event)
 {
-    // 鼠标中键抬起“提交”操作
-    if(event->button() == Qt::MidButton)
+    // 鼠标左键抬起“提交”操作
+    if(event->button() == Qt::LeftButton)
     {
         if (m_pMap)
         {
-            m_pMap->confirm(BUTTONCTRL_MUP, event->pos());
+            m_pMap->confirm(BUTTONCTRL_LUP, event->pos());
             QCursor cursor = m_pMap->drag(event->pos()); // 完成拖拽需再调用一次
             this->setCursor(cursor);
         }
@@ -107,8 +104,8 @@ void MapForm::mouseReleaseEvent(QMouseEvent *event)
 
 void MapForm::mouseMoveEvent(QMouseEvent *event)
 {
-    // 鼠标中键按下且移动为“拖拽”操作
-    if(event->buttons() & Qt::MidButton)
+    // 鼠标左键按下且移动为“拖拽”操作
+    if(event->buttons() & Qt::LeftButton)
     {
         if (m_pMap)
         {
@@ -143,7 +140,4 @@ void MapForm::onBtnOkClicked()
     }
 }
 
-void MapForm::onBtnCancelClicked()
-{
-    // 无需实现
-}
+void MapForm::onBtnCancelClicked(){}

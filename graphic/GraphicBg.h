@@ -6,7 +6,7 @@
 class GraphicBg : public Graphic
 {
 public:
-    GraphicBg(QColor colorLine = Qt::black, float fWidth = 2.0f, QString cstrPath = "./res/image/background.jpg");
+    GraphicBg(QColor colorLine = Qt::black, float fWidth = 2.0f, QString strPath = "./res/image/background.jpg");
     ~GraphicBg();
 
 protected:

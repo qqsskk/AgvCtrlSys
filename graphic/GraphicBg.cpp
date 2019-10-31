@@ -1,10 +1,10 @@
 ﻿#include "graphic/GraphicBg.h"
 
-GraphicBg::GraphicBg(QColor colorLine, float fWidth, QString cstrPath)
+GraphicBg::GraphicBg(QColor colorLine, float fWidth, QString strPath)
 {
     m_colorLine = colorLine;
     m_fWidth = fWidth;
-    m_strPath = cstrPath;
+    m_strPath = strPath;
     m_bMove = false;
     m_ptPrepoint = QPoint(0,0);
     m_ptLastpoint = QPoint(0, 0);
@@ -17,8 +17,16 @@ GraphicBg::GraphicBg(QColor colorLine, float fWidth, QString cstrPath)
 
 GraphicBg::~GraphicBg()
 {
-    delete m_pImage;
-    delete m_pPen;
+    if(m_pImage)
+    {
+        delete m_pImage;
+        m_pImage = nullptr;
+    }
+    if(m_pPen)
+    {
+        delete m_pPen;
+        m_pPen = nullptr;
+    }
 }
 
 void GraphicBg::setLine(QColor colorLine, float fWidth)
@@ -27,7 +35,6 @@ void GraphicBg::setLine(QColor colorLine, float fWidth)
 
     m_colorLine = colorLine;
     m_fWidth = fWidth;
-    //delete m_pPen;
     m_pPen = new QPen(m_colorLine, m_fWidth);
 
     return;
@@ -41,12 +48,11 @@ void GraphicBg::getLine(QColor &colorLine, float & fWidth)
     return;
 }
 
-void GraphicBg::setImage(QString cstrPath)
+void GraphicBg::setImage(QString strPath)
 {
     QMutexLocker locker(&m_mutexLock);
 
-    m_strPath = cstrPath;
-    //delete m_pImage;
+    m_strPath = strPath;
     m_pImage = new QImage(m_strPath);
 
     return;
@@ -302,7 +308,7 @@ void GraphicBg::drawSubpoint(QPainter &painter)
     }
 
     QPoint cptVector = QPoint(0, 0);	// 矢量坐标
-    QString cstrText;
+    QString strText;
 
 
     QFont font("Microsoft YaHei", 10.0f, QFont::Bold);

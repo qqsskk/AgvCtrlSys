@@ -50,7 +50,7 @@ void MainWindow::initWindow()
     ui->tabWidget->setTabPosition(QTabWidget::West);
     ui->tabWidget->tabBar()->setStyle(new CustomTabStyle);
     MapForm *pMapForm = new MapForm();
-    ui->tabWidget->addTab(pMapForm, QString::fromLocal8Bit(" 布局图"));
+    ui->tabWidget->addTab(pMapForm, QString::fromLocal8Bit("地图信息"));
     TaskForm *pTaskForm = new TaskForm();
     ui->tabWidget->addTab(pTaskForm, QString::fromLocal8Bit("任务信息"));
     HistoryForm *pHistoryForm = new HistoryForm();
@@ -98,10 +98,7 @@ void MainWindow::onBtnOkClicked()
     qApp->quit();
 }
 
-void MainWindow::onBtnCancelClicked()
-{
-    // 无需实现
-}
+void MainWindow::onBtnCancelClicked(){}
 
 void MainWindow::onUpdateAbnormalExist(bool exist)
 {

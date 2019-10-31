@@ -6,7 +6,7 @@
 class GraphicStation : public Graphic
 {
 public:
-    GraphicStation(quint32 unNo, quint32 unMark, QString cstrName="");
+    GraphicStation(quint32 unNo, quint32 unMark, QString strName="");
     ~GraphicStation();
 
 protected:

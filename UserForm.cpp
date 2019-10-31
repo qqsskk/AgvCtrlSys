@@ -168,11 +168,7 @@ void UserForm::onExitProgress()
 {
     qApp->quit();
 }
-void UserForm::onBtnCancelClickedLogout()
-{
-    // 无需实现
-}
-
+void UserForm::onBtnCancelClickedLogout(){}
 
 void UserForm::onClickedUserList(const QModelIndex&)
 {
@@ -187,7 +183,6 @@ void UserForm::onClickedUserList(const QModelIndex&)
        ui->lineEditUserName->setText(user);
        ui->lineEditUserPasswd->setText(passwd);
        ui->comboBoxLevel->setCurrentText(level);
-
    }
 }
 

@@ -22,6 +22,11 @@ GraphicStation::GraphicStation(quint32 unNo, quint32 unMark, QString strName)
 
 GraphicStation::~GraphicStation()
 {
+    if(m_pImage)
+    {
+        delete m_pImage;
+        m_pImage = nullptr;
+    }
 }
 
 quint32 GraphicStation::getNo()
@@ -29,9 +34,9 @@ quint32 GraphicStation::getNo()
     return m_unNo;
 }
 
-void GraphicStation::setName(QString cstrName)
+void GraphicStation::setName(QString strName)
 {
-    m_strName = cstrName;
+    m_strName = strName;
 
     return;
 }
@@ -53,9 +58,9 @@ quint32 GraphicStation::getMark()
     return m_unMark;;
 }
 
-void GraphicStation::setImage(QString cstrPath)
+void GraphicStation::setImage(QString strPath)
 {
-    g_strPath = cstrPath;
+    g_strPath = strPath;
 
     return;
 }
