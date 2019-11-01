@@ -406,6 +406,7 @@ void GraphicTrack::draw(QPainter &painter)
     QPoint ptStartWin = vecToWin(m_ptStart);
     QPoint ptEndWin = vecToWin(m_ptEnd);
 
+    // 默认画笔
     QPen pen;
     pen.setColor(QColor(Qt::black));
     pen.setWidth(g_fWidth * g_fScale);
@@ -413,127 +414,39 @@ void GraphicTrack::draw(QPainter &painter)
     painter.setPen(pen);
 
     // 弧
-//    if (m_bArc)
-//    {
-//        QRectF rcTemp;
-//        rcTemp.setWidth((qreal)qAbs(ptStartWin.x() - ptEndWin.x()) * 2);
-//        rcTemp.setHeight((qreal)qAbs(ptStartWin.y() - ptEndWin.y()) * 2);
+    if (m_bArc)
+    {
+        if ((ptEndWin.x() < ptStartWin.x() && ptEndWin.y() < ptStartWin.y()) ||
+            (ptEndWin.x() > ptStartWin.x() && ptEndWin.y() < ptStartWin.y()) ||
+            (ptEndWin.x() < ptStartWin.x() && ptEndWin.y() > ptStartWin.y()) ||
+            (ptEndWin.x() > ptStartWin.x() && ptEndWin.y() > ptStartWin.y()))
+        {
+            QPainterPath path;
+            path.moveTo(ptStartWin);
+            path.cubicTo(ptStartWin, QPoint(ptEndWin.x(), ptStartWin.y()), ptEndWin);
 
-//        //! [1]
-//        if (ptEndWin.x() < ptStartWin.x() && ptEndWin.y() < ptStartWin.y())
-//        {
-//            rcTemp.setX((qreal)ptEndWin.x());
-//            rcTemp.setY((qreal)ptEndWin.y() - rcTemp.height() / 2);
+            // 画黑线
+            painter.drawPath(path);
 
-//            if (m_bSelect)
-//            {
-//                pen.setColor(QColor(Qt::red));
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 180, -90);
-//            }
-//            else
-//            {
-//                painter.drawArc(rcTemp, 180, -90);
-//                pen.setWidth((g_fWidth / 2) * g_fScale);
-//                pen.setColor(QColor(Qt::yellow));
-//                pen.setStyle(Qt::DashLine);
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 180, -90);
-//            }
-//        }
-//        //! [1]
-//        //! [2]
-//        else if (ptEndWin.x() > ptStartWin.x() && ptEndWin.y() < ptStartWin.y())
-//        {
-//            rcTemp.setX((qreal)ptStartWin.x() - rcTemp.width() / 2);
-//            rcTemp.setY((qreal)ptEndWin.y() - rcTemp.height() / 2);
-
-//            if (m_bSelect)
-//            {
-//                pen.setColor(QColor(Qt::red));
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 0, 90);
-//            }
-//            else
-//            {
-//                painter.drawArc(rcTemp, 0, 90);
-//                pen.setWidth((g_fWidth / 2) * g_fScale);
-//                pen.setColor(QColor(Qt::yellow));
-//                pen.setStyle(Qt::DashLine);
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 0, 90);
-//            }
-//        }
-//        //! [2]
-//        //! [3]
-//        else if (ptEndWin.x() < ptStartWin.x() && ptEndWin.y() > ptStartWin.y())
-//        {
-//            rcTemp.setX((qreal)ptEndWin.x());
-//            rcTemp.setY((qreal)ptStartWin.y());
-
-//            if (m_bSelect)
-//            {
-//                pen.setColor(QColor(Qt::red));
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 180, 90);
-//            }
-//            else
-//            {
-//                painter.drawArc(rcTemp, 180, 90);
-//                pen.setWidth((g_fWidth / 2) * g_fScale);
-//                pen.setColor(QColor(Qt::yellow));
-//                pen.setStyle(Qt::DashLine);
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 180, 90);
-//            }
-//        }
-//        //! [3]
-//        //! [4]
-//        else if (ptEndWin.x() > ptStartWin.x() && ptEndWin.y() > ptStartWin.y())
-//        {
-//            rcTemp.setX((qreal)ptStartWin.x() - rcTemp.width() / 2);
-//            rcTemp.setY((qreal)ptStartWin.y());
-
-//            if (m_bSelect)
-//            {
-//                pen.setColor(QColor(Qt::red));
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 0, -90);
-//            }
-//            else
-//            {
-//                painter.drawArc(rcTemp, 0, -90);
-//                pen.setWidth((g_fWidth / 2) * g_fScale);
-//                pen.setColor(QColor(Qt::yellow));
-//                pen.setStyle(Qt::DashLine);
-//                painter.setPen(pen);
-//                painter.drawArc(rcTemp, 0, -90);
-//            }
-//        }
-//        //! [4]
-//        //! [5]
-//        else
-//        {
-//            if (m_bSelect)
-//            {
-//                pen.setColor(QColor(Qt::red));
-//                painter.setPen(pen);
-//                painter.drawLine(ptStartWin.x(), ptStartWin.y(), ptEndWin.x(), ptEndWin.y());
-//            }
-//            else
-//            {
-//                painter.drawLine(ptStartWin.x(), ptStartWin.y(), ptEndWin.x(), ptEndWin.y());
-//                pen.setWidth((g_fWidth / 2) * g_fScale);
-//                pen.setColor(QColor(Qt::yellow));
-//                pen.setStyle(Qt::DashLine);
-//                painter.setPen(pen);
-//                painter.drawLine(ptStartWin.x(), ptStartWin.y(), ptEndWin.x(), ptEndWin.y());
-//            }
-//        }
-//        //! [5]
-//    }
+            // 画黄线
+            pen.setWidth((g_fWidth / 2) * g_fScale);
+            pen.setColor(QColor(Qt::yellow));
+            pen.setStyle(Qt::DashLine);
+            painter.setPen(pen);
+            painter.drawPath(path);
+        }
+        else
+        {
+           painter.drawLine(ptStartWin.x(), ptStartWin.y(), ptEndWin.x(), ptEndWin.y());
+           pen.setWidth((g_fWidth / 2) * g_fScale);
+           pen.setColor(QColor(Qt::yellow));
+           pen.setStyle(Qt::DashLine);
+           painter.setPen(pen);
+           painter.drawLine(ptStartWin.x(), ptStartWin.y(), ptEndWin.x(), ptEndWin.y());
+        }
+    }
     // 直线
-  //  else
+    else
     {
         //! [6]
         if (m_bSelect)
