@@ -92,18 +92,6 @@ void GraphicCharger::getImage(QString & strPath, QString & strPower)
     return;
 }
 
-bool GraphicCharger::isInside(QPoint ptWinpoint)
-{
-    QPoint ptWindow = vecToWin(m_ptCenter);
-    QRect rect;
-    rect.setLeft(ptWindow.x() - (g_unWidth / 2) * g_fScale);
-    rect.setTop(ptWindow.y() - (g_unHeight / 2) * g_fScale);
-    rect.setRight(rect.left() + g_unWidth * g_fScale);
-    rect.setBottom(rect.top() + g_unHeight * g_fScale);
-
-    return rect.contains(ptWinpoint);
-}
-
 bool GraphicCharger::isSelected()
 {
     return m_bSelect;
@@ -187,12 +175,6 @@ void GraphicCharger::draw(QPainter &painter)
     rect.setTop(ptWindow.y() - (g_unHeight / 2) * g_fScale);
     rect.setRight(rect.left() + g_unWidth * g_fScale);
     rect.setBottom(rect.top() + g_unHeight * g_fScale);
-
-    // 绘制选中背景
-    if (m_bSelect)
-    {
-        painter.fillRect(QRect(rect.left(), rect.top(), rect.width(), rect.height()), QColor(Qt::red));
-    }
 
     // 绘制底图
     painter.drawImage(QRect(rect.left(), rect.top(), rect.width(), rect.height()), *m_pImageBg);

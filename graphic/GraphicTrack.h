@@ -60,13 +60,6 @@ public:
     bool getType();
 
     /**
-     * @brief isInside   窗口坐标是否在区域内
-     * @param ptWinpoint true 在区域内，false 不在区域内
-     * @return
-     */
-    bool isInside(QPoint ptWinpoint);
-
-    /**
      * @brief isSelected 获取选中状态
      * @return true 选中，false 未选中
      */

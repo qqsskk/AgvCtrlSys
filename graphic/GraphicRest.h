@@ -58,13 +58,6 @@ public:
     static QString getImage();
 
     /**
-     * @brief isInside      窗口坐标是否在区域内
-     * @param ptWinpoint    窗口坐标
-     * @return true 在区域内，false 不在区域内
-     */
-    bool isInside(QPoint ptWinpoint);
-
-    /**
      * @brief isSelected    获取选中状态
      * @return true 选中，false 未选中
      */

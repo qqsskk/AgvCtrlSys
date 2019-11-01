@@ -24,20 +24,6 @@ quint32 GraphicMark::getNo()
     return m_unNo;
 }
 
-bool GraphicMark::isInside(QPoint ptWinpoint)
-{
-    QPoint ptWindow = vecToWin(m_ptCenter);
-    QRect rect;
-    rect.setLeft(ptWindow.x() - (g_unWidth / 2) * g_fScale);
-    rect.setTop(ptWindow.y() - (g_unHeight / 2) * g_fScale);
-    rect.setRight(rect.left() + g_unWidth * g_fScale);
-    rect.setBottom(rect.top() + g_unHeight * g_fScale);
-
-    rect.setLeft(ptWindow.x() - (g_unWidth/2)*g_fScale);
-
-    return rect.contains(ptWinpoint);
-}
-
 bool GraphicMark::isSelected()
 {
     return m_bSelect;
@@ -123,11 +109,6 @@ void GraphicMark::draw(QPainter &painter)
     rect.setBottom(rect.top() + g_unHeight * g_fScale);
 
     QPen pen;
-    // 绘制选中背景
-    if (m_bSelect)
-    {
-        painter.fillRect(QRect(rect.left(), rect.top(), rect.width(), rect.height()), QColor(Qt::red));
-    }
 
     // 绘制外圈
     pen.setBrush(QColor(Qt::black));
