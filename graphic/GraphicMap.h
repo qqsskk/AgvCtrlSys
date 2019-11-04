@@ -133,5 +133,8 @@ private:
      * @brief 清除地图元素信息
      */
     void clearMapElement();
+
+    QString getAgvType(QString shortType);
+    QString getAgvMoveDire(QString shortMoveDire);
 };
 #endif // GRAPHICMAP_H

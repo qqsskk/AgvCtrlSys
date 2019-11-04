@@ -40,6 +40,10 @@ void MapForm::paintEvent(QPaintEvent *event)
     m_pMap->drawMap(painter);
 }
 
+void MapForm::onCursorChange()
+{
+    this->setCursor(Qt::ArrowCursor);
+}
 
 void MapForm::wheelEvent(QWheelEvent *event)
 {
@@ -47,6 +51,8 @@ void MapForm::wheelEvent(QWheelEvent *event)
     if (m_pMap)
     {
         m_pMap->wheel(event->delta()>=0 ? false : true);
+        this->setCursor(Qt::CrossCursor);
+        QTimer::singleShot(500, this, SLOT(onCursorChange()));
         event->accept();
         this->update();
     }

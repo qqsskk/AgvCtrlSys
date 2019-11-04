@@ -41,6 +41,7 @@ private slots:
     void onUpdateMapMenuEvent();
     void onBtnOkClicked();
     void onBtnCancelClicked();
+    void onCursorChange();
 
 };
 

@@ -45,8 +45,8 @@ void ConfigForm::init()
     ui->lineEditNetSerPort->setText(netport);
 
     // 初始化组合框
-    //P牵引式 S潜入式 T移载式 F叉车式 A机械手式 L激光式
-    //S单向 D双向 F全向
+    // P牵引式 S潜入式 T移载式 F叉车式 A机械手式 L激光式
+    // S单向 D双向 F全向
     ui->comboBoxDevType->addItem(QString::fromLocal8Bit("牵引式"));
     ui->comboBoxDevType->addItem(QString::fromLocal8Bit("潜入式"));
     ui->comboBoxDevType->addItem(QString::fromLocal8Bit("移载式"));

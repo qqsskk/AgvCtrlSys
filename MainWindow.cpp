@@ -82,7 +82,7 @@ void MainWindow::initWindow()
     connect(pAbnormalForm, SIGNAL(updateAbnormalExist(bool)), this, SLOT(onUpdateAbnormalExist(bool)));
     ui->tabWidget->addTab(pAbnormalForm, QString::fromLocal8Bit("                 "));
 
-    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setCurrentIndex(1);
 }
 
 void MainWindow::onWindowClose()

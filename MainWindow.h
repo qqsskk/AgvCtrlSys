@@ -44,6 +44,7 @@ private slots:
 
 public slots:
     void onUpdateAbnormalExist(bool exist);
+
 };
 
 #endif // MAINWINDOW_H
