@@ -47,7 +47,6 @@ SOURCES += \
     Config.cpp \
     LabelEx.cpp \
     GroupBoxEx.cpp \
-    DrawingPaperEditor.cpp \
     xml/tinystr.cpp \
     xml/tinyxml.cpp \
     xml/TinyxmlEngine.cpp \
@@ -87,7 +86,6 @@ HEADERS += \
     LabelEx.h \
     GroupBoxEx.h \
     CustomData.h \
-    DrawingPaperEditor.h \
     xml/tinystr.h \
     xml/tinyxml.h \
     xml/TinyxmlEngine.h \

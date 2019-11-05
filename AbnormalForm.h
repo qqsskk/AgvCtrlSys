@@ -7,7 +7,6 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QSqlRecord>
-#include "CustomTableModel.h"
 
 namespace Ui {
 class AbnormalForm;

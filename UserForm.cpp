@@ -59,9 +59,9 @@ void UserForm::init()
 void UserForm::updateModel()
 {
     m_modelUser->setQuery(QString("SELECT * FROM AGVDB_INFO_USER"));
-    m_modelUser->setHeaderData(0, Qt::Horizontal,QString::fromLocal8Bit("用户名"));
-    m_modelUser->setHeaderData(1, Qt::Horizontal,QString::fromLocal8Bit("密  码"));
-    m_modelUser->setHeaderData(2, Qt::Horizontal,QString::fromLocal8Bit("等  级"));
+    m_modelUser->setHeaderData(0, Qt::Horizontal, QString::fromLocal8Bit("用户名"));
+    m_modelUser->setHeaderData(1, Qt::Horizontal, QString::fromLocal8Bit("密  码"));
+    m_modelUser->setHeaderData(2, Qt::Horizontal, QString::fromLocal8Bit("等  级"));
     ui->tableViewUserInfo->setTableModel(m_modelUser);
 }
 

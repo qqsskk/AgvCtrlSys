@@ -6,7 +6,6 @@
 #include <QTimer>
 #include <QSqlQueryModel>
 #include <QSqlTableModel>
-#include "CustomTableModel.h"
 
 namespace Ui {
 class DeviceStateForm;

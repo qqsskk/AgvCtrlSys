@@ -1,7 +1,6 @@
 ﻿#include "MapForm.h"
 #include "ui_MapForm.h"
 
-#include <QStyleOption>
 MapForm::MapForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MapForm)
@@ -9,6 +8,8 @@ MapForm::MapForm(QWidget *parent) :
     ui->setupUi(this);
 
     m_pMap = new GraphicMap(this);
+    m_pMap->drag(QPoint(0,0));
+
 
 //    QPalette pal(this->palette());
 //    pal.setColor(QPalette::Background, Qt::black);
@@ -147,3 +148,21 @@ void MapForm::onBtnOkClicked()
 }
 
 void MapForm::onBtnCancelClicked(){}
+
+
+
+void MapForm::onShowAgv(quint32 unNo, QString strType, QString strMove, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError)
+{
+    if(m_pMap)
+    {
+        m_pMap->showAgv(unNo, strType, strMove, unCurMark, bRun, bUnVol, bObs, bError);
+    }
+}
+
+void MapForm::onHideAgv(quint32 unNo)
+{
+    if(m_pMap)
+    {
+        m_pMap->hideAgv(unNo);
+    }
+}

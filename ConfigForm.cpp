@@ -20,6 +20,7 @@ void ConfigForm::init()
     ui->groupBox->setTitle(QString::fromLocal8Bit("数据库服务器参数配置"));
     ui->groupBox_2->setTitle(QString::fromLocal8Bit("网络服务器参数配置"));
     ui->groupBox_3->setTitle(QString::fromLocal8Bit("设备配置"));
+    ui->groupBox_3->setVisible(false);
     ui->groupBox_4->setTitle(QString::fromLocal8Bit("WMS服务器参数配置"));
 
     QRegExp rx("\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");

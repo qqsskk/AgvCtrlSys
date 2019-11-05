@@ -28,11 +28,11 @@ void AbnormalForm::onUpdateModel()
     while (m_model->canFetchMore())
         m_model->fetchMore();
 
-    m_model->setHeaderData(0, Qt::Horizontal,QString::fromLocal8Bit("异常编号"));
-    m_model->setHeaderData(1, Qt::Horizontal,QString::fromLocal8Bit("异常发生时间"));
-    m_model->setHeaderData(2, Qt::Horizontal,QString::fromLocal8Bit("异常描述"));
-    m_model->setHeaderData(3, Qt::Horizontal,QString::fromLocal8Bit("异常等级"));
-    m_model->setHeaderData(4, Qt::Horizontal,QString::fromLocal8Bit("异常状态"));
+    m_model->setHeaderData(0, Qt::Horizontal, QString::fromLocal8Bit("异常编号"));
+    m_model->setHeaderData(1, Qt::Horizontal, QString::fromLocal8Bit("异常发生时间"));
+    m_model->setHeaderData(2, Qt::Horizontal, QString::fromLocal8Bit("异常描述"));
+    m_model->setHeaderData(3, Qt::Horizontal, QString::fromLocal8Bit("异常等级"));
+    m_model->setHeaderData(4, Qt::Horizontal, QString::fromLocal8Bit("异常状态"));
     ui->tableView->setTableModel(m_model);
 
     if(m_model->rowCount() > 0)

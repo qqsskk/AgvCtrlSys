@@ -18,8 +18,8 @@ protected:
 protected:
     bool m_bRun;				// 移动标识
     bool m_bUnVol;				// 电量不足标识
-    bool m_bError;				// 异常标识
     bool m_bObs;				// 避障标识
+    bool m_bError;				// 异常标识
 
 protected:
     bool m_bShow;				// 显示标识符
@@ -95,10 +95,10 @@ public:
      * @brief setStatus 设置状态
      * @param bRun      移动标识
      * @param bUnVol    电量不足标识
-     * @param bError    异常标识
      * @param bObs      避障标识
+     * @param bError    异常标识
      */
-    void setStatus(bool bRun, bool bUnVol, bool bError, bool bObs);
+    void setStatus(bool bRun, bool bUnVol, bool bObs, bool bError);
 
     /**
      * @brief isShow    是否显示

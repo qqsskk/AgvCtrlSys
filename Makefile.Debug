@@ -69,7 +69,6 @@ SOURCES       = main.cpp \
 		Config.cpp \
 		LabelEx.cpp \
 		GroupBoxEx.cpp \
-		DrawingPaperEditor.cpp \
 		xml\tinystr.cpp \
 		xml\tinyxml.cpp \
 		xml\TinyxmlEngine.cpp \
@@ -101,8 +100,7 @@ SOURCES       = main.cpp \
 		debug\moc_MsgBoxEx.cpp \
 		debug\moc_LoginSetForm.cpp \
 		debug\moc_LabelEx.cpp \
-		debug\moc_GroupBoxEx.cpp \
-		debug\moc_DrawingPaperEditor.cpp
+		debug\moc_GroupBoxEx.cpp
 OBJECTS       = debug\main.obj \
 		debug\MainWindow.obj \
 		debug\MapForm.obj \
@@ -125,7 +123,6 @@ OBJECTS       = debug\main.obj \
 		debug\Config.obj \
 		debug\LabelEx.obj \
 		debug\GroupBoxEx.obj \
-		debug\DrawingPaperEditor.obj \
 		debug\tinystr.obj \
 		debug\tinyxml.obj \
 		debug\TinyxmlEngine.obj \
@@ -158,8 +155,7 @@ OBJECTS       = debug\main.obj \
 		debug\moc_MsgBoxEx.obj \
 		debug\moc_LoginSetForm.obj \
 		debug\moc_LabelEx.obj \
-		debug\moc_GroupBoxEx.obj \
-		debug\moc_DrawingPaperEditor.obj
+		debug\moc_GroupBoxEx.obj
 
 DIST          =  MainWindow.h \
 		MapForm.h \
@@ -184,7 +180,6 @@ DIST          =  MainWindow.h \
 		LabelEx.h \
 		GroupBoxEx.h \
 		CustomData.h \
-		DrawingPaperEditor.h \
 		xml\tinystr.h \
 		xml\tinyxml.h \
 		xml\TinyxmlEngine.h \
@@ -219,7 +214,6 @@ DIST          =  MainWindow.h \
 		Config.cpp \
 		LabelEx.cpp \
 		GroupBoxEx.cpp \
-		DrawingPaperEditor.cpp \
 		xml\tinystr.cpp \
 		xml\tinyxml.cpp \
 		xml\TinyxmlEngine.cpp \
@@ -330,8 +324,8 @@ all: Makefile.Debug  debug\AgvCtrlSys.exe
 
 debug\AgvCtrlSys.exe: ui_MainWindow.h ui_MapForm.h ui_TaskForm.h ui_DeviceStateForm.h ui_UserForm.h ui_HistoryForm.h ui_AbnormalForm.h ui_ConfigForm.h ui_LoginForm.h ui_LoginSetForm.h $(OBJECTS) debug\AgvCtrlSys_resource.res
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-debug\main.obj debug\MainWindow.obj debug\MapForm.obj debug\TaskForm.obj debug\TitleBarEx.obj debug\DeviceStateForm.obj debug\UserForm.obj debug\HistoryForm.obj debug\AbnormalForm.obj debug\ConfigForm.obj debug\PushButtonEx.obj debug\LineEditEx.obj debug\ComboBoxEx.obj debug\TableViewEx.obj debug\CustomTableModel.obj debug\CustomJsonModel.obj debug\LoginForm.obj debug\MsgBoxEx.obj debug\LoginSetForm.obj debug\Config.obj debug\LabelEx.obj debug\GroupBoxEx.obj debug\DrawingPaperEditor.obj debug\tinystr.obj debug\tinyxml.obj debug\TinyxmlEngine.obj debug\tinyxmlerror.obj debug\tinyxmlparser.obj debug\Graphic.obj debug\GraphicBg.obj debug\GraphicCharger.obj debug\GraphicMap.obj debug\GraphicMark.obj debug\GraphicRest.obj debug\GraphicStation.obj debug\GraphicTrack.obj debug\GraphicAgv.obj debug\moc_MainWindow.obj debug\moc_MapForm.obj debug\moc_TaskForm.obj debug\moc_TitleBarEx.obj debug\moc_DeviceStateForm.obj debug\moc_UserForm.obj debug\moc_HistoryForm.obj debug\moc_AbnormalForm.obj
-debug\moc_ConfigForm.obj debug\moc_PushButtonEx.obj debug\moc_LineEditEx.obj debug\moc_ComboBoxEx.obj debug\moc_TableViewEx.obj debug\moc_CustomTableModel.obj debug\moc_LoginForm.obj debug\moc_MsgBoxEx.obj debug\moc_LoginSetForm.obj debug\moc_LabelEx.obj debug\moc_GroupBoxEx.obj debug\moc_DrawingPaperEditor.obj
+debug\main.obj debug\MainWindow.obj debug\MapForm.obj debug\TaskForm.obj debug\TitleBarEx.obj debug\DeviceStateForm.obj debug\UserForm.obj debug\HistoryForm.obj debug\AbnormalForm.obj debug\ConfigForm.obj debug\PushButtonEx.obj debug\LineEditEx.obj debug\ComboBoxEx.obj debug\TableViewEx.obj debug\CustomTableModel.obj debug\CustomJsonModel.obj debug\LoginForm.obj debug\MsgBoxEx.obj debug\LoginSetForm.obj debug\Config.obj debug\LabelEx.obj debug\GroupBoxEx.obj debug\tinystr.obj debug\tinyxml.obj debug\TinyxmlEngine.obj debug\tinyxmlerror.obj debug\tinyxmlparser.obj debug\Graphic.obj debug\GraphicBg.obj debug\GraphicCharger.obj debug\GraphicMap.obj debug\GraphicMark.obj debug\GraphicRest.obj debug\GraphicStation.obj debug\GraphicTrack.obj debug\GraphicAgv.obj debug\moc_MainWindow.obj debug\moc_MapForm.obj debug\moc_TaskForm.obj debug\moc_TitleBarEx.obj debug\moc_DeviceStateForm.obj debug\moc_UserForm.obj debug\moc_HistoryForm.obj debug\moc_AbnormalForm.obj debug\moc_ConfigForm.obj
+debug\moc_PushButtonEx.obj debug\moc_LineEditEx.obj debug\moc_ComboBoxEx.obj debug\moc_TableViewEx.obj debug\moc_CustomTableModel.obj debug\moc_LoginForm.obj debug\moc_MsgBoxEx.obj debug\moc_LoginSetForm.obj debug\moc_LabelEx.obj debug\moc_GroupBoxEx.obj
 $(LIBS)
 <<
 
@@ -344,10 +338,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) AgvCtrlSys.zip $(SOURCES) $(DIST) AgvCtrlSys.pro ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\angle.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\windows-vulkan.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\qconfig.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_script.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_script_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_virtualkeyboard.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qt.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\resources.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\moc.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\uic.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\lex.prf AgvCtrlSys.pro ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5QuickWidgetsd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Quickd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Widgetsd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Guid.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Sqld.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Qmld.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Networkd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Cored.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\qtmaind.prl    ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\data\dummy.cpp MainWindow.h MapForm.h TaskForm.h TitleBarEx.h CustomTabStyle.h DeviceStateForm.h UserForm.h HistoryForm.h AbnormalForm.h ConfigForm.h PushButtonEx.h LineEditEx.h ComboBoxEx.h TableViewEx.h CustomTableModel.h CustomJsonModel.h LoginForm.h MsgBoxEx.h LoginSetForm.h Config.h LabelEx.h GroupBoxEx.h CustomData.h DrawingPaperEditor.h xml\tinystr.h xml\tinyxml.h xml\TinyxmlEngine.h graphic\Graphic.h graphic\GraphicBg.h graphic\GraphicCharger.h graphic\GraphicMap.h graphic\GraphicMark.h graphic\GraphicRest.h graphic\GraphicsAgv.h graphic\GraphicStation.h graphic\GraphicTrack.h graphic\GraphicAgv.h  main.cpp MainWindow.cpp MapForm.cpp TaskForm.cpp TitleBarEx.cpp DeviceStateForm.cpp UserForm.cpp HistoryForm.cpp AbnormalForm.cpp ConfigForm.cpp PushButtonEx.cpp LineEditEx.cpp ComboBoxEx.cpp TableViewEx.cpp CustomTableModel.cpp CustomJsonModel.cpp LoginForm.cpp MsgBoxEx.cpp LoginSetForm.cpp Config.cpp LabelEx.cpp GroupBoxEx.cpp DrawingPaperEditor.cpp xml\tinystr.cpp xml\tinyxml.cpp xml\TinyxmlEngine.cpp xml\tinyxmlerror.cpp xml\tinyxmlparser.cpp graphic\Graphic.cpp graphic\GraphicBg.cpp graphic\GraphicCharger.cpp graphic\GraphicMap.cpp graphic\GraphicMark.cpp graphic\GraphicRest.cpp graphic\GraphicStation.cpp graphic\GraphicTrack.cpp graphic\GraphicAgv.cpp MainWindow.ui MapForm.ui TaskForm.ui DeviceStateForm.ui UserForm.ui HistoryForm.ui AbnormalForm.ui ConfigForm.ui LoginForm.ui LoginSetForm.ui    
+	$(ZIP) AgvCtrlSys.zip $(SOURCES) $(DIST) AgvCtrlSys.pro ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\angle.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\windows-vulkan.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\qconfig.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_script.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_script_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_virtualkeyboard.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qt.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\resources.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\moc.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\uic.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\lex.prf AgvCtrlSys.pro ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5QuickWidgetsd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Quickd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Widgetsd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Guid.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Sqld.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Qmld.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Networkd.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Cored.prl ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\qtmaind.prl    ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\data\dummy.cpp MainWindow.h MapForm.h TaskForm.h TitleBarEx.h CustomTabStyle.h DeviceStateForm.h UserForm.h HistoryForm.h AbnormalForm.h ConfigForm.h PushButtonEx.h LineEditEx.h ComboBoxEx.h TableViewEx.h CustomTableModel.h CustomJsonModel.h LoginForm.h MsgBoxEx.h LoginSetForm.h Config.h LabelEx.h GroupBoxEx.h CustomData.h xml\tinystr.h xml\tinyxml.h xml\TinyxmlEngine.h graphic\Graphic.h graphic\GraphicBg.h graphic\GraphicCharger.h graphic\GraphicMap.h graphic\GraphicMark.h graphic\GraphicRest.h graphic\GraphicsAgv.h graphic\GraphicStation.h graphic\GraphicTrack.h graphic\GraphicAgv.h  main.cpp MainWindow.cpp MapForm.cpp TaskForm.cpp TitleBarEx.cpp DeviceStateForm.cpp UserForm.cpp HistoryForm.cpp AbnormalForm.cpp ConfigForm.cpp PushButtonEx.cpp LineEditEx.cpp ComboBoxEx.cpp TableViewEx.cpp CustomTableModel.cpp CustomJsonModel.cpp LoginForm.cpp MsgBoxEx.cpp LoginSetForm.cpp Config.cpp LabelEx.cpp GroupBoxEx.cpp xml\tinystr.cpp xml\tinyxml.cpp xml\TinyxmlEngine.cpp xml\tinyxmlerror.cpp xml\tinyxmlparser.cpp graphic\Graphic.cpp graphic\GraphicBg.cpp graphic\GraphicCharger.cpp graphic\GraphicMap.cpp graphic\GraphicMark.cpp graphic\GraphicRest.cpp graphic\GraphicStation.cpp graphic\GraphicTrack.cpp graphic\GraphicAgv.cpp MainWindow.ui MapForm.ui TaskForm.ui DeviceStateForm.ui UserForm.ui HistoryForm.ui AbnormalForm.ui ConfigForm.ui LoginForm.ui LoginSetForm.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.obj debug\MainWindow.obj debug\MapForm.obj debug\TaskForm.obj debug\TitleBarEx.obj debug\DeviceStateForm.obj debug\UserForm.obj debug\HistoryForm.obj debug\AbnormalForm.obj debug\ConfigForm.obj debug\PushButtonEx.obj debug\LineEditEx.obj debug\ComboBoxEx.obj debug\TableViewEx.obj debug\CustomTableModel.obj debug\CustomJsonModel.obj debug\LoginForm.obj debug\MsgBoxEx.obj debug\LoginSetForm.obj debug\Config.obj debug\LabelEx.obj debug\GroupBoxEx.obj debug\DrawingPaperEditor.obj debug\tinystr.obj debug\tinyxml.obj debug\TinyxmlEngine.obj debug\tinyxmlerror.obj debug\tinyxmlparser.obj debug\Graphic.obj debug\GraphicBg.obj debug\GraphicCharger.obj debug\GraphicMap.obj debug\GraphicMark.obj debug\GraphicRest.obj debug\GraphicStation.obj debug\GraphicTrack.obj debug\GraphicAgv.obj debug\moc_MainWindow.obj debug\moc_MapForm.obj debug\moc_TaskForm.obj debug\moc_TitleBarEx.obj debug\moc_DeviceStateForm.obj debug\moc_UserForm.obj debug\moc_HistoryForm.obj debug\moc_AbnormalForm.obj debug\moc_ConfigForm.obj debug\moc_PushButtonEx.obj debug\moc_LineEditEx.obj debug\moc_ComboBoxEx.obj debug\moc_TableViewEx.obj debug\moc_CustomTableModel.obj debug\moc_LoginForm.obj debug\moc_MsgBoxEx.obj debug\moc_LoginSetForm.obj debug\moc_LabelEx.obj debug\moc_GroupBoxEx.obj debug\moc_DrawingPaperEditor.obj
+	-$(DEL_FILE) debug\main.obj debug\MainWindow.obj debug\MapForm.obj debug\TaskForm.obj debug\TitleBarEx.obj debug\DeviceStateForm.obj debug\UserForm.obj debug\HistoryForm.obj debug\AbnormalForm.obj debug\ConfigForm.obj debug\PushButtonEx.obj debug\LineEditEx.obj debug\ComboBoxEx.obj debug\TableViewEx.obj debug\CustomTableModel.obj debug\CustomJsonModel.obj debug\LoginForm.obj debug\MsgBoxEx.obj debug\LoginSetForm.obj debug\Config.obj debug\LabelEx.obj debug\GroupBoxEx.obj debug\tinystr.obj debug\tinyxml.obj debug\TinyxmlEngine.obj debug\tinyxmlerror.obj debug\tinyxmlparser.obj debug\Graphic.obj debug\GraphicBg.obj debug\GraphicCharger.obj debug\GraphicMap.obj debug\GraphicMark.obj debug\GraphicRest.obj debug\GraphicStation.obj debug\GraphicTrack.obj debug\GraphicAgv.obj debug\moc_MainWindow.obj debug\moc_MapForm.obj debug\moc_TaskForm.obj debug\moc_TitleBarEx.obj debug\moc_DeviceStateForm.obj debug\moc_UserForm.obj debug\moc_HistoryForm.obj debug\moc_AbnormalForm.obj debug\moc_ConfigForm.obj debug\moc_PushButtonEx.obj debug\moc_LineEditEx.obj debug\moc_ComboBoxEx.obj debug\moc_TableViewEx.obj debug\moc_CustomTableModel.obj debug\moc_LoginForm.obj debug\moc_MsgBoxEx.obj debug\moc_LoginSetForm.obj debug\moc_LabelEx.obj debug\moc_GroupBoxEx.obj
 	-$(DEL_FILE) debug\AgvCtrlSys.exp debug\AgvCtrlSys.vc.pdb debug\AgvCtrlSys.ilk debug\AgvCtrlSys.idb
 	-$(DEL_FILE) debug\AgvCtrlSys_resource.res
 
@@ -374,9 +368,9 @@ compiler_moc_predefs_clean:
 debug\moc_predefs.h: ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\data\dummy.cpp
 	cl -BxD:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\features\data\dummy.cpp 2>NUL >debug\moc_predefs.h
 
-compiler_moc_header_make_all: debug\moc_MainWindow.cpp debug\moc_MapForm.cpp debug\moc_TaskForm.cpp debug\moc_TitleBarEx.cpp debug\moc_DeviceStateForm.cpp debug\moc_UserForm.cpp debug\moc_HistoryForm.cpp debug\moc_AbnormalForm.cpp debug\moc_ConfigForm.cpp debug\moc_PushButtonEx.cpp debug\moc_LineEditEx.cpp debug\moc_ComboBoxEx.cpp debug\moc_TableViewEx.cpp debug\moc_CustomTableModel.cpp debug\moc_LoginForm.cpp debug\moc_MsgBoxEx.cpp debug\moc_LoginSetForm.cpp debug\moc_LabelEx.cpp debug\moc_GroupBoxEx.cpp debug\moc_DrawingPaperEditor.cpp
+compiler_moc_header_make_all: debug\moc_MainWindow.cpp debug\moc_MapForm.cpp debug\moc_TaskForm.cpp debug\moc_TitleBarEx.cpp debug\moc_DeviceStateForm.cpp debug\moc_UserForm.cpp debug\moc_HistoryForm.cpp debug\moc_AbnormalForm.cpp debug\moc_ConfigForm.cpp debug\moc_PushButtonEx.cpp debug\moc_LineEditEx.cpp debug\moc_ComboBoxEx.cpp debug\moc_TableViewEx.cpp debug\moc_CustomTableModel.cpp debug\moc_LoginForm.cpp debug\moc_MsgBoxEx.cpp debug\moc_LoginSetForm.cpp debug\moc_LabelEx.cpp debug\moc_GroupBoxEx.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug\moc_MainWindow.cpp debug\moc_MapForm.cpp debug\moc_TaskForm.cpp debug\moc_TitleBarEx.cpp debug\moc_DeviceStateForm.cpp debug\moc_UserForm.cpp debug\moc_HistoryForm.cpp debug\moc_AbnormalForm.cpp debug\moc_ConfigForm.cpp debug\moc_PushButtonEx.cpp debug\moc_LineEditEx.cpp debug\moc_ComboBoxEx.cpp debug\moc_TableViewEx.cpp debug\moc_CustomTableModel.cpp debug\moc_LoginForm.cpp debug\moc_MsgBoxEx.cpp debug\moc_LoginSetForm.cpp debug\moc_LabelEx.cpp debug\moc_GroupBoxEx.cpp debug\moc_DrawingPaperEditor.cpp
+	-$(DEL_FILE) debug\moc_MainWindow.cpp debug\moc_MapForm.cpp debug\moc_TaskForm.cpp debug\moc_TitleBarEx.cpp debug\moc_DeviceStateForm.cpp debug\moc_UserForm.cpp debug\moc_HistoryForm.cpp debug\moc_AbnormalForm.cpp debug\moc_ConfigForm.cpp debug\moc_PushButtonEx.cpp debug\moc_LineEditEx.cpp debug\moc_ComboBoxEx.cpp debug\moc_TableViewEx.cpp debug\moc_CustomTableModel.cpp debug\moc_LoginForm.cpp debug\moc_MsgBoxEx.cpp debug\moc_LoginSetForm.cpp debug\moc_LabelEx.cpp debug\moc_GroupBoxEx.cpp
 debug\moc_MainWindow.cpp: MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QMainWindow \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
@@ -848,13 +842,8 @@ debug\moc_MainWindow.cpp: MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QPainter \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QProxyStyle \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOptionTab \
-		MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QDebug \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
+		MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMap \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlQuery \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlquery.h \
@@ -862,6 +851,9 @@ debug\moc_MainWindow.cpp: MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qtsql-config.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QFile \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
 		graphic\GraphicMap.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMutex \
 		xml\TinyxmlEngine.h \
@@ -886,9 +878,6 @@ debug\moc_MainWindow.cpp: MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlquerymodel.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
 		DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		UserForm.h \
@@ -1011,15 +1000,6 @@ debug\moc_MapForm.cpp: MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QDebug \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QPainter \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
@@ -1035,6 +1015,21 @@ debug\moc_MapForm.cpp: MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qicon.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qaction.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QFile \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		graphic\GraphicMap.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMutex \
 		xml\TinyxmlEngine.h \
@@ -1179,10 +1174,6 @@ debug\moc_TaskForm.cpp: TaskForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" TaskForm.h -o debug\moc_TaskForm.cpp
@@ -1776,10 +1767,6 @@ debug\moc_DeviceStateForm.cpp: DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" DeviceStateForm.h -o debug\moc_DeviceStateForm.cpp
@@ -1914,10 +1901,6 @@ debug\moc_UserForm.cpp: UserForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlRecord \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlrecord.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" UserForm.h -o debug\moc_UserForm.cpp
@@ -2037,10 +2020,6 @@ debug\moc_HistoryForm.cpp: HistoryForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" HistoryForm.h -o debug\moc_HistoryForm.cpp
@@ -2175,10 +2154,6 @@ debug\moc_AbnormalForm.cpp: AbnormalForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlRecord \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlrecord.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" AbnormalForm.h -o debug\moc_AbnormalForm.cpp
@@ -3481,13 +3456,11 @@ debug\moc_LoginForm.cpp: LoginForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QProxyStyle \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOptionTab \
 		MapForm.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMap \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QFile \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
 		graphic\GraphicMap.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMutex \
 		xml\TinyxmlEngine.h \
@@ -3503,9 +3476,6 @@ debug\moc_LoginForm.cpp: LoginForm.h \
 		graphic\GraphicAgv.h \
 		TaskForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlQueryModel \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
 		DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		UserForm.h \
@@ -4105,117 +4075,6 @@ debug\moc_GroupBoxEx.cpp: GroupBoxEx.h \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" GroupBoxEx.h -o debug\moc_GroupBoxEx.cpp
-
-debug\moc_DrawingPaperEditor.cpp: DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qwidget.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobal.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtcore-config.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsystemdetection.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qprocessordetection.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtypeinfo.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsysinfo.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlogging.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qflags.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbasicatomic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qgenericatomic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobalstatic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmutex.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnumeric.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qversiontagging.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnamespace.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstring.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qchar.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearray.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrefcount.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qarraydata.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringliteral.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringview.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringbuilder.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlist.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qalgorithms.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiterator.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhashfunctions.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpair.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearraylist.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringlist.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregexp.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringmatcher.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreevent.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qscopedpointer.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmetatype.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject_impl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmargins.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpaintdevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrect.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsize.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpoint.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpalette.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcolor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgb.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgba64.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qbrush.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvector.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qmatrix.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpolygon.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qregion.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdatastream.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiodevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qline.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtransform.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpainterpath.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qimage.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixelformat.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixmap.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qshareddata.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhash.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfont.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontmetrics.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontinfo.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qsizepolicy.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcursor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qkeysequence.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qevent.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvariant.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmap.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdebug.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtextstream.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlocale.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qset.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurlquery.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfile.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfiledevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
-		debug\moc_predefs.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
-	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" DrawingPaperEditor.h -o debug\moc_DrawingPaperEditor.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -6928,13 +6787,11 @@ debug\main.obj: main.cpp ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWi
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QProxyStyle \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOptionTab \
 		MapForm.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMap \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QFile \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
 		graphic\GraphicMap.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMutex \
 		xml\TinyxmlEngine.h \
@@ -6950,9 +6807,6 @@ debug\main.obj: main.cpp ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWi
 		graphic\GraphicAgv.h \
 		TaskForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlQueryModel \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
 		DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		UserForm.h \
@@ -7437,13 +7291,8 @@ debug\MainWindow.obj: MainWindow.cpp MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QPainter \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QProxyStyle \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOptionTab \
-		MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QDebug \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
+		MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMap \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlQuery \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlquery.h \
@@ -7451,6 +7300,9 @@ debug\MainWindow.obj: MainWindow.cpp MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qtsql-config.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QFile \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
 		graphic\GraphicMap.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMutex \
 		xml\TinyxmlEngine.h \
@@ -7475,9 +7327,6 @@ debug\MainWindow.obj: MainWindow.cpp MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlquerymodel.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
 		DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		UserForm.h \
@@ -7491,7 +7340,12 @@ debug\MainWindow.obj: MainWindow.cpp MainWindow.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QRegExpValidator \
 		Config.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QSettings \
-		ui_MainWindow.h
+		ui_MainWindow.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QSpacerItem \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStatusBar \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTabWidget
 
 debug\MapForm.obj: MapForm.cpp MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -7598,15 +7452,6 @@ debug\MapForm.obj: MapForm.cpp MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QDebug \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QPainter \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
@@ -7622,6 +7467,21 @@ debug\MapForm.obj: MapForm.cpp MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qicon.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qaction.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QFile \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		graphic\GraphicMap.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMutex \
 		xml\TinyxmlEngine.h \
@@ -7648,19 +7508,19 @@ debug\MapForm.obj: MapForm.cpp MapForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
 		ui_MapForm.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h
 
 debug\TaskForm.obj: TaskForm.cpp TaskForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -7777,11 +7637,41 @@ debug\TaskForm.obj: TaskForm.cpp TaskForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
-		ui_TaskForm.h
+		ui_TaskForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		TableViewEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
 
 debug\TitleBarEx.obj: TitleBarEx.cpp TitleBarEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QtWidgets \
@@ -8369,11 +8259,37 @@ debug\DeviceStateForm.obj: DeviceStateForm.cpp DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
 		ui_DeviceStateForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		TableViewEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlDatabase \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QDebug \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QJsonParseError \
@@ -8382,6 +8298,7 @@ debug\DeviceStateForm.obj: DeviceStateForm.cpp DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QJsonArray \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qjsonarray.h \
 		CustomJsonModel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariantMap
 
 debug\UserForm.obj: UserForm.cpp UserForm.h \
@@ -8514,11 +8431,60 @@ debug\UserForm.obj: UserForm.cpp UserForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlRecord \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlrecord.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
-		ui_UserForm.h
+		ui_UserForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QSpacerItem \
+		ComboBoxEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QComboBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcombobox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QListView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlistview.h \
+		GroupBoxEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
+		LabelEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		LineEditEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLineEdit \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlineedit.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextcursor.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextformat.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpen.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
+		PushButtonEx.h \
+		TableViewEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
 
 debug\HistoryForm.obj: HistoryForm.cpp HistoryForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -8635,11 +8601,41 @@ debug\HistoryForm.obj: HistoryForm.cpp HistoryForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqldatabase.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlTableModel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqltablemodel.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
-		ui_HistoryForm.h
+		ui_HistoryForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		TableViewEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
 
 debug\AbnormalForm.obj: AbnormalForm.cpp AbnormalForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -8771,11 +8767,40 @@ debug\AbnormalForm.obj: AbnormalForm.cpp AbnormalForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlRecord \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\qsqlrecord.h \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QRect \
-		ui_AbnormalForm.h
+		ui_AbnormalForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		TableViewEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
 
 debug\ConfigForm.obj: ConfigForm.cpp ConfigForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -9024,7 +9049,49 @@ debug\ConfigForm.obj: ConfigForm.cpp ConfigForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		ui_ConfigForm.h
+		ui_ConfigForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QSpacerItem \
+		ComboBoxEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QComboBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcombobox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QListView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlistview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		GroupBoxEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
+		LabelEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		LineEditEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLineEdit \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlineedit.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextcursor.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextformat.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpen.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
+		PushButtonEx.h
 
 debug\PushButtonEx.obj: PushButtonEx.cpp PushButtonEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
@@ -10139,13 +10206,11 @@ debug\LoginForm.obj: LoginForm.cpp LoginForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QProxyStyle \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOptionTab \
 		MapForm.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMap \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QFile \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QStyleOption \
 		graphic\GraphicMap.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QMutex \
 		xml\TinyxmlEngine.h \
@@ -10161,9 +10226,6 @@ debug\LoginForm.obj: LoginForm.cpp LoginForm.h \
 		graphic\GraphicAgv.h \
 		TaskForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSql\QSqlQueryModel \
-		CustomTableModel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QHash \
 		DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		UserForm.h \
@@ -10176,7 +10238,13 @@ debug\LoginForm.obj: LoginForm.cpp LoginForm.h \
 		Config.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QSettings \
 		LoginSetForm.h \
-		ui_LoginForm.h
+		ui_LoginForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QToolButton \
+		LineEditEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLineEdit \
+		PushButtonEx.h
 
 debug\MsgBoxEx.obj: MsgBoxEx.cpp MsgBoxEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QMessageBox \
@@ -10535,7 +10603,23 @@ debug\LoginSetForm.obj: LoginSetForm.cpp LoginSetForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		ui_LoginSetForm.h
+		ui_LoginSetForm.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		LineEditEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLineEdit \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlineedit.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextcursor.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextformat.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpen.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
+		PushButtonEx.h
 
 debug\Config.obj: Config.cpp Config.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QVariant \
@@ -10948,118 +11032,6 @@ debug\GroupBoxEx.obj: GroupBoxEx.cpp GroupBoxEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h
-
-debug\DrawingPaperEditor.obj: DrawingPaperEditor.cpp DrawingPaperEditor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qwidget.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobal.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtcore-config.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsystemdetection.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qprocessordetection.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtypeinfo.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsysinfo.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlogging.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qflags.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbasicatomic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qgenericatomic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobalstatic.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmutex.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnumeric.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qversiontagging.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnamespace.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstring.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qchar.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearray.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrefcount.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qarraydata.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringliteral.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringview.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringbuilder.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlist.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qalgorithms.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiterator.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhashfunctions.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpair.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearraylist.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringlist.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregexp.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringmatcher.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreevent.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qscopedpointer.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmetatype.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject_impl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmargins.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpaintdevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrect.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsize.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpoint.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpalette.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcolor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgb.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgba64.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qbrush.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvector.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qmatrix.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpolygon.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qregion.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdatastream.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiodevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qline.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtransform.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpainterpath.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qimage.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixelformat.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixmap.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qshareddata.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhash.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfont.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontmetrics.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontinfo.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qsizepolicy.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcursor.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qkeysequence.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qevent.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvariant.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmap.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdebug.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtextstream.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlocale.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qset.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurl.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurlquery.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfile.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfiledevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QMouseEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QWheelEvent \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QPoint \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\QPainter \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpainter.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtextoption.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpen.h
 
 debug\tinystr.obj: xml\tinystr.cpp xml\tinystr.h
 
@@ -11894,8 +11866,6 @@ debug\moc_LoginSetForm.obj: debug\moc_LoginSetForm.cpp
 debug\moc_LabelEx.obj: debug\moc_LabelEx.cpp 
 
 debug\moc_GroupBoxEx.obj: debug\moc_GroupBoxEx.cpp 
-
-debug\moc_DrawingPaperEditor.obj: debug\moc_DrawingPaperEditor.cpp 
 
 ####### Install
 

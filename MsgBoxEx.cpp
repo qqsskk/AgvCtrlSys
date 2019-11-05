@@ -34,7 +34,6 @@ void MsgBoxEx::updateMsgBoxMode()
 {
     setWindowFlags(Qt::FramelessWindowHint);
     setText("\n"+m_strContent);
-    //setIconPixmap(QPixmap("./res/icon/waring.png"));
     switch (m_msgBoxMode)
     {
         case MsgBoxMode::MsgBoxMode_OnlyHint:

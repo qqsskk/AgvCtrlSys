@@ -54,7 +54,7 @@ int	CustomJsonModel::rowCount(const QModelIndex &parent) const {
 QVariant CustomJsonModel::headerData(int section, Qt::Orientation orientation, int role) const {
     if (role == Qt::DisplayRole)
     {
-        if (orientation == Qt::Horizontal) // ˮƽҭͷ
+        if (orientation == Qt::Horizontal)
         {
             return m_headers[section];
         }

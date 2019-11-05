@@ -140,7 +140,7 @@ bool LoginForm::linkdb()
     QString loginName = config.get("DataBase", "LoginName").toString();
     QString passwd = config.get("DataBase", "Passwd").toString();
 
-    QSqlDatabase db=QSqlDatabase::addDatabase("QODBC3");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC3");
     db.setDatabaseName(QString("DRIVER={SQL SERVER};"
                                    "SERVER=%1;"
                                    "DATABASE=%2;"

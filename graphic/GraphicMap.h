@@ -105,10 +105,10 @@ public:
      * @param unCurMark         当前地标卡
      * @param bRun              移动标识
      * @param bUnVol            电量不足标识
-     * @param bError            异常标识
      * @param bObs              避障标识
+     * @param bError            异常标识
      */
-    void showAgv(quint32 unNo, QString strType, QString strMove, quint32 unCurMark, bool bRun, bool bUnVol, bool bError, bool bObs);
+    void showAgv(quint32 unNo, QString strType, QString strMove, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError);
 
     /**
      * @brief hideAgv           隐藏AGV
