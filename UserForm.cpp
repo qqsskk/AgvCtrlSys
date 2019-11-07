@@ -33,13 +33,13 @@ void UserForm::init()
     ui->labelUserName->setText(m_userName);
     switch(m_userLevel)
     {
-        case UserLevel::UserLevel_High:
+    case UserLevel::UserLevel_High:
         ui->labelLevel->setText(QString::fromLocal8Bit("高"));
         break;
-        case UserLevel::UserLevel_Center:
+    case UserLevel::UserLevel_Center:
         ui->labelLevel->setText(QString::fromLocal8Bit("中"));
         break;
-        case UserLevel::UserLevel_Low:
+    case UserLevel::UserLevel_Low:
         ui->labelLevel->setText(QString::fromLocal8Bit("低"));
         break;
     }
@@ -69,7 +69,7 @@ void UserForm::on_pushButtonChangePasswd_clicked()
 {
     if(ui->groupBoxPasswdChange->isHidden())
     {
-       ui->groupBoxPasswdChange->setVisible(true);
+        ui->groupBoxPasswdChange->setVisible(true);
     }
 }
 
@@ -83,30 +83,37 @@ void UserForm::on_pushButtonChangePwdCancel_clicked()
 
 void UserForm::on_pushButtonChangePwdOk_clicked()
 {
-    MsgBoxEx *msgBox = new MsgBoxEx();
     QString pwdold = ui->lineEditPwdOld->text();
     QString pwdnew = ui->lineEditPwdNew->text();
     QString pwdmakesure = ui->lineEditPwdMakesure->text();
 
     if(pwdold.isEmpty() || pwdnew.isEmpty() || pwdmakesure.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("所有密码输入框都不可为空！"));
+        delete  msgBox;
         return;
     }
 
     if(pwdold != m_userPasswd)
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("旧密码与当前密码不一致！"));
+        delete msgBox;
         return;
     }
     if(pwdold == pwdnew)
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("旧密码与新密码相同！"));
+        delete msgBox;
         return;
     }
     if(pwdnew != pwdmakesure)
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("两次输入的密码不一致！"));
+        delete msgBox;
         return;
     }
 
@@ -115,18 +122,22 @@ void UserForm::on_pushButtonChangePwdOk_clicked()
     query.prepare(QString("UPDATE AGVDB_INFO_USER SET user_passwd = '%1'  WHERE user_name = '%2'").arg(pwdnew).arg(m_userName));
     if(query.exec())
     {
-       msgBox->setMsgBoxMode(QString::fromLocal8Bit("修改密码成功！"));
-       m_userPasswd = pwdnew;
+        MsgBoxEx *msgBox = new MsgBoxEx();
+        msgBox->setMsgBoxMode(QString::fromLocal8Bit("修改密码成功！"));
+        delete msgBox;
+        m_userPasswd = pwdnew;
 
-       // 如果是最高权限的用户需要更新用户信息列表，对于其它权限的用户由于未显示用户信息列表，故不必更新
-       if(m_userLevel==UserLevel::UserLevel_High)
-       {
-           updateModel();
-       }
+        // 如果是最高权限的用户需要更新用户信息列表，对于其它权限的用户由于未显示用户信息列表，故不必更新
+        if(m_userLevel==UserLevel::UserLevel_High)
+        {
+            updateModel();
+        }
     }
     else
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("修改密码失败！"));
+        delete msgBox;
     }
 
     ui->lineEditPwdOld->setText("");
@@ -146,21 +157,25 @@ void UserForm::on_pushButtonLogoutUser_clicked()
     connect(msgBox, SIGNAL(btnOkClicked()), this, SLOT(onBtnOkClickedLogout()));
     connect(msgBox, SIGNAL(btnCancelClicked()), this, SLOT(onBtnCancelClickedLogout()));
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("此操作会将当前用户信息删除，且程序将立即退出，\n此操作不可逆，您确定注销当前用户吗？"), "", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
+    delete msgBox;
 }
 
 void UserForm::onBtnOkClickedLogout()
 {
-    MsgBoxEx *msgBox = new MsgBoxEx();
     QSqlQuery query;
     query.prepare(QString("DELETE FROM AGVDB_INFO_USER WHERE user_name = '%1'").arg(m_userName));
     if(query.exec())
     {
-       msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户注销成功,程序将退出！"), 3000);
-       QTimer::singleShot(3000, this, SLOT(onExitProgress()));
+        MsgBoxEx *msgBox = new MsgBoxEx();
+        msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户注销成功,程序将退出！"), 3000);
+        QTimer::singleShot(3000, this, SLOT(onExitProgress()));
+        delete msgBox;
     }
     else
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户注销失败！"));
+        delete msgBox;
     }
 }
 
@@ -172,29 +187,30 @@ void UserForm::onBtnCancelClickedLogout(){}
 
 void UserForm::onClickedUserList(const QModelIndex&)
 {
-   QModelIndex index = ui->tableViewUserInfo->currentIndex();
-   if (index.isValid())
-   {
-       QSqlRecord record = m_modelUser->record(index.row());
-       QString user = record.value(0).toString();
-       QString passwd = record.value(1).toString();
-       QString level = record.value(2).toString();
+    QModelIndex index = ui->tableViewUserInfo->currentIndex();
+    if (index.isValid())
+    {
+        QSqlRecord record = m_modelUser->record(index.row());
+        QString user = record.value(0).toString();
+        QString passwd = record.value(1).toString();
+        QString level = record.value(2).toString();
 
-       ui->lineEditUserName->setText(user);
-       ui->lineEditUserPasswd->setText(passwd);
-       ui->comboBoxLevel->setCurrentText(level);
-   }
+        ui->lineEditUserName->setText(user);
+        ui->lineEditUserPasswd->setText(passwd);
+        ui->comboBoxLevel->setCurrentText(level);
+    }
 }
 
 void UserForm::on_pushButtonUserAdd_clicked()
 {
-    MsgBoxEx *msgBox = new MsgBoxEx();
     QString user = ui->lineEditUserName->text();
     QString passwd = ui->lineEditUserPasswd->text();
     QString level = ui->comboBoxLevel->currentText();
     if(user.isEmpty() || passwd.isEmpty() || level.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("添加的用户信息都不可为空！"));
+        delete msgBox;
         return;
     }
 
@@ -203,37 +219,46 @@ void UserForm::on_pushButtonUserAdd_clicked()
     query.exec(QString("SELECT * FROM AGVDB_INFO_USER WHERE user_name = '%1'").arg(user));
     if(query.next())
     {
-       msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户 <%1> 已存在！").arg(user));
-       return;
+        MsgBoxEx *msgBox = new MsgBoxEx();
+        msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户 <%1> 已存在！").arg(user));
+        delete msgBox;
+        return;
     }
 
     // 添加用户
     query.prepare(QString("INSERT INTO AGVDB_INFO_USER (user_name, user_passwd, user_level) VALUES ('%1', '%2', %3)").arg(user).arg(passwd).arg(level));
     if(query.exec())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("添加用户 <%1> 成功！").arg(user));
+        delete msgBox;
         updateModel();
     }
     else
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("添加用户 <%1> 失败！").arg(user));
+        delete msgBox;
     }
 }
 
 void UserForm::on_pushButtonUserChange_clicked()
 {
-    MsgBoxEx *msgBox = new MsgBoxEx();
     QString user = ui->lineEditUserName->text();
     QString passwd = ui->lineEditUserPasswd->text();
     QString level = ui->comboBoxLevel->currentText();
     if(user.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("请选择要修改的用户！"));
+        delete msgBox;
         return;
     }
     if(passwd.isEmpty() || level.isEmpty())
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("修改的用户信息都不可为空！"));
+        delete msgBox;
         return;
     }
 
@@ -242,8 +267,10 @@ void UserForm::on_pushButtonUserChange_clicked()
     query.exec(QString("SELECT * FROM AGVDB_INFO_USER WHERE user_name = '%1'").arg(user));
     if(!query.next())
     {
-       msgBox->setMsgBoxMode(QString::fromLocal8Bit("不存在将要修改的用户 <'%1'> ！").arg(user));
-       return;
+        MsgBoxEx *msgBox = new MsgBoxEx();
+        msgBox->setMsgBoxMode(QString::fromLocal8Bit("不存在将要修改的用户 <'%1'> ！").arg(user));
+        delete msgBox;
+        return;
     }
 
     // 修改用户信息
@@ -251,19 +278,22 @@ void UserForm::on_pushButtonUserChange_clicked()
                   .arg(passwd).arg(level).arg(user));
     if(query.exec())
     {
-       msgBox->setMsgBoxMode(QString::fromLocal8Bit("修改用户 <%1> 信息成功！").arg(user));
-       updateModel();
+        MsgBoxEx *msgBox = new MsgBoxEx();
+        msgBox->setMsgBoxMode(QString::fromLocal8Bit("修改用户 <%1> 信息成功！").arg(user));
+        delete msgBox;
+        updateModel();
     }
     else
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("修改用户 <%1> 信息失败！").arg(user));
+        delete msgBox;
     }
 }
 
 void UserForm::on_pushButtonUserDel_clicked()
 {
     QModelIndex index = ui->tableViewUserInfo->currentIndex();
-    MsgBoxEx *msgBox = new MsgBoxEx();
     if (index.isValid())
     {
         QSqlRecord record = m_modelUser->record(index.row());
@@ -272,7 +302,9 @@ void UserForm::on_pushButtonUserDel_clicked()
         // 管理员不可以删除自己，但可以注销
         if(user == m_userName)
         {
+            MsgBoxEx *msgBox = new MsgBoxEx();
             msgBox->setMsgBoxMode(QString::fromLocal8Bit("最高权限用户不可删除自己，只可注销用户！"));
+            delete msgBox;
             return;
         }
 
@@ -281,16 +313,22 @@ void UserForm::on_pushButtonUserDel_clicked()
         query.prepare(QString("DELETE FROM AGVDB_INFO_USER WHERE user_name = '%1'").arg(user));
         if(query.exec())
         {
-           msgBox->setMsgBoxMode(QString::fromLocal8Bit("删除用户 [%1] 成功！").arg(user));
-           updateModel();
+            MsgBoxEx *msgBox = new MsgBoxEx();
+            msgBox->setMsgBoxMode(QString::fromLocal8Bit("删除用户 [%1] 成功！").arg(user));
+            delete msgBox;
+            updateModel();
         }
         else
         {
+            MsgBoxEx *msgBox = new MsgBoxEx();
             msgBox->setMsgBoxMode(QString::fromLocal8Bit("删除用户 [%1] 失败！").arg(user));
+            delete msgBox;
         }
     }
     else
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("请选择要删除的用户！"));
+        delete msgBox;
     }
 }

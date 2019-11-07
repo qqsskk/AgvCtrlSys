@@ -417,6 +417,7 @@ void ModulesForm::on_toolButtonUpdate_clicked()
     connect(msgBox, SIGNAL(btnOkClicked()), this, SLOT(onBtnOkClicked()));
     connect(msgBox, SIGNAL(btnCancelClicked()), this, SLOT(onBtnCancelClicked()));
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("确定要更新组件信息吗？"), "", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
+    delete msgBox;
 }
 
 void ModulesForm::onBtnOkClicked()
@@ -426,19 +427,23 @@ void ModulesForm::onBtnOkClicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("未找到 ./res/set/modules.json 文件,请检查此文件是否在！"));
+        delete msgBox;
         return;
     }
 
     clearAllTabelModel();
 
-    MsgBoxEx *msgBox = new MsgBoxEx();
     if(! loadJsonData("./res/set/modules.json"))
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("更新组件信息失败！"));
+        delete msgBox;
     }
     else
     {
+        MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("更新组件信息成功！"));
+        delete msgBox;
     }
 }
 

@@ -53,6 +53,7 @@ void LoginForm::on_pushButton_login_clicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("连接数据库失败，请检查服务器参数配置！"), 3000);
+        delete msgBox;
         return;
     }
 
@@ -63,6 +64,7 @@ void LoginForm::on_pushButton_login_clicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户名或密码不可为空！"));
+        delete msgBox;
         return;
     }
 
@@ -87,6 +89,7 @@ void LoginForm::on_pushButton_login_clicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("用户名或密码错误，请重新输入!"));
+        delete msgBox;
         ui->lineEdit_userName->clear();
         ui->lineEdit_passwd->clear();
         return;
@@ -97,8 +100,8 @@ void LoginForm::on_pushButton_login_clicked()
 
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("登录成功！"));
+        delete msgBox;
         QTimer::singleShot(500, this, SLOT(onLoginMainWindow()));
-        this->close();
     }
 }
 
@@ -108,6 +111,7 @@ void LoginForm::on_pushButton_exit_clicked()
     connect(msgBox, SIGNAL(btnOkClicked()), this, SLOT(onBtnOkClicked()));
     connect(msgBox, SIGNAL(btnCancelClicked()), this, SLOT(onBtnCancelClicked()));
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("确定要退出系统吗？"), "", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
+    delete msgBox;
 }
 
 void LoginForm::onBtnOkClicked()
@@ -121,6 +125,7 @@ void LoginForm::onBtnCancelClicked(){}
 
 void LoginForm::onLoginMainWindow()
 {
+    this->close();
     MainWindow *mainWindow = new MainWindow(m_userName, m_userPasswd, m_userLevel);
     mainWindow->show();
 }

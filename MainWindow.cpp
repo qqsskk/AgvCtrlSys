@@ -93,6 +93,7 @@ void MainWindow::onWindowClose()
     connect(msgBox, SIGNAL(btnOkClicked()), this, SLOT(onBtnOkClicked()));
     connect(msgBox, SIGNAL(btnCancelClicked()), this, SLOT(onBtnCancelClicked()));
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("确定要退出系统吗？"), "", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
+    delete msgBox;
 }
 void MainWindow::onBtnOkClicked()
 {

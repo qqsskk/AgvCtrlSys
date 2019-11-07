@@ -130,6 +130,7 @@ void MapForm::onUpdateMapMenuEvent()
     connect(msgBox, SIGNAL(btnOkClicked()), this, SLOT(onBtnOkClicked()));
     connect(msgBox, SIGNAL(btnCancelClicked()), this, SLOT(onBtnCancelClicked()));
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("与地图相关数据将会被新地图数据覆盖，\n此操作不可逆，确定更新吗？"), "", MsgBoxBtnType::MsgBoxBtnType_OkCancle);
+    delete msgBox;
 }
 void MapForm::onBtnOkClicked()
 {
@@ -138,6 +139,7 @@ void MapForm::onBtnOkClicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("未找到 ./res/set/map.map 地图文件,请检查此文件是否在！"));
+        delete msgBox;
         return;
     }
 

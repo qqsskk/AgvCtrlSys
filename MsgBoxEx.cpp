@@ -46,6 +46,8 @@ void MsgBoxEx::updateMsgBoxMode()
             button(QMessageBox::Ok)->hide();
             show();
             QTimer::singleShot(m_nDelayTime, this, SLOT(close()));
+
+            exec();
         }
             break;
         case MsgBoxMode::MsgBoxMode_Normal:

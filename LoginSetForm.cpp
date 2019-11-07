@@ -61,6 +61,7 @@ void LoginSetForm::on_pushButtonOk_clicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("所有服务器参数都不可为空！"));
+        delete msgBox;
         return;
     }
 

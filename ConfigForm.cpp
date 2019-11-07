@@ -54,6 +54,7 @@ void ConfigForm::on_pushButtonSetDb_clicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("所有数据库服务器参数都不可为空！"));
+        delete msgBox;
         return;
     }
 
@@ -66,6 +67,7 @@ void ConfigForm::on_pushButtonSetDb_clicked()
 
     MsgBoxEx *msgBox = new MsgBoxEx();
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("数据库服务器参数设置成功，若要应用此设置请重启程序！"), 3000);
+    delete msgBox;
 }
 
 void ConfigForm::on_pushButtonSetNet_clicked()
@@ -77,6 +79,7 @@ void ConfigForm::on_pushButtonSetNet_clicked()
     {
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("网络服务器参数不可为空！"));
+        delete msgBox;
         return;
     }
 
@@ -86,5 +89,6 @@ void ConfigForm::on_pushButtonSetNet_clicked()
 
     MsgBoxEx *msgBox = new MsgBoxEx();
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("网络服务器参数设置成功，若要应用此设置请重启程序！"), 3000);
+    delete msgBox;
 }
 
