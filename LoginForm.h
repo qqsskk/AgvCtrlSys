@@ -8,6 +8,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QTimer>
+#include <QSqlError>
 #include "MsgBoxEx.h"
 #include "MainWindow.h"
 #include "LoginSetForm.h"

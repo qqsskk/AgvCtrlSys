@@ -101,7 +101,7 @@ void TitleBarEx::setIcon(const QString& fileName)
 {
 	QPixmap pixmap(fileName);
     m_pIconLabel->setPixmap(pixmap.scaled(55, 35));
-    m_pIconLabel->setStyleSheet("QLabel{background-color: #31343B;}");
+    m_pIconLabel->setStyleSheet("QLabel{background-color: #31343B; padding-left: 10px}");
 }
 
 void TitleBarEx::setTitle(const QString& title)
