@@ -11,8 +11,10 @@
 #include "HistoryForm.h"
 #include "AbnormalForm.h"
 #include "ConfigForm.h"
+#include "ModulesForm.h"
 #include "MsgBoxEx.h"
 #include "CustomData.h"
+
 
 namespace Ui {
 class MainWindow;

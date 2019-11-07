@@ -135,6 +135,5 @@ private:
     void clearMapElement();
 
     QString getAgvType(QString shortType);
-    QString getAgvMoveDire(QString shortMoveDire);
 };
 #endif // GRAPHICMAP_H

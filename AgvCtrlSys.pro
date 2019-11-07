@@ -60,7 +60,8 @@ SOURCES += \
     graphic/GraphicRest.cpp \
     graphic/GraphicStation.cpp \
     graphic/GraphicTrack.cpp \
-    graphic/GraphicAgv.cpp
+    graphic/GraphicAgv.cpp \
+    ModulesForm.cpp
 
 HEADERS += \
         MainWindow.h \
@@ -98,7 +99,8 @@ HEADERS += \
     graphic/GraphicsAgv.h \
     graphic/GraphicStation.h \
     graphic/GraphicTrack.h \
-    graphic/GraphicAgv.h
+    graphic/GraphicAgv.h \
+    ModulesForm.h
 
 FORMS += \
         MainWindow.ui \
@@ -110,7 +112,8 @@ FORMS += \
     AbnormalForm.ui \
     ConfigForm.ui \
     LoginForm.ui \
-    LoginSetForm.ui
+    LoginSetForm.ui \
+    ModulesForm.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

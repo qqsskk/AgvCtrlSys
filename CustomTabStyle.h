@@ -55,8 +55,9 @@ public:
                 painter->drawImage(15, 136, QImage("./res/icon/tab_task.png"));
                 painter->drawImage(15, 236, QImage("./res/icon/tab_history.png"));
                 painter->drawImage(15, 336, QImage("./res/icon/tab_devstate.png"));
-                painter->drawImage(15, 436, QImage("./res/icon/tab_user.png"));
-                painter->drawImage(15, 536, QImage("./res/icon/tab_config.png"));
+                painter->drawImage(15, 436, QImage("./res/icon/tab_modules.png"));
+                painter->drawImage(15, 536, QImage("./res/icon/tab_user.png"));
+                painter->drawImage(15, 636, QImage("./res/icon/tab_config.png"));
 
                 return;
             }

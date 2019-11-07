@@ -29,7 +29,7 @@ void MainWindow::initWindow()
     this->setPalette(pal);
 
     // 窗口初始尺寸
-    this->resize(QSize(1280, 800));
+    this->resize(QSize(1600, 900));
     this->setFixedSize(this->width(),this->height());
 
     // 窗口标题栏
@@ -57,6 +57,8 @@ void MainWindow::initWindow()
     ui->tabWidget->addTab(pHistoryForm, QString::fromLocal8Bit("历史信息"));
     DeviceStateForm *pDeviceStateForm = new DeviceStateForm();
     ui->tabWidget->addTab(pDeviceStateForm, QString::fromLocal8Bit("设备状态"));
+    ModulesForm *pModulesForm = new ModulesForm();
+    ui->tabWidget->addTab(pModulesForm, QString::fromLocal8Bit("模块信息"));
     UserForm *pUserForm = new UserForm(m_userName, m_userPasswd, m_userLevel);
     ui->tabWidget->addTab(pUserForm, QString::fromLocal8Bit("用户信息"));
     // 根据用户权限添加功能
@@ -80,7 +82,7 @@ void MainWindow::initWindow()
     }
     AbnormalForm *pAbnormalForm = new AbnormalForm();
     connect(pAbnormalForm, SIGNAL(updateAbnormalExist(bool)), this, SLOT(onUpdateAbnormalExist(bool)));
-    ui->tabWidget->addTab(pAbnormalForm, QString::fromLocal8Bit("                 "));
+    ui->tabWidget->addTab(pAbnormalForm, QString::fromLocal8Bit("                 ")); // 异常信息
 
     ui->tabWidget->setCurrentIndex(0);
 }
@@ -111,7 +113,7 @@ void MainWindow::onUpdateAbnormalExist(bool exist)
     }
     else
     {
-         ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #31343B;}\
+        ui->tabWidget->setStyleSheet("QTabWidget::pane{border-left:1px solid #31343B;}\
                                        QTabBar::tab:last:!selected {border-image: url(./res/icon/error_normal.png);}\
                                        QTabBar::tab:last:selected {border-image: url(./res/icon/error_pressed.png);}");
     }

@@ -24,8 +24,6 @@ private slots:
 
     void on_pushButtonSetNet_clicked();
 
-    void on_pushButtonAddDev_clicked();
-
 private:
     Ui::ConfigForm *ui;
 
