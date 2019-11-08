@@ -114,6 +114,25 @@
     <string/>
    </property>
   </widget>
+  <widget class="QToolButton" name="toolButtonEye">
+   <property name="geometry">
+    <rect>
+     <x>352</x>
+     <y>185</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>

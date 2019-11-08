@@ -31,6 +31,7 @@ public:
     PushButtonEx *pushButton_login;
     QPushButton *pushButtonTitle;
     QToolButton *toolButtonSet;
+    QToolButton *toolButtonEye;
 
     void setupUi(QWidget *LoginForm)
     {
@@ -62,6 +63,11 @@ public:
         toolButtonSet = new QToolButton(LoginForm);
         toolButtonSet->setObjectName(QString::fromUtf8("toolButtonSet"));
         toolButtonSet->setGeometry(QRect(416, 92, 32, 32));
+        toolButtonEye = new QToolButton(LoginForm);
+        toolButtonEye->setObjectName(QString::fromUtf8("toolButtonEye"));
+        toolButtonEye->setGeometry(QRect(352, 185, 21, 21));
+        toolButtonEye->setCheckable(true);
+        toolButtonEye->setChecked(false);
         QWidget::setTabOrder(lineEdit_userName, lineEdit_passwd);
         QWidget::setTabOrder(lineEdit_passwd, pushButton_exit);
         QWidget::setTabOrder(pushButton_exit, pushButton_login);
@@ -82,6 +88,7 @@ public:
         pushButton_login->setText(QApplication::translate("LoginForm", "\347\231\273\345\275\225", nullptr));
         pushButtonTitle->setText(QApplication::translate("LoginForm", "PushButton", nullptr));
         toolButtonSet->setText(QString());
+        toolButtonEye->setText(QString());
     } // retranslateUi
 
 };

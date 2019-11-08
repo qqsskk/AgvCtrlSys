@@ -30,6 +30,11 @@ void LoginSetForm::init()
     ui->label_4->setStyleSheet("QLabel {font: 10pt Microsoft YaHei; color:000000}");
     ui->label_5->setStyleSheet("QLabel {font: 10pt Microsoft YaHei; color:000000}");
 
+    ui->toolButtonEye->setStyleSheet("QToolButton{background:transparent;}\
+                                     QToolButton:!checked{border-image:url(./res/icon/eye_close.png);}\
+                                     QToolButton:checked{border-image:url(./res/icon/eye_open.png);}");
+    connect(ui->toolButtonEye, SIGNAL(toggled(bool)), this, SLOT(onEyeToggled(bool)));
+
     // 读取服务器配置参数
     Config config("./res/set/config.ini");
     QString serverName = config.get("DataBase", "ServerName").toString();
@@ -42,6 +47,18 @@ void LoginSetForm::init()
     ui->lineEditDbName->setText(databaseName);
     ui->lineEditLoginName->setText(loginName);
     ui->lineEditLoginPwd->setText(passwd);
+}
+
+void LoginSetForm::onEyeToggled(bool checked)
+{
+    if(checked)
+    {
+        ui->lineEditLoginPwd->setEchoMode(QLineEdit::Normal);
+    }
+    else
+    {
+        ui->lineEditLoginPwd->setEchoMode(QLineEdit::Password);
+    }
 }
 
 void LoginSetForm::on_pushButtonCancel_clicked()

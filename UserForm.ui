@@ -580,6 +580,9 @@
           <height>30</height>
          </size>
         </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
         <property name="readOnly">
          <bool>false</bool>
         </property>
@@ -723,12 +726,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GroupBoxEx</class>
-   <extends>QGroupBox</extends>
-   <header>GroupBoxEx.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>LineEditEx</class>
    <extends>QLineEdit</extends>
    <header>LineEditEx.h</header>
@@ -737,6 +734,12 @@
    <class>PushButtonEx</class>
    <extends>QPushButton</extends>
    <header>PushButtonEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GroupBoxEx</class>
+   <extends>QGroupBox</extends>
+   <header>GroupBoxEx.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>LabelEx</class>

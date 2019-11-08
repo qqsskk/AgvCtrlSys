@@ -304,6 +304,7 @@ public:
         sizePolicy.setHeightForWidth(lineEditUserPasswd->sizePolicy().hasHeightForWidth());
         lineEditUserPasswd->setSizePolicy(sizePolicy);
         lineEditUserPasswd->setMinimumSize(QSize(150, 30));
+        lineEditUserPasswd->setEchoMode(QLineEdit::Password);
         lineEditUserPasswd->setReadOnly(false);
 
         gridLayout_4->addWidget(lineEditUserPasswd, 1, 4, 1, 1);

@@ -176,14 +176,14 @@ bool ModulesForm::updateTableAgvType(const QJsonObject &json)
 
     for (int i = 0; i < listKey.size(); ++i)
     {
-        QString strType = listKey.at(i);                        // 类型名称
+        QString strType = listKey.at(i);                            // 类型名称
         QJsonObject obj = json.value(strType).toObject();
-        QString strBrand = obj.value("Brand").toString();       // 品牌
-        QString strVersion = obj.value("Version").toString();   // 型号
-        float fMaxSpeed = obj.value("MaxSpeed").toDouble();     // 最大速度
-        float fMaxWeight = obj.value("MaxWeight").toDouble();   // 最大载重量
-        int nProtocol = obj.value("Protocol").toInt();          // 协议类型
-        QJsonObject objAction = obj.value("Action").toObject(); // 动作名列表
+        QString strBrand = obj.value("Brand").toString();           // 品牌
+        QString strVersion = obj.value("Version").toString();       // 型号
+        double fMaxSpeed = obj.value("MaxSpeed").toDouble();        // 最大速度
+        double fMaxWeight = obj.value("MaxWeight").toDouble();      // 最大载重量
+        int nProtocol = obj.value("Protocol").toInt();              // 协议类型
+        QJsonObject objAction = obj.value("Action").toObject();     // 动作名列表
         if (objAction.isEmpty())
         {
             continue;

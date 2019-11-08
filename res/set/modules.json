@@ -1,16 +1,31 @@
 ﻿{
 	"AGVType":
 	{
-		"类型名称":
+		"类型名称1":
 		{
-			"Brand":"品牌",
-			"Version":"型号",
-			"MaxSpeed":1,
-			"MaxWeight":1,
-			"Protocol":1,
+			"Brand":"品牌1",
+			"Version":"型号1",
+			"MaxSpeed":133,
+			"MaxWeight":122,
+			"Protocol":111,
 			"Action":
 			{
-				"1":"动作名"
+				"1":"动作名",
+				"2":"动作名2"
+			}
+		},
+		"类型名称2":
+		{
+			"Brand":"品牌2",
+			"Version":"型号2",
+			"MaxSpeed":11,
+			"MaxWeight":12,
+			"Protocol":13,
+			"Action":
+			{
+				"1":"动作名",
+				"2":"动作名2",
+				"3":"动作名3"
 			}
 		}
 	},

@@ -18,6 +18,8 @@ public:
     ~LoginSetForm();
 
 private slots:
+    void onEyeToggled(bool checked);
+
     void on_pushButtonCancel_clicked();
 
     void on_pushButtonOk_clicked();

@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 #include "LineEditEx.h"
 #include "PushButtonEx.h"
@@ -33,6 +34,7 @@ public:
     PushButtonEx *pushButtonCancel;
     PushButtonEx *pushButtonOk;
     QPushButton *pushButtonTitle;
+    QToolButton *toolButtonEye;
 
     void setupUi(QWidget *LoginSetForm)
     {
@@ -54,6 +56,7 @@ public:
         lineEditLoginPwd = new LineEditEx(LoginSetForm);
         lineEditLoginPwd->setObjectName(QString::fromUtf8("lineEditLoginPwd"));
         lineEditLoginPwd->setGeometry(QRect(170, 200, 191, 31));
+        lineEditLoginPwd->setEchoMode(QLineEdit::Password);
         lineEditLoginName = new LineEditEx(LoginSetForm);
         lineEditLoginName->setObjectName(QString::fromUtf8("lineEditLoginName"));
         lineEditLoginName->setGeometry(QRect(170, 157, 191, 31));
@@ -73,6 +76,11 @@ public:
         pushButtonTitle->setObjectName(QString::fromUtf8("pushButtonTitle"));
         pushButtonTitle->setGeometry(QRect(0, 0, 451, 51));
         pushButtonTitle->setAcceptDrops(true);
+        toolButtonEye = new QToolButton(LoginSetForm);
+        toolButtonEye->setObjectName(QString::fromUtf8("toolButtonEye"));
+        toolButtonEye->setGeometry(QRect(374, 205, 21, 21));
+        toolButtonEye->setCheckable(true);
+        toolButtonEye->setChecked(false);
         QWidget::setTabOrder(lineEditSerName, lineEditDbName);
         QWidget::setTabOrder(lineEditDbName, lineEditLoginName);
         QWidget::setTabOrder(lineEditLoginName, lineEditLoginPwd);
@@ -95,6 +103,7 @@ public:
         pushButtonCancel->setText(QApplication::translate("LoginSetForm", "\345\217\226\346\266\210", nullptr));
         pushButtonOk->setText(QApplication::translate("LoginSetForm", "\347\241\256\345\256\232", nullptr));
         pushButtonTitle->setText(QApplication::translate("LoginSetForm", "PushButton", nullptr));
+        toolButtonEye->setText(QString());
     } // retranslateUi
 
 };

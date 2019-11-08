@@ -36,6 +36,7 @@ private slots:
 
     void onLoginMainWindow();
     void onSetClicked();
+    void onEyeToggled(bool checked);
     void onSetFormClosed();
 
 signals:

@@ -387,7 +387,7 @@ public:
         label_15->setText(QApplication::translate("ConfigForm", "\346\234\215\345\212\241\345\231\250\345\220\215\357\274\232", nullptr));
         label_23->setText(QApplication::translate("ConfigForm", "\347\231\273\345\275\225\345\220\215\357\274\232", nullptr));
         groupBox_2->setTitle(QString());
-        label_7->setText(QApplication::translate("ConfigForm", "\347\253\257   \345\217\243\357\274\232", nullptr));
+        label_7->setText(QApplication::translate("ConfigForm", "\347\253\257     \345\217\243\357\274\232", nullptr));
         pushButtonSetNet->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
         label_16->setText(QApplication::translate("ConfigForm", "IP\357\274\232", nullptr));
         groupBox->setTitle(QString());

@@ -19,7 +19,6 @@ LoginForm::~LoginForm()
         delete m_loginSetForm;
         m_loginSetForm = nullptr;
     }
-
 }
 
 void LoginForm::init()
@@ -38,9 +37,14 @@ void LoginForm::init()
     ui->label->setStyleSheet("QLabel {font: 10pt Microsoft YaHei; color:000000}");
     ui->label_2->setStyleSheet("QLabel {font: 10pt Microsoft YaHei; color:000000}");
     ui->toolButtonSet->setStyleSheet("QToolButton{background:transparent; border-image:url(./res/icon/set.png)}\
-                        QToolButton:hover{border-image:url(./res/icon/set_hover.png)}\
-                        QToolButton:pressed{border-image:url(./res/icon/set_pressed.png);}");
-    connect(ui->toolButtonSet, SIGNAL(clicked()), this, SLOT(onSetClicked()));
+                                     QToolButton:hover{border-image:url(./res/icon/set_hover.png)}\
+                                     QToolButton:pressed{border-image:url(./res/icon/set_pressed.png);}");
+                                     connect(ui->toolButtonSet, SIGNAL(clicked()), this, SLOT(onSetClicked()));
+
+    ui->toolButtonEye->setStyleSheet("QToolButton{background:transparent;}\
+                                     QToolButton:!checked{border-image:url(./res/icon/eye_close.png);}\
+                                     QToolButton:checked{border-image:url(./res/icon/eye_open.png);}");
+                                     connect(ui->toolButtonEye, SIGNAL(toggled(bool)), this, SLOT(onEyeToggled(bool)));
 
     m_loginSetForm = new LoginSetForm();
     connect(m_loginSetForm, SIGNAL(setFormClosed()), this, SLOT(onSetFormClosed()));
@@ -57,7 +61,7 @@ void LoginForm::on_pushButton_login_clicked()
         return;
     }
 
-     // 空字符校验
+    // 空字符校验
     QString strName = ui->lineEdit_userName->text();
     QString strPasswd = ui->lineEdit_passwd->text();
     if (strName.isEmpty() || strPasswd.isEmpty())
@@ -81,7 +85,8 @@ void LoginForm::on_pushButton_login_clicked()
         Qt::CaseSensitivity cs = Qt::CaseSensitive;
         if (strName.compare(m_userName, cs) == 0 && strPasswd.compare(m_userPasswd, cs) == 0)
         {
-           bOk = true;
+            bOk = true;
+            break;
         }
     }
 
@@ -101,6 +106,7 @@ void LoginForm::on_pushButton_login_clicked()
         MsgBoxEx *msgBox = new MsgBoxEx();
         msgBox->setMsgBoxMode(QString::fromLocal8Bit("登录成功！"));
         delete msgBox;
+        this->setEnabled(false);
         QTimer::singleShot(500, this, SLOT(onLoginMainWindow()));
     }
 }
@@ -136,6 +142,18 @@ void LoginForm::onSetClicked()
     ui->toolButtonSet->setVisible(false);
 }
 
+void LoginForm::onEyeToggled(bool checked)
+{
+    if(checked)
+    {
+        ui->lineEdit_passwd->setEchoMode(QLineEdit::Normal);
+    }
+    else
+    {
+        ui->lineEdit_passwd->setEchoMode(QLineEdit::Password);
+    }
+}
+
 bool LoginForm::linkdb()
 {
     // 读取服务器配置参数
@@ -147,10 +165,10 @@ bool LoginForm::linkdb()
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC3");
     db.setDatabaseName(QString("DRIVER={SQL SERVER};"
-                                   "SERVER=%1;"
-                                   "DATABASE=%2;"
-                                   "UID=%3;"
-                                   "PWD=%4;").arg(serverName).arg(databaseName).arg(loginName).arg(passwd));
+                               "SERVER=%1;"
+                               "DATABASE=%2;"
+                               "UID=%3;"
+                               "PWD=%4;").arg(serverName).arg(databaseName).arg(loginName).arg(passwd));
     if (!db.open())
     {
         return false;
