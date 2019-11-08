@@ -131,7 +131,6 @@ bool ModulesForm::loadJsonData(QString jsonFilePath)
     QString data = file.readAll();
     file.close();
 
-    QString out;
     QJsonObject obj;
     QJsonParseError jsonError;
     QJsonDocument doc(QJsonDocument::fromJson(data.toUtf8(), &jsonError));

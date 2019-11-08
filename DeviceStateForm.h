@@ -6,6 +6,16 @@
 #include <QTimer>
 #include <QSqlQueryModel>
 #include <QSqlTableModel>
+#include <QSqlDatabase>
+#include <QSqlQueryModel>
+#include <QDebug>
+#include <QJsonParseError>
+#include <QJsonArray>
+#include <QVariantMap>
+#include <memory>
+#include <QAbstractTableModel>
+#include <QJsonArray>
+#include "CustomJsonModel.h"
 
 namespace Ui {
 class DeviceStateForm;

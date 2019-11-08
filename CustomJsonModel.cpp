@@ -1,8 +1,5 @@
 ﻿#include "CustomJsonModel.h"
 
-#include <QJsonObject>
-#include "CustomJsonModel.h"
-
 CustomJsonModel::CustomJsonModel(const QJsonArray &src, QObject *parent)
     : QAbstractTableModel(parent)
     , m_src(src)

@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <QAbstractTableModel>
+#include <QJsonObject>
 #include <QJsonArray>
 
 class CustomJsonModel : public QAbstractTableModel

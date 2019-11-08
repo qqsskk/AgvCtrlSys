@@ -4,6 +4,9 @@
 #include <QtCore/QAbstractTableModel>
 #include <QtCore/QHash>
 #include <QtCore/QRect>
+#include <QtCore/QVector>
+#include <QtCore/QRandomGenerator>
+#include <QtGui/QColor>
 
 class CustomTableModel : public QAbstractTableModel
 {

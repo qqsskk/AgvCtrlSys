@@ -1,8 +1,4 @@
 ﻿#include "CustomTableModel.h"
-#include <QtCore/QVector>
-#include <QtCore/QRandomGenerator>
-#include <QtCore/QRect>
-#include <QtGui/QColor>
 
 CustomTableModel::CustomTableModel(QObject *parent) :
     QAbstractTableModel(parent)

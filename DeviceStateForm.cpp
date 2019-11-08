@@ -1,17 +1,6 @@
 ﻿#include "DeviceStateForm.h"
 #include "ui_DeviceStateForm.h"
 
-#include <QSqlDatabase>
-#include <QSqlQueryModel>
-#include <QDebug>
-#include <QJsonParseError>
-#include <QJsonArray>
-#include "CustomJsonModel.h"
-#include <QVariantMap>
-#include <memory>
-#include <QAbstractTableModel>
-#include <QJsonArray>
-
 DeviceStateForm::DeviceStateForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DeviceStateForm)
