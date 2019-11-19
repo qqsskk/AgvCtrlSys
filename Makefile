@@ -273,6 +273,7 @@ Makefile: AgvCtrlSys.pro ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\mkspecs\win3
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Sql.prl \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Qml.prl \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Network.prl \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5SerialPort.prl \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Core.prl \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\qtmaind.prl
 	$(QMAKE) -o Makefile AgvCtrlSys.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -472,6 +473,7 @@ AgvCtrlSys.pro:
 ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Sql.prl:
 ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Qml.prl:
 ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Network.prl:
+..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5SerialPort.prl:
 ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\Qt5Core.prl:
 ..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\lib\qtmaind.prl:
 qmake: FORCE

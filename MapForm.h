@@ -44,7 +44,8 @@ private slots:
     void onCursorChange();
 public slots:
     // 显示AGV
-    void onShowAgv(quint32 unNo, QString strType, QString strMove, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError);
+    void onShowAgv(quint32 unNo, QString strType, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError);
+
     // 隐藏AGV
     void onHideAgv(quint32 unNo);
 };

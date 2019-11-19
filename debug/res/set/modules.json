@@ -27,18 +27,6 @@
 				"2":"动作名2",
 				"3":"动作名3"
 			}
-		},
-		"类型名称3":
-		{
-			"Brand":"品牌3",
-			"Version":"型号3",
-			"MaxSpeed":14,
-			"MaxWeight":15,
-			"Protocol":16,
-			"Action":
-			{
-				"1":"动作名"
-			}
 		}
 	},
 	"RestQueue":
@@ -93,12 +81,14 @@
 		"1":
 		{
 			"Name":"待机站1",
-			"Location":1
+			"Location":1,
+			"Lock":[1,2]
 		},
 		"2":
 		{
 			"Name":"待机站2",
-			"Location":2
+			"Location":2,
+			"Lock":[3,4]
 		}
 	},
 	"ChargeStation":

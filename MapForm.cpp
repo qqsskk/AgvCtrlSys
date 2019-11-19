@@ -7,14 +7,10 @@ MapForm::MapForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setStyleSheet("QWidget{border: 1px solid #34373E;}");
+
     m_pMap = new GraphicMap(this);
     m_pMap->drag(QPoint(0,0));
-
-
-//    QPalette pal(this->palette());
-//    pal.setColor(QPalette::Background, Qt::black);
-//    this->setAutoFillBackground(true);
-//    this->setPalette(pal);
 }
 
 MapForm::~MapForm()
@@ -36,7 +32,7 @@ void MapForm::paintEvent(QPaintEvent *event)
 
     QStyleOption opt;
     opt.initFrom(this);
-    style()->drawPrimitive(QStyle::PE_FrameDefaultButton, &opt, &painter, this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 
     m_pMap->drawMap(painter);
 }
@@ -153,11 +149,11 @@ void MapForm::onBtnCancelClicked(){}
 
 
 
-void MapForm::onShowAgv(quint32 unNo, QString strType, QString strMove, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError)
+void MapForm::onShowAgv(quint32 unNo, QString strType, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError)
 {
     if(m_pMap)
     {
-        m_pMap->showAgv(unNo, strType, strMove, unCurMark, bRun, bUnVol, bObs, bError);
+        m_pMap->showAgv(unNo, strType, unCurMark, bRun, bUnVol, bObs, bError);
     }
 }
 

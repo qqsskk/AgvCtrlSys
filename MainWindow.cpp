@@ -51,6 +51,8 @@ void MainWindow::initWindow()
     ui->tabWidget->tabBar()->setStyle(new CustomTabStyle);
     MapForm *pMapForm = new MapForm();
     ui->tabWidget->addTab(pMapForm, QString::fromLocal8Bit("地图信息"));
+    connect(this, SIGNAL(showAgv(quint32,QString,quint32,bool,bool,bool,bool)), pMapForm, SLOT(onShowAgv(quint32,QString,quint32,bool,bool,bool,bool)));
+    connect(this, SIGNAL(hideAgv(quint32)), pMapForm, SLOT(onHideAgv(quint32)));
     TaskForm *pTaskForm = new TaskForm();
     ui->tabWidget->addTab(pTaskForm, QString::fromLocal8Bit("任务信息"));
     HistoryForm *pHistoryForm = new HistoryForm();
@@ -59,25 +61,20 @@ void MainWindow::initWindow()
     ui->tabWidget->addTab(pDeviceStateForm, QString::fromLocal8Bit("设备状态"));
     ModulesForm *pModulesForm = new ModulesForm();
     ui->tabWidget->addTab(pModulesForm, QString::fromLocal8Bit("模块信息"));
+    connect(pModulesForm, SIGNAL(callerEnable(int, bool)), this, SLOT(onCallerEnable(int, bool)));
+    connect(this, SIGNAL(updateCallerData()), pModulesForm, SLOT(onUpdateCallerData()));
     UserForm *pUserForm = new UserForm(m_userName, m_userPasswd, m_userLevel);
     ui->tabWidget->addTab(pUserForm, QString::fromLocal8Bit("用户信息"));
     // 根据用户权限添加功能
+    ConfigForm *pConfigForm = new ConfigForm();
+    ui->tabWidget->addTab(pConfigForm, QString::fromLocal8Bit("系统配置"));
+    connect(this, SIGNAL(netServerStateChange(bool)), pConfigForm, SLOT(onNetServerStateChange(bool)));
+    connect(this, SIGNAL(serialPortStateChange(bool)), pConfigForm, SLOT(onSerialPortStateChange(bool)));
     switch(m_userLevel)
     {
         case UserLevel::UserLevel_High:
-        {
-            ConfigForm *pSetForm = new ConfigForm();
-            ui->tabWidget->addTab(pSetForm, QString::fromLocal8Bit("系统配置"));
-
-            // 显示用户信息页的用户设置组
-            pUserForm->visibleUsersetGroup();
-        }
-        break;
-        case UserLevel::UserLevel_Center:
-        {
-            ConfigForm *pSetForm = new ConfigForm();
-            ui->tabWidget->addTab(pSetForm, QString::fromLocal8Bit("系统配置"));
-        }
+        // 只有最高权限需显示用户信息页的用户设置组
+        pUserForm->visibleUsersetGroup();
         break;
     }
     AbnormalForm *pAbnormalForm = new AbnormalForm();
@@ -118,4 +115,9 @@ void MainWindow::onUpdateAbnormalExist(bool exist)
                                        QTabBar::tab:last:!selected {border-image: url(./res/icon/error_normal.png);}\
                                        QTabBar::tab:last:selected {border-image: url(./res/icon/error_pressed.png);}");
     }
+}
+
+void MainWindow::onCallerEnable(int id, bool enable)
+{
+    emit callerEnable(id, enable);
 }

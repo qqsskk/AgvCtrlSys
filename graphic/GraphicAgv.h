@@ -7,15 +7,12 @@
 class GraphicAgv : public Graphic
 {
 public:
-    GraphicAgv(quint32 unNo, QString strType, QString strMove);
+    GraphicAgv(quint32 unNo, QString strType);
     ~GraphicAgv();
 
 protected:
     quint32 m_unNo;             // 编号
-    QString m_strType;			// 类型 P牵引式 S潜入式 T移载式 F叉车式 A机械手式 L激光式
-    QString m_strMove;			// 可运动方向 S单向 D双向 F全向
-
-protected:
+    QString m_strType;			// 类型
     bool m_bRun;				// 移动标识
     bool m_bUnVol;				// 电量不足标识
     bool m_bObs;				// 避障标识
@@ -48,12 +45,6 @@ public:
     void setType(QString strType);
 
     /**
-     * @brief setMove   设置可运动方向
-     * @param strMove   可运动方向
-     */
-    void setMove(QString strMove);
-
-    /**
      * @brief getNo 获取编号
      * @return 编号
      */
@@ -61,15 +52,10 @@ public:
 
     /**
      * @brief getType   获取类型
-     * @return P牵引式 S潜入式 T移载式 F叉车式 A机械手式 L激光式
+     * @return 类型
      */
     QString getType();
 
-    /**
-     * @brief getMove   获取可运动方向
-     * @return S单向 D双向 F全向
-     */
-    QString getMove();
 
     /**
      * @brief setImage  设置贴图

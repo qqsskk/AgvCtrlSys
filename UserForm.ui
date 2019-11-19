@@ -726,6 +726,12 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>GroupBoxEx</class>
+   <extends>QGroupBox</extends>
+   <header location="global">GroupBoxEx.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>LineEditEx</class>
    <extends>QLineEdit</extends>
    <header>LineEditEx.h</header>
@@ -734,12 +740,6 @@
    <class>PushButtonEx</class>
    <extends>QPushButton</extends>
    <header>PushButtonEx.h</header>
-  </customwidget>
-  <customwidget>
-   <class>GroupBoxEx</class>
-   <extends>QGroupBox</extends>
-   <header>GroupBoxEx.h</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>LabelEx</class>

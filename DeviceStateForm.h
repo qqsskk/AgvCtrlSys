@@ -31,7 +31,8 @@ public:
 
 private:
     Ui::DeviceStateForm *ui;
-    QSqlQueryModel *m_model;
+    QSqlQueryModel *m_modelAgv;
+    QSqlQueryModel *m_modelCaller;
 
 private slots:
     void onUpdateModel();

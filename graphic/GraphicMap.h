@@ -7,6 +7,11 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QMutex>
+#include <QFile>
+#include <QJsonParseError>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QSqlError>
 #include "xml/TinyxmlEngine.h"
 #include "graphic/GraphicBg.h"
 #include "graphic/GraphicMark.h"
@@ -101,14 +106,13 @@ public:
      * @brief showAgv           显示AGV
      * @param unNo              AGV编号
      * @param strType           AGV类型
-     * @param strMove           可运动方向
      * @param unCurMark         当前地标卡
      * @param bRun              移动标识
      * @param bUnVol            电量不足标识
      * @param bObs              避障标识
      * @param bError            异常标识
      */
-    void showAgv(quint32 unNo, QString strType, QString strMove, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError);
+    void showAgv(quint32 unNo, QString strType, quint32 unCurMark, bool bRun, bool bUnVol, bool bObs, bool bError);
 
     /**
      * @brief hideAgv           隐藏AGV
@@ -135,5 +139,10 @@ private:
     void clearMapElement();
 
     QString getAgvType(QString shortType);
+
+    bool updateElementData(QString jsonFilePath);
+
+    bool insertTableAgvType(const QJsonObject &json);
+    bool insertTableRestQueue(const QJsonObject &json);
 };
 #endif // GRAPHICMAP_H

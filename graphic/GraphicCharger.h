@@ -6,13 +6,12 @@
 class GraphicCharger : public Graphic
 {
 public:
-    GraphicCharger(quint32 unNo, quint32 unMark, quint32 unCtrl);
+    GraphicCharger(quint32 unNo, quint32 unMark);
     ~GraphicCharger();
 
 protected:
     quint32 m_unNo;                  // 编号
     quint32 m_unMark;                // 地标卡
-    quint32 m_unCtrl;                // 控制器
 
 protected:
     bool m_bPower;                  // 通电状态
@@ -45,18 +44,6 @@ public:
     * @param bPower true充电, false断电
     */
     void setPower(bool bPower);
-
-    /**
-    * @brief setCtrl   设置控制器
-    * @param unCtrl    控制器编号
-    */
-    void setCtrl(quint32 unCtrl);
-
-    /**
-    * @brief getCtrl 获取控制器
-    * @return 控制器编号
-    */
-    quint32 getCtrl();
 
     /**
     * @brief setMark   设置地标卡

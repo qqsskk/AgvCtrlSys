@@ -9,12 +9,13 @@
 #ifndef UI_CONFIGFORM_H
 #define UI_CONFIGFORM_H
 
+#include <GroupBoxEx.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
-#include "GroupBoxEx.h"
+#include "ComboBoxEx.h"
 #include "LabelEx.h"
 #include "LineEditEx.h"
 #include "PushButtonEx.h"
@@ -40,22 +41,6 @@ public:
     LabelEx *label_23;
     QSpacerItem *horizontalSpacer_7;
     QSpacerItem *horizontalSpacer_8;
-    GroupBoxEx *groupBox_2;
-    QGridLayout *gridLayout_4;
-    LineEditEx *lineEditNetSerIP;
-    QSpacerItem *horizontalSpacer_9;
-    QSpacerItem *horizontalSpacer_18;
-    QSpacerItem *horizontalSpacer_20;
-    QSpacerItem *horizontalSpacer_16;
-    QSpacerItem *horizontalSpacer_21;
-    LineEditEx *lineEditNetSerPort;
-    LabelEx *label_7;
-    QSpacerItem *horizontalSpacer_22;
-    PushButtonEx *pushButtonSetNet;
-    QSpacerItem *horizontalSpacer_17;
-    QSpacerItem *horizontalSpacer_15;
-    LabelEx *label_16;
-    QSpacerItem *horizontalSpacer_19;
     GroupBoxEx *groupBox;
     QGridLayout *gridLayout_2;
     LabelEx *label_21;
@@ -72,7 +57,41 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *horizontalSpacer_4;
     QSpacerItem *verticalSpacer;
-    QSpacerItem *verticalSpacer_2;
+    GroupBoxEx *groupBox_2;
+    QGridLayout *gridLayout_4;
+    LabelEx *label_17;
+    QSpacerItem *horizontalSpacer_20;
+    QSpacerItem *horizontalSpacer_19;
+    QSpacerItem *horizontalSpacer_15;
+    QSpacerItem *horizontalSpacer_18;
+    LineEditEx *lineEditNetSerIP;
+    PushButtonEx *pushButtonSetNet;
+    LabelEx *label_16;
+    QSpacerItem *horizontalSpacer_16;
+    QSpacerItem *horizontalSpacer_14;
+    LabelEx *label_7;
+    QSpacerItem *horizontalSpacer_23;
+    LabelEx *labelNetState;
+    LineEditEx *lineEditNetSerPort;
+    QSpacerItem *horizontalSpacer_21;
+    QSpacerItem *horizontalSpacer_22;
+    QSpacerItem *horizontalSpacer_9;
+    GroupBoxEx *groupBox_4;
+    QGridLayout *gridLayout_5;
+    PushButtonEx *pushButtonRefresh;
+    LabelEx *label_25;
+    PushButtonEx *pushButtonSetCom;
+    LabelEx *labelComState;
+    LineEditEx *lineEditComNumber;
+    QSpacerItem *horizontalSpacer_13;
+    QSpacerItem *horizontalSpacer_10;
+    QSpacerItem *horizontalSpacer_12;
+    LabelEx *label_18;
+    LabelEx *label_19;
+    ComboBoxEx *comboBoxComName;
+    QSpacerItem *horizontalSpacer_11;
+    ComboBoxEx *comboBoxBaud;
+    LabelEx *label_24;
 
     void setupUi(QWidget *ConfigForm)
     {
@@ -183,90 +202,6 @@ public:
 
         gridLayout->addWidget(groupBox_3, 1, 0, 1, 1);
 
-        groupBox_2 = new GroupBoxEx(ConfigForm);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        sizePolicy.setHeightForWidth(groupBox_2->sizePolicy().hasHeightForWidth());
-        groupBox_2->setSizePolicy(sizePolicy);
-        groupBox_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        groupBox_2->setCheckable(false);
-        gridLayout_4 = new QGridLayout(groupBox_2);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        gridLayout_4->setContentsMargins(-1, 30, -1, 0);
-        lineEditNetSerIP = new LineEditEx(groupBox_2);
-        lineEditNetSerIP->setObjectName(QString::fromUtf8("lineEditNetSerIP"));
-        sizePolicy1.setHeightForWidth(lineEditNetSerIP->sizePolicy().hasHeightForWidth());
-        lineEditNetSerIP->setSizePolicy(sizePolicy1);
-        lineEditNetSerIP->setMinimumSize(QSize(0, 30));
-
-        gridLayout_4->addWidget(lineEditNetSerIP, 0, 1, 1, 1);
-
-        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_9, 0, 9, 1, 1);
-
-        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_18, 0, 13, 1, 1);
-
-        horizontalSpacer_20 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_20, 0, 8, 1, 1);
-
-        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_16, 0, 11, 1, 1);
-
-        horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_21, 0, 7, 1, 1);
-
-        lineEditNetSerPort = new LineEditEx(groupBox_2);
-        lineEditNetSerPort->setObjectName(QString::fromUtf8("lineEditNetSerPort"));
-        sizePolicy1.setHeightForWidth(lineEditNetSerPort->sizePolicy().hasHeightForWidth());
-        lineEditNetSerPort->setSizePolicy(sizePolicy1);
-        lineEditNetSerPort->setMinimumSize(QSize(0, 30));
-
-        gridLayout_4->addWidget(lineEditNetSerPort, 0, 5, 1, 1);
-
-        label_7 = new LabelEx(groupBox_2);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-
-        gridLayout_4->addWidget(label_7, 0, 3, 1, 1);
-
-        horizontalSpacer_22 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_22, 0, 2, 1, 1);
-
-        pushButtonSetNet = new PushButtonEx(groupBox_2);
-        pushButtonSetNet->setObjectName(QString::fromUtf8("pushButtonSetNet"));
-        sizePolicy1.setHeightForWidth(pushButtonSetNet->sizePolicy().hasHeightForWidth());
-        pushButtonSetNet->setSizePolicy(sizePolicy1);
-        pushButtonSetNet->setMinimumSize(QSize(80, 30));
-
-        gridLayout_4->addWidget(pushButtonSetNet, 0, 15, 1, 1);
-
-        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_17, 0, 14, 1, 1);
-
-        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_15, 0, 10, 1, 1);
-
-        label_16 = new LabelEx(groupBox_2);
-        label_16->setObjectName(QString::fromUtf8("label_16"));
-        sizePolicy.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
-        label_16->setSizePolicy(sizePolicy);
-
-        gridLayout_4->addWidget(label_16, 0, 0, 1, 1);
-
-        horizontalSpacer_19 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_19, 0, 12, 1, 1);
-
-
-        gridLayout->addWidget(groupBox_2, 2, 0, 1, 1);
-
         groupBox = new GroupBoxEx(ConfigForm);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
@@ -363,13 +298,229 @@ public:
 
         gridLayout->addWidget(groupBox, 0, 0, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 50, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
         gridLayout->addItem(verticalSpacer, 4, 0, 1, 1);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        groupBox_2 = new GroupBoxEx(ConfigForm);
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        sizePolicy.setHeightForWidth(groupBox_2->sizePolicy().hasHeightForWidth());
+        groupBox_2->setSizePolicy(sizePolicy);
+        groupBox_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        groupBox_2->setCheckable(false);
+        gridLayout_4 = new QGridLayout(groupBox_2);
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
+        gridLayout_4->setContentsMargins(-1, 50, -1, 0);
+        label_17 = new LabelEx(groupBox_2);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        sizePolicy1.setHeightForWidth(label_17->sizePolicy().hasHeightForWidth());
+        label_17->setSizePolicy(sizePolicy1);
 
-        gridLayout->addItem(verticalSpacer_2, 3, 0, 1, 1);
+        gridLayout_4->addWidget(label_17, 1, 0, 1, 1);
+
+        horizontalSpacer_20 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_20, 0, 9, 1, 1);
+
+        horizontalSpacer_19 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_19, 0, 13, 1, 1);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_15, 0, 11, 1, 1);
+
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_18, 0, 14, 1, 1);
+
+        lineEditNetSerIP = new LineEditEx(groupBox_2);
+        lineEditNetSerIP->setObjectName(QString::fromUtf8("lineEditNetSerIP"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(lineEditNetSerIP->sizePolicy().hasHeightForWidth());
+        lineEditNetSerIP->setSizePolicy(sizePolicy2);
+        lineEditNetSerIP->setMinimumSize(QSize(0, 30));
+
+        gridLayout_4->addWidget(lineEditNetSerIP, 0, 1, 1, 1);
+
+        pushButtonSetNet = new PushButtonEx(groupBox_2);
+        pushButtonSetNet->setObjectName(QString::fromUtf8("pushButtonSetNet"));
+        sizePolicy1.setHeightForWidth(pushButtonSetNet->sizePolicy().hasHeightForWidth());
+        pushButtonSetNet->setSizePolicy(sizePolicy1);
+        pushButtonSetNet->setMinimumSize(QSize(80, 30));
+
+        gridLayout_4->addWidget(pushButtonSetNet, 0, 15, 1, 1);
+
+        label_16 = new LabelEx(groupBox_2);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        sizePolicy1.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
+        label_16->setSizePolicy(sizePolicy1);
+        label_16->setMaximumSize(QSize(50, 16777215));
+
+        gridLayout_4->addWidget(label_16, 0, 0, 1, 1);
+
+        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_16, 0, 12, 1, 1);
+
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_14, 0, 7, 1, 1);
+
+        label_7 = new LabelEx(groupBox_2);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+
+        gridLayout_4->addWidget(label_7, 0, 3, 1, 1);
+
+        horizontalSpacer_23 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_23, 0, 6, 1, 1);
+
+        labelNetState = new LabelEx(groupBox_2);
+        labelNetState->setObjectName(QString::fromUtf8("labelNetState"));
+        sizePolicy2.setHeightForWidth(labelNetState->sizePolicy().hasHeightForWidth());
+        labelNetState->setSizePolicy(sizePolicy2);
+        labelNetState->setAlignment(Qt::AlignCenter);
+
+        gridLayout_4->addWidget(labelNetState, 1, 1, 1, 1);
+
+        lineEditNetSerPort = new LineEditEx(groupBox_2);
+        lineEditNetSerPort->setObjectName(QString::fromUtf8("lineEditNetSerPort"));
+        sizePolicy1.setHeightForWidth(lineEditNetSerPort->sizePolicy().hasHeightForWidth());
+        lineEditNetSerPort->setSizePolicy(sizePolicy1);
+        lineEditNetSerPort->setMinimumSize(QSize(0, 30));
+
+        gridLayout_4->addWidget(lineEditNetSerPort, 0, 5, 1, 1);
+
+        horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_21, 0, 8, 1, 1);
+
+        horizontalSpacer_22 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_22, 0, 2, 1, 1);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_9, 0, 10, 1, 1);
+
+
+        gridLayout->addWidget(groupBox_2, 2, 0, 1, 1);
+
+        groupBox_4 = new GroupBoxEx(ConfigForm);
+        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
+        sizePolicy.setHeightForWidth(groupBox_4->sizePolicy().hasHeightForWidth());
+        groupBox_4->setSizePolicy(sizePolicy);
+        groupBox_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        groupBox_4->setCheckable(false);
+        gridLayout_5 = new QGridLayout(groupBox_4);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        gridLayout_5->setContentsMargins(-1, 50, -1, 0);
+        pushButtonRefresh = new PushButtonEx(groupBox_4);
+        pushButtonRefresh->setObjectName(QString::fromUtf8("pushButtonRefresh"));
+        sizePolicy1.setHeightForWidth(pushButtonRefresh->sizePolicy().hasHeightForWidth());
+        pushButtonRefresh->setSizePolicy(sizePolicy1);
+        pushButtonRefresh->setMinimumSize(QSize(80, 30));
+        pushButtonRefresh->setMaximumSize(QSize(16777215, 16777215));
+
+        gridLayout_5->addWidget(pushButtonRefresh, 0, 9, 1, 1);
+
+        label_25 = new LabelEx(groupBox_4);
+        label_25->setObjectName(QString::fromUtf8("label_25"));
+        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(label_25->sizePolicy().hasHeightForWidth());
+        label_25->setSizePolicy(sizePolicy3);
+
+        gridLayout_5->addWidget(label_25, 0, 3, 1, 1);
+
+        pushButtonSetCom = new PushButtonEx(groupBox_4);
+        pushButtonSetCom->setObjectName(QString::fromUtf8("pushButtonSetCom"));
+        sizePolicy1.setHeightForWidth(pushButtonSetCom->sizePolicy().hasHeightForWidth());
+        pushButtonSetCom->setSizePolicy(sizePolicy1);
+        pushButtonSetCom->setMinimumSize(QSize(80, 30));
+        pushButtonSetCom->setMaximumSize(QSize(16777215, 16777215));
+
+        gridLayout_5->addWidget(pushButtonSetCom, 0, 12, 1, 1);
+
+        labelComState = new LabelEx(groupBox_4);
+        labelComState->setObjectName(QString::fromUtf8("labelComState"));
+        sizePolicy2.setHeightForWidth(labelComState->sizePolicy().hasHeightForWidth());
+        labelComState->setSizePolicy(sizePolicy2);
+        labelComState->setAlignment(Qt::AlignCenter);
+
+        gridLayout_5->addWidget(labelComState, 2, 1, 1, 1);
+
+        lineEditComNumber = new LineEditEx(groupBox_4);
+        lineEditComNumber->setObjectName(QString::fromUtf8("lineEditComNumber"));
+        lineEditComNumber->setEnabled(false);
+        sizePolicy1.setHeightForWidth(lineEditComNumber->sizePolicy().hasHeightForWidth());
+        lineEditComNumber->setSizePolicy(sizePolicy1);
+        lineEditComNumber->setMinimumSize(QSize(0, 30));
+        lineEditComNumber->setMaximumSize(QSize(120, 16777215));
+
+        gridLayout_5->addWidget(lineEditComNumber, 0, 4, 1, 1);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_13, 0, 10, 1, 1);
+
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_10, 0, 8, 1, 1);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_12, 0, 2, 1, 1);
+
+        label_18 = new LabelEx(groupBox_4);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        sizePolicy3.setHeightForWidth(label_18->sizePolicy().hasHeightForWidth());
+        label_18->setSizePolicy(sizePolicy3);
+
+        gridLayout_5->addWidget(label_18, 0, 6, 1, 1);
+
+        label_19 = new LabelEx(groupBox_4);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        sizePolicy3.setHeightForWidth(label_19->sizePolicy().hasHeightForWidth());
+        label_19->setSizePolicy(sizePolicy3);
+
+        gridLayout_5->addWidget(label_19, 0, 0, 1, 1);
+
+        comboBoxComName = new ComboBoxEx(groupBox_4);
+        comboBoxComName->setObjectName(QString::fromUtf8("comboBoxComName"));
+        sizePolicy1.setHeightForWidth(comboBoxComName->sizePolicy().hasHeightForWidth());
+        comboBoxComName->setSizePolicy(sizePolicy1);
+        comboBoxComName->setMinimumSize(QSize(0, 30));
+        comboBoxComName->setMaximumSize(QSize(120, 16777215));
+
+        gridLayout_5->addWidget(comboBoxComName, 0, 1, 1, 1);
+
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_11, 0, 5, 1, 1);
+
+        comboBoxBaud = new ComboBoxEx(groupBox_4);
+        comboBoxBaud->setObjectName(QString::fromUtf8("comboBoxBaud"));
+        sizePolicy1.setHeightForWidth(comboBoxBaud->sizePolicy().hasHeightForWidth());
+        comboBoxBaud->setSizePolicy(sizePolicy1);
+        comboBoxBaud->setMinimumSize(QSize(0, 30));
+        comboBoxBaud->setMaximumSize(QSize(120, 16777215));
+
+        gridLayout_5->addWidget(comboBoxBaud, 0, 7, 1, 1);
+
+        label_24 = new LabelEx(groupBox_4);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+        sizePolicy3.setHeightForWidth(label_24->sizePolicy().hasHeightForWidth());
+        label_24->setSizePolicy(sizePolicy3);
+
+        gridLayout_5->addWidget(label_24, 2, 0, 1, 1);
+
+
+        gridLayout->addWidget(groupBox_4, 3, 0, 1, 1);
 
 
         retranslateUi(ConfigForm);
@@ -386,16 +537,26 @@ public:
         pushButton_6->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
         label_15->setText(QApplication::translate("ConfigForm", "\346\234\215\345\212\241\345\231\250\345\220\215\357\274\232", nullptr));
         label_23->setText(QApplication::translate("ConfigForm", "\347\231\273\345\275\225\345\220\215\357\274\232", nullptr));
-        groupBox_2->setTitle(QString());
-        label_7->setText(QApplication::translate("ConfigForm", "\347\253\257     \345\217\243\357\274\232", nullptr));
-        pushButtonSetNet->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
-        label_16->setText(QApplication::translate("ConfigForm", "IP\357\274\232", nullptr));
         groupBox->setTitle(QString());
         label_21->setText(QApplication::translate("ConfigForm", "\345\257\206   \347\240\201\357\274\232", nullptr));
         label_13->setText(QApplication::translate("ConfigForm", "\346\225\260\346\215\256\345\272\223\345\220\215\357\274\232", nullptr));
         pushButtonSetDb->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
         label_8->setText(QApplication::translate("ConfigForm", "\346\234\215\345\212\241\345\231\250\345\220\215\357\274\232", nullptr));
         label_20->setText(QApplication::translate("ConfigForm", "\347\231\273\345\275\225\345\220\215\357\274\232", nullptr));
+        groupBox_2->setTitle(QString());
+        label_17->setText(QApplication::translate("ConfigForm", "\350\277\236\346\216\245\347\212\266\346\200\201\357\274\232", nullptr));
+        pushButtonSetNet->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
+        label_16->setText(QApplication::translate("ConfigForm", "IP\357\274\232", nullptr));
+        label_7->setText(QApplication::translate("ConfigForm", "\347\253\257     \345\217\243\357\274\232", nullptr));
+        labelNetState->setText(QApplication::translate("ConfigForm", "\346\226\255\345\274\200", nullptr));
+        groupBox_4->setTitle(QString());
+        pushButtonRefresh->setText(QApplication::translate("ConfigForm", "\345\210\267\346\226\260", nullptr));
+        label_25->setText(QApplication::translate("ConfigForm", " \345\272\217\345\210\227\345\217\267\357\274\232   ", nullptr));
+        pushButtonSetCom->setText(QApplication::translate("ConfigForm", "\350\256\276\347\275\256", nullptr));
+        labelComState->setText(QApplication::translate("ConfigForm", "\345\205\263\351\227\255", nullptr));
+        label_18->setText(QApplication::translate("ConfigForm", "\346\263\242\347\211\271\347\216\207\357\274\232", nullptr));
+        label_19->setText(QApplication::translate("ConfigForm", "\344\270\262\345\217\243\345\220\215\357\274\232     ", nullptr));
+        label_24->setText(QApplication::translate("ConfigForm", "\346\211\223\345\274\200\347\212\266\346\200\201\357\274\232", nullptr));
     } // retranslateUi
 
 };

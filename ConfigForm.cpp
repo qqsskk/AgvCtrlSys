@@ -20,6 +20,17 @@ void ConfigForm::init()
     ui->groupBox->setTitle(QString::fromLocal8Bit("数据库服务器参数配置"));
     ui->groupBox_2->setTitle(QString::fromLocal8Bit("网络服务器参数配置"));
     ui->groupBox_3->setTitle(QString::fromLocal8Bit("WMS服务器参数配置"));
+    ui->groupBox_4->setTitle(QString::fromLocal8Bit("串口参数配置"));
+
+    // 更新串口号
+    updatePort();
+
+    // 波特率
+    ui->comboBoxBaud->addItem("9600");
+    ui->comboBoxBaud->addItem("19200");
+    ui->comboBoxBaud->addItem("38400");
+    ui->comboBoxBaud->addItem("57600");
+    ui->comboBoxBaud->addItem("115200");
 
     QRegExp rx("\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");
     ui->lineEditNetSerIP->setValidator(new QRegExpValidator(rx, this));
@@ -33,6 +44,9 @@ void ConfigForm::init()
     QString passwd = config.get("DataBase", "Passwd").toString();
     QString netip = config.get("Net", "IP").toString();
     QString netport = config.get("Net", "Port").toString();
+    QString com = config.get("SerialPort", "Com").toString();
+    QString num = config.get("SerialPort", "Num").toString();
+    QString baud = config.get("SerialPort", "Baud").toString();
 
     // 填充相应文本框
     ui->lineEditSerName->setText(serverName);
@@ -41,6 +55,9 @@ void ConfigForm::init()
     ui->lineEditPasswd->setText(passwd);
     ui->lineEditNetSerIP->setText(netip);
     ui->lineEditNetSerPort->setText(netport);
+    ui->comboBoxComName->setCurrentText(com);
+    ui->lineEditComNumber->setText(num);
+    ui->comboBoxBaud->setCurrentText(baud);
 }
 
 void ConfigForm::on_pushButtonSetDb_clicked()
@@ -84,11 +101,96 @@ void ConfigForm::on_pushButtonSetNet_clicked()
     }
 
     Config config("./res/set/config.ini");
-    config.set("Net", "IP", QString("%1").arg(ui->lineEditNetSerIP->text()));
-    config.set("Net", "Port", QString("%1").arg(ui->lineEditNetSerPort->text()));
+    config.set("Net", "IP", QString("%1").arg(ip));
+    config.set("Net", "Port", QString("%1").arg(port));
 
     MsgBoxEx *msgBox = new MsgBoxEx();
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("网络服务器参数设置成功，若要应用此设置请重启程序！"), 3000);
     delete msgBox;
 }
 
+void ConfigForm::onNetServerStateChange(bool isLink)
+{
+    if(isLink)
+    {
+        ui->labelNetState->setText(QString::fromLocal8Bit("连接"));
+    }
+    else
+    {
+        ui->labelNetState->setText(QString::fromLocal8Bit("断开"));
+    }
+}
+
+void ConfigForm::onSerialPortStateChange(bool isOpen)
+{
+    if(isOpen)
+    {
+        ui->labelComState->setText(QString::fromLocal8Bit("打开"));
+    }
+    else
+    {
+        ui->labelComState->setText(QString::fromLocal8Bit("关闭"));
+    }
+}
+
+void ConfigForm::on_pushButtonSetCom_clicked()
+{
+    QString com = ui->comboBoxComName->currentText();
+    QString num = ui->lineEditComNumber->text();
+    QString baud = ui->comboBoxBaud->currentText();
+
+    if(com.isEmpty() || baud.isEmpty())
+    {
+        MsgBoxEx *msgBox = new MsgBoxEx();
+        msgBox->setMsgBoxMode(QString::fromLocal8Bit("串口参数不可为空！"));
+        delete msgBox;
+        return;
+    }
+
+    Config config("./res/set/config.ini");
+    config.set("SerialPort", "Com", QString("%1").arg(com));
+    config.set("SerialPort", "Num", QString("%1").arg(num));
+    config.set("SerialPort", "Baud", QString("%1").arg(baud));
+
+    MsgBoxEx *msgBox = new MsgBoxEx();
+    msgBox->setMsgBoxMode(QString::fromLocal8Bit("串口参数设置成功，若要应用此设置请重启程序！"), 3000);
+    delete msgBox;
+}
+
+void ConfigForm::on_comboBoxComName_currentTextChanged(const QString &arg1)
+{
+    ui->lineEditComNumber->setText(m_mapSerialPort[arg1]);
+}
+
+void ConfigForm::on_pushButtonRefresh_clicked()
+{
+    updatePort();
+}
+
+void ConfigForm::updatePort()
+{
+    m_mapSerialPort.clear();
+    ui->comboBoxComName->clear();
+    ui->lineEditComNumber->setText("");
+    ui->comboBoxBaud->setCurrentIndex(-1);
+    QSerialPort serial;
+    QStringList listPort;
+    const auto infos = QSerialPortInfo::availablePorts();
+    for (const QSerialPortInfo &info : infos)
+    {
+        serial.setPort(info);
+        if(serial.open(QIODevice::ReadWrite))
+        {
+            m_mapSerialPort[info.portName()] = info.serialNumber();
+            serial.close();
+        }
+    }
+    for (QMap<QString, QString>::iterator it = m_mapSerialPort.begin(); it != m_mapSerialPort.end(); it++)
+    {
+        if(!it.key().isEmpty())
+        {
+            ui->comboBoxComName->addItem(it.key());
+        }
+    }
+    ui->comboBoxComName->setCurrentIndex(-1);
+}

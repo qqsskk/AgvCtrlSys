@@ -6,11 +6,10 @@ quint32 GraphicCharger::g_unHeight = 20;
 QString GraphicCharger::g_strPath = "./res/image/charger.png";
 QString GraphicCharger::g_strPower = "./res/image/power.png";
 
-GraphicCharger::GraphicCharger(quint32 unNo, quint32 unMark, quint32 unCtrl)
+GraphicCharger::GraphicCharger(quint32 unNo, quint32 unMark)
 {
     m_unNo = unNo;
     m_unMark = unMark;
-    m_unCtrl = unCtrl;
 
     m_bPower = false;
 
@@ -50,18 +49,6 @@ void GraphicCharger::setPower(bool bPower)
     m_bPower = bPower;
 
     return;
-}
-
-void GraphicCharger::setCtrl(quint32 unCtrl)
-{
-    m_unCtrl = unCtrl;
-
-    return;
-}
-
-quint32 GraphicCharger::getCtrl()
-{
-    return m_unCtrl;
 }
 
 void GraphicCharger::setMark(quint32 unMark)

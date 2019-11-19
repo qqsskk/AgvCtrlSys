@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MapForm_t {
-    QByteArrayData data[16];
-    char stringdata0[154];
+    QByteArrayData data[15];
+    char stringdata0[146];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,20 +40,19 @@ QT_MOC_LITERAL(5, 64, 14), // "onCursorChange"
 QT_MOC_LITERAL(6, 79, 9), // "onShowAgv"
 QT_MOC_LITERAL(7, 89, 4), // "unNo"
 QT_MOC_LITERAL(8, 94, 7), // "strType"
-QT_MOC_LITERAL(9, 102, 7), // "strMove"
-QT_MOC_LITERAL(10, 110, 9), // "unCurMark"
-QT_MOC_LITERAL(11, 120, 4), // "bRun"
-QT_MOC_LITERAL(12, 125, 6), // "bUnVol"
-QT_MOC_LITERAL(13, 132, 4), // "bObs"
-QT_MOC_LITERAL(14, 137, 6), // "bError"
-QT_MOC_LITERAL(15, 144, 9) // "onHideAgv"
+QT_MOC_LITERAL(9, 102, 9), // "unCurMark"
+QT_MOC_LITERAL(10, 112, 4), // "bRun"
+QT_MOC_LITERAL(11, 117, 6), // "bUnVol"
+QT_MOC_LITERAL(12, 124, 4), // "bObs"
+QT_MOC_LITERAL(13, 129, 6), // "bError"
+QT_MOC_LITERAL(14, 136, 9) // "onHideAgv"
 
     },
     "MapForm\0onUpdateMapMenuEvent\0\0"
     "onBtnOkClicked\0onBtnCancelClicked\0"
     "onCursorChange\0onShowAgv\0unNo\0strType\0"
-    "strMove\0unCurMark\0bRun\0bUnVol\0bObs\0"
-    "bError\0onHideAgv"
+    "unCurMark\0bRun\0bUnVol\0bObs\0bError\0"
+    "onHideAgv"
 };
 #undef QT_MOC_LITERAL
 
@@ -75,15 +74,15 @@ static const uint qt_meta_data_MapForm[] = {
        3,    0,   45,    2, 0x08 /* Private */,
        4,    0,   46,    2, 0x08 /* Private */,
        5,    0,   47,    2, 0x08 /* Private */,
-       6,    8,   48,    2, 0x0a /* Public */,
-      15,    1,   65,    2, 0x0a /* Public */,
+       6,    7,   48,    2, 0x0a /* Public */,
+      14,    1,   63,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::UInt, QMetaType::QString, QMetaType::QString, QMetaType::UInt, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool,    7,    8,    9,   10,   11,   12,   13,   14,
+    QMetaType::Void, QMetaType::UInt, QMetaType::QString, QMetaType::UInt, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool,    7,    8,    9,   10,   11,   12,   13,
     QMetaType::Void, QMetaType::UInt,    7,
 
        0        // eod
@@ -99,7 +98,7 @@ void MapForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 1: _t->onBtnOkClicked(); break;
         case 2: _t->onBtnCancelClicked(); break;
         case 3: _t->onCursorChange(); break;
-        case 4: _t->onShowAgv((*reinterpret_cast< quint32(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< quint32(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5])),(*reinterpret_cast< bool(*)>(_a[6])),(*reinterpret_cast< bool(*)>(_a[7])),(*reinterpret_cast< bool(*)>(_a[8]))); break;
+        case 4: _t->onShowAgv((*reinterpret_cast< quint32(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< quint32(*)>(_a[3])),(*reinterpret_cast< bool(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5])),(*reinterpret_cast< bool(*)>(_a[6])),(*reinterpret_cast< bool(*)>(_a[7]))); break;
         case 5: _t->onHideAgv((*reinterpret_cast< quint32(*)>(_a[1]))); break;
         default: ;
         }

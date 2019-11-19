@@ -6,6 +6,9 @@
 #include <QSqlQuery>
 #include "Config.h"
 #include "MsgBoxEx.h"
+#include <QSerialPort>
+#include <QSerialPortInfo>
+
 
 namespace Ui {
 class ConfigForm;
@@ -24,11 +27,23 @@ private slots:
 
     void on_pushButtonSetNet_clicked();
 
+    void onNetServerStateChange(bool isLink);
+    void onSerialPortStateChange(bool isOpen);
+    void on_pushButtonSetCom_clicked();
+
+    void on_comboBoxComName_currentTextChanged(const QString &arg1);
+
+    void on_pushButtonRefresh_clicked();
+
 private:
     Ui::ConfigForm *ui;
 
+    QMap<QString, QString> m_mapSerialPort;
+
 private:
     void init();
+    void updatePort();
+
 };
 
 #endif // CONFIGFORM_H

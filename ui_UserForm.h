@@ -9,6 +9,7 @@
 #ifndef UI_USERFORM_H
 #define UI_USERFORM_H
 
+#include <GroupBoxEx.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -16,7 +17,6 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 #include "ComboBoxEx.h"
-#include "GroupBoxEx.h"
 #include "LabelEx.h"
 #include "LineEditEx.h"
 #include "PushButtonEx.h"
