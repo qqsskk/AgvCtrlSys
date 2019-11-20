@@ -6,113 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>300</height>
+    <width>620</width>
+    <height>490</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>82</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>服务器名称：</string>
-   </property>
-  </widget>
-  <widget class="LineEditEx" name="lineEditSerName">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>76</y>
-     <width>191</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>121</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>数据库名：</string>
-   </property>
-  </widget>
-  <widget class="LineEditEx" name="lineEditDbName">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>116</y>
-     <width>191</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="LineEditEx" name="lineEditLoginPwd">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>200</y>
-     <width>191</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
-   </property>
-  </widget>
-  <widget class="LineEditEx" name="lineEditLoginName">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>157</y>
-     <width>191</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>162</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>登录名：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>205</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>密码：</string>
-   </property>
-  </widget>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
   <widget class="PushButtonEx" name="pushButtonCancel">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>250</y>
+     <x>160</x>
+     <y>440</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -124,8 +32,8 @@
   <widget class="PushButtonEx" name="pushButtonOk">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>250</y>
+     <x>350</x>
+     <y>440</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -139,7 +47,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>451</width>
+     <width>621</width>
      <height>51</height>
     </rect>
    </property>
@@ -150,24 +58,411 @@
     <string>PushButton</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButtonEye">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>374</x>
-     <y>205</y>
-     <width>21</width>
-     <height>21</height>
+     <x>10</x>
+     <y>70</y>
+     <width>601</width>
+     <height>130</height>
     </rect>
    </property>
-   <property name="text">
-    <string/>
+   <property name="title">
+    <string>数据库服务器参数</string>
    </property>
-   <property name="checkable">
-    <bool>true</bool>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <item row="1" column="1">
+     <widget class="LineEditEx" name="lineEditLoginName">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="LineEditEx" name="lineEditLoginPwd">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="LineEditEx" name="lineEditDbName">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>服务器名称：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="LineEditEx" name="lineEditSerName">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>登录名：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QToolButton" name="toolButtonEye">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>数据库名：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>密码：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>600</width>
+     <height>90</height>
+    </rect>
    </property>
-   <property name="checked">
-    <bool>false</bool>
+   <property name="title">
+    <string>网络服务器参数</string>
    </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <item row="0" column="1">
+     <widget class="LineEditEx" name="lineEditNetIP">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>180</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="LineEditEx" name="lineEditNetPort">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>180</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>50</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="label_8">
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>端口： </string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="maximumSize">
+       <size>
+        <width>65</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>IP：            </string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>330</y>
+     <width>600</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>串口参数</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <item row="0" column="8">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="7">
+     <widget class="ComboBoxEx" name="comboBoxComBaud">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="LabelEx" name="label_9">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>65</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>串口名：  </string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <spacer name="horizontalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3">
+     <widget class="LabelEx" name="label_10">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string> 序列号： </string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="6">
+     <widget class="LabelEx" name="label_11">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>波特率：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="LineEditEx" name="lineEditComNum">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="ComboBoxEx" name="comboBoxComName">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
   </widget>
  </widget>
  <customwidgets>
@@ -181,12 +476,28 @@
    <extends>QPushButton</extends>
    <header>PushButtonEx.h</header>
   </customwidget>
+  <customwidget>
+   <class>LabelEx</class>
+   <extends>QLabel</extends>
+   <header>LabelEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>ComboBoxEx.h</header>
+  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>lineEditSerName</tabstop>
   <tabstop>lineEditDbName</tabstop>
   <tabstop>lineEditLoginName</tabstop>
   <tabstop>lineEditLoginPwd</tabstop>
+  <tabstop>toolButtonEye</tabstop>
+  <tabstop>lineEditNetIP</tabstop>
+  <tabstop>lineEditNetPort</tabstop>
+  <tabstop>comboBoxComName</tabstop>
+  <tabstop>lineEditComNum</tabstop>
+  <tabstop>comboBoxComBaud</tabstop>
   <tabstop>pushButtonCancel</tabstop>
   <tabstop>pushButtonOk</tabstop>
   <tabstop>pushButtonTitle</tabstop>

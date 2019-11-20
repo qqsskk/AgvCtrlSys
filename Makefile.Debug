@@ -3940,6 +3940,11 @@ debug\moc_LoginSetForm.cpp: LoginSetForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\QSerialPort \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\qserialport.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\qserialportglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\QSerialPortInfo \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\qserialportinfo.h \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSerialPort -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" LoginSetForm.h -o debug\moc_LoginSetForm.cpp
@@ -6432,6 +6437,8 @@ ui_LoginSetForm.h: LoginSetForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\uic.exe \
 		LineEditEx.h \
 		PushButtonEx.h \
+		LabelEx.h \
+		ComboBoxEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLineEdit \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlineedit.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
@@ -6646,7 +6653,235 @@ ui_LoginSetForm.h: LoginSetForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfile.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlogging.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qflags.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmutex.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnumeric.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstring.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qchar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearray.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrefcount.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qarraydata.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringbuilder.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlist.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qalgorithms.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiterator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhashfunctions.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpair.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearraylist.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringlist.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregexp.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringmatcher.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreevent.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmetatype.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject_impl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmargins.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpaintdevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrect.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsize.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpoint.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpalette.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcolor.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgb.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgba64.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qbrush.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvector.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qmatrix.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpolygon.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qregion.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdatastream.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiodevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qline.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtransform.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpainterpath.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qimage.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixelformat.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixmap.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qshareddata.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhash.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfont.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontmetrics.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontinfo.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qsizepolicy.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcursor.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qkeysequence.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qevent.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvariant.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmap.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdebug.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtextstream.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlocale.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qset.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurlquery.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfile.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfiledevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QComboBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcombobox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtguiglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qconfig.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlogging.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qflags.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmutex.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnumeric.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtgui-config.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstring.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qchar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearray.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrefcount.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qarraydata.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringbuilder.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlist.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qalgorithms.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiterator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhashfunctions.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpair.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qbytearraylist.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringlist.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregexp.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qstringmatcher.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcoreevent.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmetatype.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qobject_impl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmargins.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpaintdevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qrect.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsize.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qpoint.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpalette.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcolor.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgb.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qrgba64.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qbrush.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvector.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qmatrix.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpolygon.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qregion.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdatastream.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qiodevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qline.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtransform.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpainterpath.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qimage.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixelformat.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qpixmap.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qshareddata.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qhash.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfont.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontmetrics.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qfontinfo.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qsizepolicy.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qcursor.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qkeysequence.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qevent.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qvariant.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qmap.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qdebug.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qtextstream.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qlocale.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qset.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurl.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qurlquery.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfile.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qfiledevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvector2d.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QListView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlistview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\qitemselectionmodel.h
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\uic.exe LoginSetForm.ui -o ui_LoginSetForm.h
 
 ui_ModulesForm.h: ModulesForm.ui \
@@ -11292,17 +11527,48 @@ debug\LoginSetForm.obj: LoginSetForm.cpp LoginSetForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\QSerialPort \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\qserialport.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\qserialportglobal.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\QSerialPortInfo \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtSerialPort\qserialportinfo.h \
 		ui_LoginSetForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QApplication \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qapplication.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qguiapplication.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGridLayout \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLabel \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlabel.h \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QSpacerItem \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QToolButton \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtoolbutton.h \
+		ComboBoxEx.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QComboBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcombobox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QListView \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlistview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		LabelEx.h \
 		LineEditEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QLineEdit \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qlineedit.h \
