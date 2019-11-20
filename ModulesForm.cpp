@@ -19,6 +19,7 @@ void ModulesForm::init()
 {
     // 组合框
     ui->groupBox_1->setTitle(QString::fromLocal8Bit("AGV 类型"));
+    ui->groupBox_4->setTitle(QString::fromLocal8Bit("AGV"));
     ui->groupBox_2->setTitle(QString::fromLocal8Bit("待机队列信息"));
     ui->groupBox_3->setTitle(QString::fromLocal8Bit("工作站信息"));
     ui->groupBox_7->setTitle(QString::fromLocal8Bit("待机站信息"));
@@ -45,6 +46,17 @@ void ModulesForm::loadModulesData()
     m_itemModelAgvType->setHeaderData(6, Qt::Horizontal, QString::fromLocal8Bit("动作码"));
     ui->tableViewAgvType->setTableModel(m_itemModelAgvType);
 
+    // AGV
+    m_itemModelAgv = new QSqlQueryModel(this);
+    m_itemModelAgv->setQuery(QString("SELECT ID,Type,Client,IP,Port,LocalIP,LocalPort FROM AGVDB_INFO_AGV"));
+    m_itemModelAgv->setHeaderData(0, Qt::Horizontal, QString::fromLocal8Bit("编号"));
+    m_itemModelAgv->setHeaderData(1, Qt::Horizontal, QString::fromLocal8Bit("类型名称"));
+    m_itemModelAgv->setHeaderData(2, Qt::Horizontal, QString::fromLocal8Bit("网络模式"));
+    m_itemModelAgv->setHeaderData(3, Qt::Horizontal, QString::fromLocal8Bit("IP"));
+    m_itemModelAgv->setHeaderData(4, Qt::Horizontal, QString::fromLocal8Bit("端口"));
+    m_itemModelAgv->setHeaderData(5, Qt::Horizontal, QString::fromLocal8Bit("本地IP"));
+    m_itemModelAgv->setHeaderData(6, Qt::Horizontal, QString::fromLocal8Bit("本地端口"));
+    ui->tableViewAgv->setTableModel(m_itemModelAgv);
 
     // 待机队列
     m_itemModelRestQueue = new QSqlQueryModel(this);
@@ -116,6 +128,11 @@ void ModulesForm::showItemTip(const QSqlQueryModel *model, const QModelIndex ind
 void ModulesForm::on_tableViewAgvType_clicked(const QModelIndex &index)
 {
     showItemTip(m_itemModelAgvType, index);
+}
+
+void ModulesForm::on_tableViewAgv_clicked(const QModelIndex &index)
+{
+    showItemTip(m_itemModelAgv, index);
 }
 
 void ModulesForm::on_tableViewWorkStation_clicked(const QModelIndex &index)
@@ -199,3 +216,4 @@ void ModulesForm::onUpdateCallerData()
         connect(checkBox, SIGNAL(stateChanged(int)), this, SLOT(onStateChanged(int)));
     }
 }
+

@@ -3,6 +3,7 @@
 
 #include <QTableView>
 #include <QHeaderView>
+#include <QCheckBox>
 
 class TableViewEx : public QTableView
 {
@@ -15,5 +16,4 @@ public:
       void setTableModel(QAbstractTableModel *model);
 
 };
-
 #endif // TABLEVIEWEX_H

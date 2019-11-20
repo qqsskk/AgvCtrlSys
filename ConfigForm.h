@@ -27,8 +27,8 @@ private slots:
 
     void on_pushButtonSetNet_clicked();
 
-    void onNetServerStateChange(bool isLink);
-    void onSerialPortStateChange(bool isOpen);
+    void onNetServerStateChange(QString strLinkDesc);
+    void onSerialPortStateChange(QString strOpenDesc);
     void on_pushButtonSetCom_clicked();
 
     void on_comboBoxComName_currentTextChanged(const QString &arg1);

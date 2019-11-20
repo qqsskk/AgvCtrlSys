@@ -18,6 +18,7 @@
 #include "CustomTableModel.h"
 #include <QCheckBox>
 
+
 namespace Ui {
 class ModulesForm;
 }
@@ -32,6 +33,7 @@ public:
 
 private slots:
     void on_tableViewAgvType_clicked(const QModelIndex &index);
+    void on_tableViewAgv_clicked(const QModelIndex &index);
     void on_tableViewWorkStation_clicked(const QModelIndex &index);
     void on_tableViewResetStation_clicked(const QModelIndex &index);
     void on_tableViewCharger_clicked(const QModelIndex &index);
@@ -63,6 +65,7 @@ private:
 
 private:
     QSqlQueryModel *m_itemModelAgvType;         // AGV类型表模型
+    QSqlQueryModel *m_itemModelAgv;             // AGV表模型
     QSqlQueryModel *m_itemModelRestQueue;       // 待机队列表模型
     QSqlQueryModel *m_itemModelWorkStation;     // 工作站列表模型
     QSqlQueryModel *m_itemModelResetStation;    // 待机站列表模型
@@ -72,6 +75,9 @@ private:
 
 private slots:
     void onStateChanged(int state);
+
+
+
 
 public slots:
     /**

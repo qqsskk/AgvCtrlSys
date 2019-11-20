@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ConfigForm_t {
     QByteArrayData data[12];
-    char stringdata0[228];
+    char stringdata0[238];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,19 +36,19 @@ QT_MOC_LITERAL(1, 11, 26), // "on_pushButtonSetDb_clicked"
 QT_MOC_LITERAL(2, 38, 0), // ""
 QT_MOC_LITERAL(3, 39, 27), // "on_pushButtonSetNet_clicked"
 QT_MOC_LITERAL(4, 67, 22), // "onNetServerStateChange"
-QT_MOC_LITERAL(5, 90, 6), // "isLink"
-QT_MOC_LITERAL(6, 97, 23), // "onSerialPortStateChange"
-QT_MOC_LITERAL(7, 121, 6), // "isOpen"
-QT_MOC_LITERAL(8, 128, 27), // "on_pushButtonSetCom_clicked"
-QT_MOC_LITERAL(9, 156, 37), // "on_comboBoxComName_currentTex..."
-QT_MOC_LITERAL(10, 194, 4), // "arg1"
-QT_MOC_LITERAL(11, 199, 28) // "on_pushButtonRefresh_clicked"
+QT_MOC_LITERAL(5, 90, 11), // "strLinkDesc"
+QT_MOC_LITERAL(6, 102, 23), // "onSerialPortStateChange"
+QT_MOC_LITERAL(7, 126, 11), // "strOpenDesc"
+QT_MOC_LITERAL(8, 138, 27), // "on_pushButtonSetCom_clicked"
+QT_MOC_LITERAL(9, 166, 37), // "on_comboBoxComName_currentTex..."
+QT_MOC_LITERAL(10, 204, 4), // "arg1"
+QT_MOC_LITERAL(11, 209, 28) // "on_pushButtonRefresh_clicked"
 
     },
     "ConfigForm\0on_pushButtonSetDb_clicked\0"
     "\0on_pushButtonSetNet_clicked\0"
-    "onNetServerStateChange\0isLink\0"
-    "onSerialPortStateChange\0isOpen\0"
+    "onNetServerStateChange\0strLinkDesc\0"
+    "onSerialPortStateChange\0strOpenDesc\0"
     "on_pushButtonSetCom_clicked\0"
     "on_comboBoxComName_currentTextChanged\0"
     "arg1\0on_pushButtonRefresh_clicked"
@@ -80,8 +80,8 @@ static const uint qt_meta_data_ConfigForm[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,    5,
-    QMetaType::Void, QMetaType::Bool,    7,
+    QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, QMetaType::QString,    7,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   10,
     QMetaType::Void,
@@ -97,8 +97,8 @@ void ConfigForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_pushButtonSetDb_clicked(); break;
         case 1: _t->on_pushButtonSetNet_clicked(); break;
-        case 2: _t->onNetServerStateChange((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 3: _t->onSerialPortStateChange((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 2: _t->onNetServerStateChange((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 3: _t->onSerialPortStateChange((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 4: _t->on_pushButtonSetCom_clicked(); break;
         case 5: _t->on_comboBoxComName_currentTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 6: _t->on_pushButtonRefresh_clicked(); break;

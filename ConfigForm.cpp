@@ -109,28 +109,14 @@ void ConfigForm::on_pushButtonSetNet_clicked()
     delete msgBox;
 }
 
-void ConfigForm::onNetServerStateChange(bool isLink)
+void ConfigForm::onNetServerStateChange(QString strLinkDesc)
 {
-    if(isLink)
-    {
-        ui->labelNetState->setText(QString::fromLocal8Bit("连接"));
-    }
-    else
-    {
-        ui->labelNetState->setText(QString::fromLocal8Bit("断开"));
-    }
+   ui->labelNetState->setText(strLinkDesc);
 }
 
-void ConfigForm::onSerialPortStateChange(bool isOpen)
+void ConfigForm::onSerialPortStateChange(QString strOpenDesc)
 {
-    if(isOpen)
-    {
-        ui->labelComState->setText(QString::fromLocal8Bit("打开"));
-    }
-    else
-    {
-        ui->labelComState->setText(QString::fromLocal8Bit("关闭"));
-    }
+    ui->labelComState->setText(strOpenDesc);
 }
 
 void ConfigForm::on_pushButtonSetCom_clicked()

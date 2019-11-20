@@ -68,8 +68,8 @@ void MainWindow::initWindow()
     // 根据用户权限添加功能
     ConfigForm *pConfigForm = new ConfigForm();
     ui->tabWidget->addTab(pConfigForm, QString::fromLocal8Bit("系统配置"));
-    connect(this, SIGNAL(netServerStateChange(bool)), pConfigForm, SLOT(onNetServerStateChange(bool)));
-    connect(this, SIGNAL(serialPortStateChange(bool)), pConfigForm, SLOT(onSerialPortStateChange(bool)));
+    connect(this, SIGNAL(netServerStateChange(QString)), pConfigForm, SLOT(onNetServerStateChange(QString)));
+    connect(this, SIGNAL(serialPortStateChange(QString)), pConfigForm, SLOT(onSerialPortStateChange(QString)));
     switch(m_userLevel)
     {
         case UserLevel::UserLevel_High:

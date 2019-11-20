@@ -27,6 +27,9 @@ public:
     GroupBoxEx *groupBox_1;
     QGridLayout *gridLayout_10;
     TableViewEx *tableViewAgvType;
+    GroupBoxEx *groupBox_4;
+    QGridLayout *gridLayout_13;
+    TableViewEx *tableViewAgv;
     QHBoxLayout *horizontalLayout;
     GroupBoxEx *groupBox_3;
     QGridLayout *gridLayout_8;
@@ -68,12 +71,29 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(tableViewAgvType->sizePolicy().hasHeightForWidth());
         tableViewAgvType->setSizePolicy(sizePolicy);
-        tableViewAgvType->setMinimumSize(QSize(930, 0));
+        tableViewAgvType->setMinimumSize(QSize(0, 0));
 
         gridLayout_10->addWidget(tableViewAgvType, 0, 0, 1, 1);
 
 
         gridLayout_2->addWidget(groupBox_1, 0, 0, 1, 1);
+
+        groupBox_4 = new GroupBoxEx(ModulesForm);
+        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
+        groupBox_4->setMinimumSize(QSize(0, 0));
+        gridLayout_13 = new QGridLayout(groupBox_4);
+        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
+        gridLayout_13->setContentsMargins(-1, 45, -1, -1);
+        tableViewAgv = new TableViewEx(groupBox_4);
+        tableViewAgv->setObjectName(QString::fromUtf8("tableViewAgv"));
+        sizePolicy.setHeightForWidth(tableViewAgv->sizePolicy().hasHeightForWidth());
+        tableViewAgv->setSizePolicy(sizePolicy);
+        tableViewAgv->setMinimumSize(QSize(0, 0));
+
+        gridLayout_13->addWidget(tableViewAgv, 0, 0, 1, 1);
+
+
+        gridLayout_2->addWidget(groupBox_4, 0, 1, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -129,7 +149,7 @@ public:
         horizontalLayout->addWidget(groupBox_5);
 
 
-        gridLayout_2->addLayout(horizontalLayout, 1, 0, 1, 1);
+        gridLayout_2->addLayout(horizontalLayout, 1, 0, 1, 2);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
@@ -190,7 +210,7 @@ public:
         horizontalLayout_2->addWidget(groupBox_6);
 
 
-        gridLayout_2->addLayout(horizontalLayout_2, 2, 0, 1, 1);
+        gridLayout_2->addLayout(horizontalLayout_2, 2, 0, 1, 2);
 
 
         retranslateUi(ModulesForm);
@@ -202,6 +222,7 @@ public:
     {
         ModulesForm->setWindowTitle(QApplication::translate("ModulesForm", "Form", nullptr));
         groupBox_1->setTitle(QString());
+        groupBox_4->setTitle(QString());
         groupBox_3->setTitle(QString());
         groupBox_7->setTitle(QString());
         groupBox_5->setTitle(QString());

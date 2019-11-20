@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[25];
-    char stringdata0[263];
+    char stringdata0[273];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,35 +34,36 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 20), // "netServerStateChange"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 6), // "isLink"
-QT_MOC_LITERAL(4, 40, 21), // "serialPortStateChange"
-QT_MOC_LITERAL(5, 62, 6), // "isOpen"
-QT_MOC_LITERAL(6, 69, 7), // "showAgv"
-QT_MOC_LITERAL(7, 77, 4), // "unNo"
-QT_MOC_LITERAL(8, 82, 7), // "strType"
-QT_MOC_LITERAL(9, 90, 9), // "unCurMark"
-QT_MOC_LITERAL(10, 100, 4), // "bRun"
-QT_MOC_LITERAL(11, 105, 6), // "bUnVol"
-QT_MOC_LITERAL(12, 112, 4), // "bObs"
-QT_MOC_LITERAL(13, 117, 6), // "bError"
-QT_MOC_LITERAL(14, 124, 7), // "hideAgv"
-QT_MOC_LITERAL(15, 132, 12), // "callerEnable"
-QT_MOC_LITERAL(16, 145, 2), // "id"
-QT_MOC_LITERAL(17, 148, 6), // "enable"
-QT_MOC_LITERAL(18, 155, 16), // "updateCallerData"
-QT_MOC_LITERAL(19, 172, 13), // "onWindowClose"
-QT_MOC_LITERAL(20, 186, 14), // "onBtnOkClicked"
-QT_MOC_LITERAL(21, 201, 18), // "onBtnCancelClicked"
-QT_MOC_LITERAL(22, 220, 21), // "onUpdateAbnormalExist"
-QT_MOC_LITERAL(23, 242, 5), // "exist"
-QT_MOC_LITERAL(24, 248, 14) // "onCallerEnable"
+QT_MOC_LITERAL(3, 33, 11), // "strLinkDesc"
+QT_MOC_LITERAL(4, 45, 21), // "serialPortStateChange"
+QT_MOC_LITERAL(5, 67, 11), // "strOpenDesc"
+QT_MOC_LITERAL(6, 79, 7), // "showAgv"
+QT_MOC_LITERAL(7, 87, 4), // "unNo"
+QT_MOC_LITERAL(8, 92, 7), // "strType"
+QT_MOC_LITERAL(9, 100, 9), // "unCurMark"
+QT_MOC_LITERAL(10, 110, 4), // "bRun"
+QT_MOC_LITERAL(11, 115, 6), // "bUnVol"
+QT_MOC_LITERAL(12, 122, 4), // "bObs"
+QT_MOC_LITERAL(13, 127, 6), // "bError"
+QT_MOC_LITERAL(14, 134, 7), // "hideAgv"
+QT_MOC_LITERAL(15, 142, 12), // "callerEnable"
+QT_MOC_LITERAL(16, 155, 2), // "id"
+QT_MOC_LITERAL(17, 158, 6), // "enable"
+QT_MOC_LITERAL(18, 165, 16), // "updateCallerData"
+QT_MOC_LITERAL(19, 182, 13), // "onWindowClose"
+QT_MOC_LITERAL(20, 196, 14), // "onBtnOkClicked"
+QT_MOC_LITERAL(21, 211, 18), // "onBtnCancelClicked"
+QT_MOC_LITERAL(22, 230, 21), // "onUpdateAbnormalExist"
+QT_MOC_LITERAL(23, 252, 5), // "exist"
+QT_MOC_LITERAL(24, 258, 14) // "onCallerEnable"
 
     },
     "MainWindow\0netServerStateChange\0\0"
-    "isLink\0serialPortStateChange\0isOpen\0"
-    "showAgv\0unNo\0strType\0unCurMark\0bRun\0"
-    "bUnVol\0bObs\0bError\0hideAgv\0callerEnable\0"
-    "id\0enable\0updateCallerData\0onWindowClose\0"
+    "strLinkDesc\0serialPortStateChange\0"
+    "strOpenDesc\0showAgv\0unNo\0strType\0"
+    "unCurMark\0bRun\0bUnVol\0bObs\0bError\0"
+    "hideAgv\0callerEnable\0id\0enable\0"
+    "updateCallerData\0onWindowClose\0"
     "onBtnOkClicked\0onBtnCancelClicked\0"
     "onUpdateAbnormalExist\0exist\0onCallerEnable"
 };
@@ -97,8 +98,8 @@ static const uint qt_meta_data_MainWindow[] = {
       24,    2,  105,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Bool,    3,
-    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::UInt, QMetaType::QString, QMetaType::UInt, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool,    7,    8,    9,   10,   11,   12,   13,
     QMetaType::Void, QMetaType::UInt,    7,
     QMetaType::Void, QMetaType::Int, QMetaType::Bool,   16,   17,
@@ -120,8 +121,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->netServerStateChange((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 1: _t->serialPortStateChange((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 0: _t->netServerStateChange((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 1: _t->serialPortStateChange((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 2: _t->showAgv((*reinterpret_cast< quint32(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< quint32(*)>(_a[3])),(*reinterpret_cast< bool(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5])),(*reinterpret_cast< bool(*)>(_a[6])),(*reinterpret_cast< bool(*)>(_a[7]))); break;
         case 3: _t->hideAgv((*reinterpret_cast< quint32(*)>(_a[1]))); break;
         case 4: _t->callerEnable((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
@@ -136,14 +137,14 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (MainWindow::*)(bool );
+            using _t = void (MainWindow::*)(QString );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::netServerStateChange)) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _t = void (MainWindow::*)(bool );
+            using _t = void (MainWindow::*)(QString );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::serialPortStateChange)) {
                 *result = 1;
                 return;
@@ -221,14 +222,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void MainWindow::netServerStateChange(bool _t1)
+void MainWindow::netServerStateChange(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void MainWindow::serialPortStateChange(bool _t1)
+void MainWindow::serialPortStateChange(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);

@@ -50,15 +50,15 @@ private slots:
 signals:
     /**
      * @brief netServerStateChange 网络服务状态信号
-     * @param isLink 是否连接  true 连接，false 断开
+     * @param strLinkDesc 连接描述
      */
-    void netServerStateChange(bool isLink);
+    void netServerStateChange(QString strLinkDesc);
 
     /**
      * @brief serialPortStateChange 串口状态信息
-     * @param isOpen 是否打开  true 打开，false 关闭
+     * @param strOpenDesc 打开描述
      */
-    void serialPortStateChange(bool isOpen);
+    void serialPortStateChange(QString strOpenDesc);
 
     /**
      * @brief showAgv       显示AGV

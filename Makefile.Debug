@@ -2942,6 +2942,9 @@ debug\moc_TableViewEx.cpp: TableViewEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		debug\moc_predefs.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/Work/Code/Qt/AgvCtrlSys/debug/moc_predefs.h -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/mkspecs/win32-msvc -ID:/Work/Code/Qt/AgvCtrlSys -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuickWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQuick -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtWidgets -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtGui -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtANGLE -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSql -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtQml -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtNetwork -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtSerialPort -ID:/Qt/Qt5.12.2/5.12.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" TableViewEx.h -o debug\moc_TableViewEx.cpp
@@ -4481,7 +4484,10 @@ ui_TaskForm.h: TaskForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\uic.exe TaskForm.ui -o ui_TaskForm.h
 
 ui_DeviceStateForm.h: DeviceStateForm.ui \
@@ -4715,7 +4721,10 @@ ui_DeviceStateForm.h: DeviceStateForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\uic.exe DeviceStateForm.ui -o ui_DeviceStateForm.h
 
 ui_UserForm.h: UserForm.ui \
@@ -5274,6 +5283,9 @@ ui_UserForm.h: UserForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QComboBox \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcombobox.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
@@ -5524,7 +5536,10 @@ ui_HistoryForm.h: HistoryForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\uic.exe HistoryForm.ui -o ui_HistoryForm.h
 
 ui_AbnormalForm.h: AbnormalForm.ui \
@@ -5652,7 +5667,10 @@ ui_AbnormalForm.h: AbnormalForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\uic.exe AbnormalForm.ui -o ui_AbnormalForm.h
 
 ui_ConfigForm.h: ConfigForm.ui \
@@ -7115,7 +7133,10 @@ ui_ModulesForm.h: ModulesForm.ui \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 	D:\Qt\Qt5.12.2\5.12.2\msvc2017_64\bin\uic.exe ModulesForm.ui -o ui_ModulesForm.h
 
 compiler_yacc_decl_make_all:
@@ -8562,7 +8583,10 @@ debug\TaskForm.obj: TaskForm.cpp TaskForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		TableViewEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 
 debug\TitleBarEx.obj: TitleBarEx.cpp TitleBarEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QtWidgets \
@@ -9195,7 +9219,10 @@ debug\DeviceStateForm.obj: DeviceStateForm.cpp DeviceStateForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		TableViewEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 
 debug\UserForm.obj: UserForm.cpp UserForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -9380,7 +9407,9 @@ debug\UserForm.obj: UserForm.cpp UserForm.h \
 		PushButtonEx.h \
 		TableViewEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h
 
 debug\HistoryForm.obj: HistoryForm.cpp HistoryForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -9531,7 +9560,10 @@ debug\HistoryForm.obj: HistoryForm.cpp HistoryForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		TableViewEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 
 debug\AbnormalForm.obj: AbnormalForm.cpp AbnormalForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -9696,7 +9728,9 @@ debug\AbnormalForm.obj: AbnormalForm.cpp AbnormalForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		TableViewEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QTableView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtableview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h
 
 debug\ConfigForm.obj: ConfigForm.cpp ConfigForm.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -10461,7 +10495,10 @@ debug\TableViewEx.obj: TableViewEx.cpp TableViewEx.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qrubberband.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QHeaderView \
-		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtWidgets\qabstractbutton.h
 
 debug\CustomTableModel.obj: CustomTableModel.cpp CustomTableModel.h \
 		..\..\..\..\Qt\Qt5.12.2\5.12.2\msvc2017_64\include\QtCore\QAbstractTableModel \
