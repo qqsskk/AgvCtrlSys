@@ -47,6 +47,7 @@ void ConfigForm::init()
     QString com = config.get("SerialPort", "Com").toString();
     QString num = config.get("SerialPort", "Num").toString();
     QString baud = config.get("SerialPort", "Baud").toString();
+    QString details = config.get("SerialPort", "Details").toString();
 
     // 填充相应文本框
     ui->lineEditSerName->setText(serverName);
@@ -58,6 +59,7 @@ void ConfigForm::init()
     ui->comboBoxComName->setCurrentText(com);
     ui->lineEditComNumber->setText(num);
     ui->comboBoxBaud->setCurrentText(baud);
+    ui->labelComDetails->setText(details);
 }
 
 void ConfigForm::on_pushButtonSetDb_clicked()
@@ -124,6 +126,7 @@ void ConfigForm::on_pushButtonSetCom_clicked()
     QString com = ui->comboBoxComName->currentText();
     QString num = ui->lineEditComNumber->text();
     QString baud = ui->comboBoxBaud->currentText();
+    QString details = ui->labelComDetails->text();
 
     if(com.isEmpty() || baud.isEmpty())
     {
@@ -137,6 +140,7 @@ void ConfigForm::on_pushButtonSetCom_clicked()
     config.set("SerialPort", "Com", QString("%1").arg(com));
     config.set("SerialPort", "Num", QString("%1").arg(num));
     config.set("SerialPort", "Baud", QString("%1").arg(baud));
+    config.set("SerialPort", "Details", QString("%1").arg(details));
 
     MsgBoxEx *msgBox = new MsgBoxEx();
     msgBox->setMsgBoxMode(QString::fromLocal8Bit("串口参数设置成功，若要应用此设置请重启程序！"), 3000);
@@ -145,7 +149,13 @@ void ConfigForm::on_pushButtonSetCom_clicked()
 
 void ConfigForm::on_comboBoxComName_currentTextChanged(const QString &arg1)
 {
-    ui->lineEditComNumber->setText(m_mapSerialPort[arg1]);
+    QString strValue = m_mapSerialPort[arg1];
+    QStringList listValue = strValue.split(";");
+
+    if(listValue.count()!=2)
+        return;
+    ui->lineEditComNumber->setText(listValue[0]);
+    ui->labelComDetails->setText(listValue[1]);
 }
 
 void ConfigForm::on_pushButtonRefresh_clicked()
@@ -159,6 +169,8 @@ void ConfigForm::updatePort()
     ui->comboBoxComName->clear();
     ui->lineEditComNumber->setText("");
     ui->comboBoxBaud->setCurrentIndex(-1);
+    ui->labelComDetails->setText("");
+
     QSerialPort serial;
     QStringList listPort;
     const auto infos = QSerialPortInfo::availablePorts();
@@ -167,7 +179,7 @@ void ConfigForm::updatePort()
         serial.setPort(info);
         if(serial.open(QIODevice::ReadWrite))
         {
-            m_mapSerialPort[info.portName()] = info.serialNumber();
+            m_mapSerialPort[info.portName()] = info.serialNumber()+";"+info.description();
             serial.close();
         }
     }

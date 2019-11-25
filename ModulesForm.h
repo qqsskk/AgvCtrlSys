@@ -18,6 +18,7 @@
 #include "CustomTableModel.h"
 #include <QCheckBox>
 
+#include "headerviewex.h"
 
 namespace Ui {
 class ModulesForm;

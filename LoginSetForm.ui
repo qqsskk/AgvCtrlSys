@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>620</width>
-    <height>490</height>
+    <height>526</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>440</y>
+     <y>480</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -33,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>440</y>
+     <y>480</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -289,8 +289,8 @@
     <rect>
      <x>10</x>
      <y>330</y>
-     <width>600</width>
-     <height>90</height>
+     <width>601</width>
+     <height>130</height>
     </rect>
    </property>
    <property name="title">
@@ -300,44 +300,6 @@
     <property name="topMargin">
      <number>20</number>
     </property>
-    <item row="0" column="8">
-     <spacer name="horizontalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="7">
-     <widget class="ComboBoxEx" name="comboBoxComBaud">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>120</width>
-        <height>16777215</height>
-       </size>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="LabelEx" name="label_9">
       <property name="sizePolicy">
@@ -357,8 +319,30 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="5">
-     <spacer name="horizontalSpacer_5">
+    <item row="0" column="1">
+     <widget class="ComboBoxEx" name="comboBoxComName">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer_6">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -386,19 +370,6 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="6">
-     <widget class="LabelEx" name="label_11">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>波特率：</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="4">
      <widget class="LineEditEx" name="lineEditComNum">
       <property name="enabled">
@@ -412,7 +383,7 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>100</width>
+        <width>250</width>
         <height>30</height>
        </size>
       </property>
@@ -424,8 +395,21 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="ComboBoxEx" name="comboBoxComName">
+    <item row="1" column="0">
+     <widget class="LabelEx" name="label_11">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>波特率：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="ComboBoxEx" name="comboBoxComBaud">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -434,7 +418,7 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>100</width>
+        <width>150</width>
         <height>30</height>
        </size>
       </property>
@@ -446,8 +430,8 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
-     <spacer name="horizontalSpacer_6">
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer_7">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -461,6 +445,38 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="1" column="3">
+     <widget class="LabelEx" name="label_12">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string> 描述：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4" colspan="2">
+     <widget class="LabelEx" name="labelComDetails">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>250</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>串口描述</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -497,7 +513,6 @@
   <tabstop>lineEditNetPort</tabstop>
   <tabstop>comboBoxComName</tabstop>
   <tabstop>lineEditComNum</tabstop>
-  <tabstop>comboBoxComBaud</tabstop>
   <tabstop>pushButtonCancel</tabstop>
   <tabstop>pushButtonOk</tabstop>
   <tabstop>pushButtonTitle</tabstop>

@@ -35,6 +35,8 @@ void LoginSetForm::init()
     ui->label_9->setStyleSheet(strLabelStyle);
     ui->label_10->setStyleSheet(strLabelStyle);
     ui->label_11->setStyleSheet(strLabelStyle);
+    ui->label_12->setStyleSheet(strLabelStyle);
+    ui->labelComDetails->setStyleSheet(strLabelStyle);
 
     ui->toolButtonEye->setStyleSheet("QToolButton{background:transparent;}\
                                      QToolButton:!checked{border-image:url(./res/icon/eye_close.png);}\
@@ -52,6 +54,8 @@ void LoginSetForm::init()
     ui->comboBoxComName->clear();
     ui->lineEditComNum->setText("");
     ui->comboBoxComBaud->setCurrentIndex(-1);
+    ui->labelComDetails->setText("");
+
     QSerialPort serial;
     QStringList listPort;
     const auto infos = QSerialPortInfo::availablePorts();
@@ -60,7 +64,7 @@ void LoginSetForm::init()
         serial.setPort(info);
         if(serial.open(QIODevice::ReadWrite))
         {
-            m_mapSerialPort[info.portName()] = info.serialNumber();
+            m_mapSerialPort[info.portName()] = info.serialNumber()+";"+info.description();
             serial.close();
         }
     }
@@ -91,6 +95,7 @@ void LoginSetForm::init()
     QString com = config.get("SerialPort", "Com").toString();
     QString num = config.get("SerialPort", "Num").toString();
     QString baud = config.get("SerialPort", "Baud").toString();
+    QString details = config.get("SerialPort", "Details").toString();
 
     // 填充相应文本框
     ui->lineEditSerName->setText(serverName);
@@ -102,6 +107,7 @@ void LoginSetForm::init()
     ui->comboBoxComName->setCurrentText(com);
     ui->lineEditComNum->setText(num);
     ui->comboBoxComBaud->setCurrentText(baud);
+    ui->labelComDetails->setText(details);
 }
 
 void LoginSetForm::onEyeToggled(bool checked)
@@ -133,6 +139,7 @@ void LoginSetForm::on_pushButtonOk_clicked()
     QString name = ui->comboBoxComName->currentText();
     QString num = ui->lineEditComNum->text();
     QString baud = ui->comboBoxComBaud->currentText();
+    QString details = ui->labelComDetails->text();
 
     if(serverName.isEmpty() || databaseName.isEmpty() || loginName.isEmpty() || passwd.isEmpty())
     {
@@ -167,6 +174,7 @@ void LoginSetForm::on_pushButtonOk_clicked()
     config.set("SerialPort", "Com", QString("%1").arg(name));
     config.set("SerialPort", "Num", QString("%1").arg(num));
     config.set("SerialPort", "Baud", QString("%1").arg(baud));
+    config.set("SerialPort", "Details", QString("%1").arg(details));
 
     emit setFormClosed();
     close();
@@ -179,5 +187,11 @@ void LoginSetForm::onCloseLoginSetForm()
 
 void LoginSetForm::on_comboBoxComName_currentTextChanged(const QString &arg1)
 {
-    ui->lineEditComNum->setText(m_mapSerialPort[arg1]);
+    QString strValue = m_mapSerialPort[arg1];
+    QStringList listValue = strValue.split(";");
+
+    if(listValue.count()!=2)
+        return;
+    ui->lineEditComNum->setText(listValue[0]);
+    ui->labelComDetails->setText(listValue[1]);
 }

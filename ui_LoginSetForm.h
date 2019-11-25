@@ -53,28 +53,29 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QGroupBox *groupBox_3;
     QGridLayout *gridLayout_3;
-    QSpacerItem *horizontalSpacer_3;
-    ComboBoxEx *comboBoxComBaud;
     LabelEx *label_9;
-    QSpacerItem *horizontalSpacer_5;
-    LabelEx *label_10;
-    LabelEx *label_11;
-    LineEditEx *lineEditComNum;
     ComboBoxEx *comboBoxComName;
     QSpacerItem *horizontalSpacer_6;
+    LabelEx *label_10;
+    LineEditEx *lineEditComNum;
+    LabelEx *label_11;
+    ComboBoxEx *comboBoxComBaud;
+    QSpacerItem *horizontalSpacer_7;
+    LabelEx *label_12;
+    LabelEx *labelComDetails;
 
     void setupUi(QWidget *LoginSetForm)
     {
         if (LoginSetForm->objectName().isEmpty())
             LoginSetForm->setObjectName(QString::fromUtf8("LoginSetForm"));
-        LoginSetForm->resize(620, 490);
+        LoginSetForm->resize(620, 526);
         LoginSetForm->setLayoutDirection(Qt::LeftToRight);
         pushButtonCancel = new PushButtonEx(LoginSetForm);
         pushButtonCancel->setObjectName(QString::fromUtf8("pushButtonCancel"));
-        pushButtonCancel->setGeometry(QRect(160, 440, 81, 31));
+        pushButtonCancel->setGeometry(QRect(160, 480, 81, 31));
         pushButtonOk = new PushButtonEx(LoginSetForm);
         pushButtonOk->setObjectName(QString::fromUtf8("pushButtonOk"));
-        pushButtonOk->setGeometry(QRect(350, 440, 81, 31));
+        pushButtonOk->setGeometry(QRect(350, 480, 81, 31));
         pushButtonTitle = new QPushButton(LoginSetForm);
         pushButtonTitle->setObjectName(QString::fromUtf8("pushButtonTitle"));
         pushButtonTitle->setGeometry(QRect(0, 0, 621, 51));
@@ -183,70 +184,29 @@ public:
 
         groupBox_3 = new QGroupBox(LoginSetForm);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 330, 600, 90));
+        groupBox_3->setGeometry(QRect(10, 330, 601, 130));
         gridLayout_3 = new QGridLayout(groupBox_3);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(-1, 20, -1, -1);
-        horizontalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer_3, 0, 8, 1, 1);
-
-        comboBoxComBaud = new ComboBoxEx(groupBox_3);
-        comboBoxComBaud->setObjectName(QString::fromUtf8("comboBoxComBaud"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(comboBoxComBaud->sizePolicy().hasHeightForWidth());
-        comboBoxComBaud->setSizePolicy(sizePolicy);
-        comboBoxComBaud->setMinimumSize(QSize(100, 30));
-        comboBoxComBaud->setMaximumSize(QSize(120, 16777215));
-
-        gridLayout_3->addWidget(comboBoxComBaud, 0, 7, 1, 1);
-
         label_9 = new LabelEx(groupBox_3);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
-        label_9->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
+        label_9->setSizePolicy(sizePolicy);
         label_9->setMinimumSize(QSize(65, 0));
 
         gridLayout_3->addWidget(label_9, 0, 0, 1, 1);
 
-        horizontalSpacer_5 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer_5, 0, 5, 1, 1);
-
-        label_10 = new LabelEx(groupBox_3);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        sizePolicy1.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
-        label_10->setSizePolicy(sizePolicy1);
-
-        gridLayout_3->addWidget(label_10, 0, 3, 1, 1);
-
-        label_11 = new LabelEx(groupBox_3);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        sizePolicy1.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
-        label_11->setSizePolicy(sizePolicy1);
-
-        gridLayout_3->addWidget(label_11, 0, 6, 1, 1);
-
-        lineEditComNum = new LineEditEx(groupBox_3);
-        lineEditComNum->setObjectName(QString::fromUtf8("lineEditComNum"));
-        lineEditComNum->setEnabled(false);
-        sizePolicy.setHeightForWidth(lineEditComNum->sizePolicy().hasHeightForWidth());
-        lineEditComNum->setSizePolicy(sizePolicy);
-        lineEditComNum->setMinimumSize(QSize(100, 30));
-        lineEditComNum->setMaximumSize(QSize(120, 16777215));
-
-        gridLayout_3->addWidget(lineEditComNum, 0, 4, 1, 1);
-
         comboBoxComName = new ComboBoxEx(groupBox_3);
         comboBoxComName->setObjectName(QString::fromUtf8("comboBoxComName"));
-        sizePolicy.setHeightForWidth(comboBoxComName->sizePolicy().hasHeightForWidth());
-        comboBoxComName->setSizePolicy(sizePolicy);
-        comboBoxComName->setMinimumSize(QSize(100, 30));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(comboBoxComName->sizePolicy().hasHeightForWidth());
+        comboBoxComName->setSizePolicy(sizePolicy1);
+        comboBoxComName->setMinimumSize(QSize(150, 30));
         comboBoxComName->setMaximumSize(QSize(120, 16777215));
 
         gridLayout_3->addWidget(comboBoxComName, 0, 1, 1, 1);
@@ -254,6 +214,58 @@ public:
         horizontalSpacer_6 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         gridLayout_3->addItem(horizontalSpacer_6, 0, 2, 1, 1);
+
+        label_10 = new LabelEx(groupBox_3);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        sizePolicy.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
+        label_10->setSizePolicy(sizePolicy);
+
+        gridLayout_3->addWidget(label_10, 0, 3, 1, 1);
+
+        lineEditComNum = new LineEditEx(groupBox_3);
+        lineEditComNum->setObjectName(QString::fromUtf8("lineEditComNum"));
+        lineEditComNum->setEnabled(false);
+        sizePolicy1.setHeightForWidth(lineEditComNum->sizePolicy().hasHeightForWidth());
+        lineEditComNum->setSizePolicy(sizePolicy1);
+        lineEditComNum->setMinimumSize(QSize(250, 30));
+        lineEditComNum->setMaximumSize(QSize(120, 16777215));
+
+        gridLayout_3->addWidget(lineEditComNum, 0, 4, 1, 1);
+
+        label_11 = new LabelEx(groupBox_3);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        sizePolicy.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
+        label_11->setSizePolicy(sizePolicy);
+
+        gridLayout_3->addWidget(label_11, 1, 0, 1, 1);
+
+        comboBoxComBaud = new ComboBoxEx(groupBox_3);
+        comboBoxComBaud->setObjectName(QString::fromUtf8("comboBoxComBaud"));
+        sizePolicy1.setHeightForWidth(comboBoxComBaud->sizePolicy().hasHeightForWidth());
+        comboBoxComBaud->setSizePolicy(sizePolicy1);
+        comboBoxComBaud->setMinimumSize(QSize(150, 30));
+        comboBoxComBaud->setMaximumSize(QSize(120, 16777215));
+
+        gridLayout_3->addWidget(comboBoxComBaud, 1, 1, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        gridLayout_3->addItem(horizontalSpacer_7, 1, 2, 1, 1);
+
+        label_12 = new LabelEx(groupBox_3);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        sizePolicy.setHeightForWidth(label_12->sizePolicy().hasHeightForWidth());
+        label_12->setSizePolicy(sizePolicy);
+
+        gridLayout_3->addWidget(label_12, 1, 3, 1, 1);
+
+        labelComDetails = new LabelEx(groupBox_3);
+        labelComDetails->setObjectName(QString::fromUtf8("labelComDetails"));
+        sizePolicy1.setHeightForWidth(labelComDetails->sizePolicy().hasHeightForWidth());
+        labelComDetails->setSizePolicy(sizePolicy1);
+        labelComDetails->setMinimumSize(QSize(250, 0));
+
+        gridLayout_3->addWidget(labelComDetails, 1, 4, 1, 2);
 
         QWidget::setTabOrder(lineEditSerName, lineEditDbName);
         QWidget::setTabOrder(lineEditDbName, lineEditLoginName);
@@ -263,8 +275,7 @@ public:
         QWidget::setTabOrder(lineEditNetIP, lineEditNetPort);
         QWidget::setTabOrder(lineEditNetPort, comboBoxComName);
         QWidget::setTabOrder(comboBoxComName, lineEditComNum);
-        QWidget::setTabOrder(lineEditComNum, comboBoxComBaud);
-        QWidget::setTabOrder(comboBoxComBaud, pushButtonCancel);
+        QWidget::setTabOrder(lineEditComNum, pushButtonCancel);
         QWidget::setTabOrder(pushButtonCancel, pushButtonOk);
         QWidget::setTabOrder(pushButtonOk, pushButtonTitle);
 
@@ -292,6 +303,8 @@ public:
         label_9->setText(QApplication::translate("LoginSetForm", "\344\270\262\345\217\243\345\220\215\357\274\232  ", nullptr));
         label_10->setText(QApplication::translate("LoginSetForm", " \345\272\217\345\210\227\345\217\267\357\274\232 ", nullptr));
         label_11->setText(QApplication::translate("LoginSetForm", "\346\263\242\347\211\271\347\216\207\357\274\232", nullptr));
+        label_12->setText(QApplication::translate("LoginSetForm", " \346\217\217\350\277\260\357\274\232", nullptr));
+        labelComDetails->setText(QApplication::translate("LoginSetForm", "\344\270\262\345\217\243\346\217\217\350\277\260", nullptr));
     } // retranslateUi
 
 };

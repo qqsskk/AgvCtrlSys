@@ -100,7 +100,8 @@ HEADERS += \
     graphic/GraphicStation.h \
     graphic/GraphicTrack.h \
     graphic/GraphicAgv.h \
-    ModulesForm.h
+    ModulesForm.h \
+    headerviewex.h
 
 FORMS += \
         MainWindow.ui \
