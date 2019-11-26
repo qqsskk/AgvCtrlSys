@@ -1,4 +1,36 @@
 ﻿{
+	"Track":
+	{
+		"1":
+		{
+			"StartX":2,
+			"StartY":2,
+			"EndX":2,
+			"EndY":2,
+			"Arc":true
+		},
+		"2":
+		{
+			"StartX":2,
+			"StartY":2,
+			"EndX":2,
+			"EndY":2,
+			"Arc":false
+		}
+	},
+	"RFID":
+	{
+		"1":
+		{
+			"X":2,
+			"Y":2
+		},
+		"2":
+		{
+			"X":1,
+			"Y":1
+		}
+	},
 	"AGVType":
 	{
 		"类型名称1":
@@ -128,8 +160,24 @@
 				33,44,55
 			]
 		}
-	}								
-	
+	},
+	"Caller":
+	{
+		"1":
+		{
+			"Address":"",
+			"Station":1,
+			"Enable":true
+		},
+		"2":
+		{
+			"Address":"12323",
+			"Station":2,
+			"Enable":false
+		}
+	}		
 }
+
+
 
 

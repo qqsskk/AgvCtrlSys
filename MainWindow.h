@@ -47,6 +47,8 @@ private slots:
     void onUpdateAbnormalExist(bool exist);
     void onCallerEnable(int id, bool enable);
 
+    void onCreateTask(QString workName, QString taskDetails);
+
 signals:
     /**
      * @brief netServerStateChange 网络服务状态信号
@@ -94,6 +96,14 @@ signals:
      * @details 需要刷新用于显示的呼叫器信息的时候发送此信号
      */
     void updateCallerData();
+
+
+    /**
+     * @brief createTask    创建任务信号
+     * @param workName      工作站名称
+     * @param taskDetails   任务内容
+     */
+    void createTask(QString workName, QString taskDetails);
 };
 
 #endif // MAINWINDOW_H

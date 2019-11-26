@@ -55,6 +55,7 @@ void MainWindow::initWindow()
     connect(this, SIGNAL(hideAgv(quint32)), pMapForm, SLOT(onHideAgv(quint32)));
     TaskForm *pTaskForm = new TaskForm();
     ui->tabWidget->addTab(pTaskForm, QString::fromLocal8Bit("任务信息"));
+    connect(pTaskForm, SIGNAL(createTask(QString,QString)), this, SLOT(onCreateTask(QString,QString)));
     HistoryForm *pHistoryForm = new HistoryForm();
     ui->tabWidget->addTab(pHistoryForm, QString::fromLocal8Bit("历史信息"));
     DeviceStateForm *pDeviceStateForm = new DeviceStateForm();
@@ -120,4 +121,9 @@ void MainWindow::onUpdateAbnormalExist(bool exist)
 void MainWindow::onCallerEnable(int id, bool enable)
 {
     emit callerEnable(id, enable);
+}
+
+void MainWindow::onCreateTask(QString workName, QString taskDetails)
+{
+    emit createTask(workName, taskDetails);
 }
