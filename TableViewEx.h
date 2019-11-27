@@ -13,7 +13,7 @@ public:
 private:
       void init();
 public:
-      void setTableModel(QAbstractTableModel *model);
+      void setTableModel(QAbstractTableModel *model, bool isInteractive=false);
 
 };
 #endif // TABLEVIEWEX_H

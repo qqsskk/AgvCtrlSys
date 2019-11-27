@@ -7,6 +7,7 @@
 #include <QSqlTableModel>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QToolTip>
 #include "MsgBoxEx.h"
 
 namespace Ui {

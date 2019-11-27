@@ -40,6 +40,7 @@ void DeviceStateForm::onUpdateModel()
     m_modelAgv->setHeaderData(9, Qt::Horizontal, QString::fromLocal8Bit("异常信息"));
     ui->tableViewAgv->setTableModel(m_modelAgv);
 
+
     // 呼叫器
     m_modelCaller->setQuery(QString("SELECT ID,ScreamInfo,CallInfo,CancelInfo FROM AGVDB_INFO_CALLER"));
     m_modelCaller->setHeaderData(0, Qt::Horizontal, QString::fromLocal8Bit("编号"));

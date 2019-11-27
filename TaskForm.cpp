@@ -49,7 +49,7 @@ void TaskForm::onUpdateModel()
     m_model->setHeaderData(8, Qt::Horizontal, QString::fromLocal8Bit("执行时间"));
     m_model->setHeaderData(9, Qt::Horizontal, QString::fromLocal8Bit("完成时间"));
     m_model->setHeaderData(10, Qt::Horizontal, QString::fromLocal8Bit("异常信息"));
-    ui->tableView->setTableModel(m_model);
+    ui->tableView->setTableModel(m_model, true);
 }
 
 void TaskForm::on_pushButtonCreateTask_clicked()

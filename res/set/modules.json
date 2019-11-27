@@ -1,4 +1,10 @@
 ﻿{
+	"Background":
+	{
+		"Scale":2,
+		"OffsetX":2,
+		"OffsetY":2
+	},
 	"Track":
 	{
 		"1":
