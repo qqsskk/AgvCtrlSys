@@ -51,13 +51,34 @@ public:
                 }
                 painter->drawText(allRect, tab->text, option);
 
-                painter->drawImage(13, 36, QImage("./res/icon/tab_map.png"));
-                painter->drawImage(15, 136, QImage("./res/icon/tab_task.png"));
-                painter->drawImage(15, 236, QImage("./res/icon/tab_history.png"));
-                painter->drawImage(15, 336, QImage("./res/icon/tab_devstate.png"));
-                painter->drawImage(15, 436, QImage("./res/icon/tab_modules.png"));
-                painter->drawImage(15, 536, QImage("./res/icon/tab_user.png"));
-                painter->drawImage(15, 636, QImage("./res/icon/tab_config.png"));
+                if(tab->text==QString::fromLocal8Bit("地图信息"))
+                {
+                    painter->drawImage(allRect.x()+13, allRect.y()+36, QImage("./res/icon/tab_map.png"));
+                }
+                else if(tab->text==QString::fromLocal8Bit("任务信息"))
+                {
+                    painter->drawImage(allRect.x()+15, allRect.y()+36, QImage("./res/icon/tab_task.png"));
+                }
+                else if(tab->text==QString::fromLocal8Bit("历史信息"))
+                {
+                    painter->drawImage(allRect.x()+15, allRect.y()+36, QImage("./res/icon/tab_history.png"));
+                }
+                else if(tab->text==QString::fromLocal8Bit("设备状态"))
+                {
+                    painter->drawImage(allRect.x()+15, allRect.y()+36, QImage("./res/icon/tab_devstate.png"));
+                }
+                else if(tab->text==QString::fromLocal8Bit("模块信息"))
+                {
+                    painter->drawImage(allRect.x()+15, allRect.y()+36, QImage("./res/icon/tab_modules.png"));
+                }
+                else if(tab->text==QString::fromLocal8Bit("用户信息"))
+                {
+                    painter->drawImage(allRect.x()+15, allRect.y()+36, QImage("./res/icon/tab_user.png"));
+                }
+                else if(tab->text==QString::fromLocal8Bit("系统配置"))
+                {
+                    painter->drawImage(allRect.x()+15, allRect.y()+36, QImage("./res/icon/tab_config.png"));
+                }
 
                 return;
             }
